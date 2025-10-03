@@ -1,0 +1,1575 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adendo Técnico - Sistema de Ventilação Forçada Otimizado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 3px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: #f0f0f0;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .critical-box {
+            border: 3px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .critical-box .title {
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 25px 0;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 2px solid #000;
+            background: #e0e0e0;
+            text-align: center;
+        }
+
+        .subsection-title {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 7.5pt;
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            white-space: pre;
+            line-height: 1.3;
+            background: #fff;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #e0e0e0;
+        }
+
+        .dimension {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            background: #fff;
+            border: 2px solid #000;
+            padding: 3px 8px;
+            display: inline-block;
+        }
+
+        .step-box {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            background: #fafafa;
+        }
+
+        .step-number {
+            font-size: 14pt;
+            font-weight: bold;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            border: 3px double #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #f8f8f8;
+        }
+
+        .warning-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            border: 1px solid #000;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .comparison-table th {
+            background: #d0d0d0;
+            font-weight: bold;
+        }
+
+        .best-option {
+            background: #e8f5e9 !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ADENDO TÉCNICO - SISTEMA DE VENTILAÇÃO FORÇADA</h1>
+            <div style="font-size: 14pt; margin-top: 10px; font-weight: bold;">Configuração Otimizada com 4 Coolers 140mm</div>
+            <div style="font-size: 11pt; margin-top: 8px;">Complemento ao Guia Técnico de Execução Principal</div>
+            <div style="margin-top: 12px; font-size: 10pt; border-top: 1px solid #000; padding-top: 8px;">
+                Marceneiro: _________________ | Data: ___/___/_____ | Rev: 03 OTIMIZADO
+            </div>
+        </div>
+
+        <div class="critical-box">
+            <div class="title">ESCOPO DESTE ADENDO - TRABALHO DO MARCENEIRO</div>
+            
+            <p><strong>O marceneiro deve executar SOMENTE as furações conforme este documento:</strong></p>
+            <table style="width: 100%; margin: 10px 0; font-size: 10pt;">
+                <tr style="background: #e8e8e8;">
+                    <td style="padding: 6px; border: 1px solid #000;"><strong>Tipo de Furo</strong></td>
+                    <td style="padding: 6px; border: 1px solid #000;"><strong>Quantidade</strong></td>
+                    <td style="padding: 6px; border: 1px solid #000;"><strong>Dimensões</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px; border: 1px solid #000;">Furos quadrados (coolers)</td>
+                    <td style="padding: 6px; border: 1px solid #000;">4 unidades</td>
+                    <td style="padding: 6px; border: 1px solid #000;"><span class="dimension">135mm × 135mm</span></td>
+                </tr>
+                <tr style="background: #e8e8e8;">
+                    <td style="padding: 6px; border: 1px solid #000;">Furos redondos (passivos)</td>
+                    <td style="padding: 6px; border: 1px solid #000;">8 unidades</td>
+                    <td style="padding: 6px; border: 1px solid #000;"><span class="dimension">Ø 15mm</span></td>
+                </tr>
+                <tr>
+                    <td style="padding: 6px; border: 1px solid #000;"><strong>TOTAL</strong></td>
+                    <td style="padding: 6px; border: 1px solid #000;"><strong>12 furos</strong></td>
+                    <td style="padding: 6px; border: 1px solid #000;">Conforme tabelas deste documento</td>
+                </tr>
+            </table>
+
+            <p style="margin-top: 15px;"><strong>IMPORTANTE:</strong></p>
+            <ul style="margin: 10px 0 10px 25px; line-height: 2;">
+                <li>Cliente instalará os componentes (coolers, desumidificadores) APÓS a entrega</li>
+                <li>Marceneiro entrega painel COMPLETO com todas as furações prontas</li>
+                <li>Tolerâncias são CRÍTICAS - seguir exatamente as medidas</li>
+            </ul>
+        </div>
+
+        <!-- SEÇÃO 1: ESPECIFICAÇÕES DO COOLER -->
+        <div class="section">
+            <div class="section-title">1. ESPECIFICAÇÕES DO COOLER 140mm</div>
+
+            <div class="subsection-title">1.1. Componente Especificado</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Especificação</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Modelo</td>
+                    <td>Fan Cooler 140mm 14cm Ventoinha Preto S/ Led Gabinete Pc</td>
+                </tr>
+                <tr>
+                    <td>Dimensões externas</td>
+                    <td><span class="dimension">140mm × 140mm × 25mm</span></td>
+                </tr>
+                <tr>
+                    <td>Área efetiva de ventilação</td>
+                    <td>Círculo Ø 135mm (inscrito no quadrado)</td>
+                </tr>
+                <tr>
+                    <td>Tensão de operação</td>
+                    <td>12V DC</td>
+                </tr>
+                <tr>
+                    <td>Corrente</td>
+                    <td>0.11A - 0.12A por cooler</td>
+                </tr>
+                <tr>
+                    <td>Consumo</td>
+                    <td>1.3W - 1.4W por cooler</td>
+                </tr>
+                <tr>
+                    <td>Rotação</td>
+                    <td>1000 RPM (baixo ruído)</td>
+                </tr>
+                <tr>
+                    <td>Nível de ruído</td>
+                    <td>Aproximadamente 18-20 dBA</td>
+                </tr>
+                <tr>
+                    <td>Furos de fixação</td>
+                    <td>4 cantos, rosca M4 ou parafuso 3×15mm</td>
+                </tr>
+                <tr>
+                    <td>Preço unitário</td>
+                    <td>R$ 24,94</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.2. Dimensões para Furação</div>
+
+            <div class="diagram">COOLER 140mm - DIMENSÕES EXATAS PARA FURAÇÃO
+
+Vista Frontal do Cooler:
+                140mm TOTAL
+    ├───────────────────────────────────┤
+    
+    ┌───────────────────────────────────┐  ─┬─
+    │ ○                             ○   │   │ 
+    │    ┌─────────────────────┐        │   │
+    │    │                     │        │   │
+    │    │   ╔═══════════╗     │        │  140mm
+    │    │   ║           ║     │        │  TOTAL
+    │    │   ║  Ventoinha║     │        │   │
+    │    │   ║   Ø135mm  ║     │        │   │
+    │    │   ╚═══════════╝     │        │   │
+    │    │                     │        │   │
+    │    └─────────────────────┘        │   │
+    │ ○                             ○   │   │
+    └───────────────────────────────────┘  ─┴─
+    
+    ○ = Furos de fixação M4 (4 cantos)
+    Distância entre furos: 124mm diagonal
+
+FURO RECOMENDADO NO PAINEL:
+────────────────────────────────────────────
+    
+    Tamanho: 135mm × 135mm (quadrado)
+    
+    Razão: 
+    - Cooler tem 140mm externo
+    - Precisa 2,5mm folga cada lado
+    - 140mm - 5mm = 135mm
+    
+    Resultado:
+    - Cooler encaixa no furo
+    - Bordas do cooler sobrepõem 2,5mm
+    - Parafusos fixam nas bordas externas
+
+CORTE LATERAL (espessura):
+                         
+    FRENTE ────┬────────┬──── TRASEIRA
+               │ Cooler │
+               │ 25mm   │
+               │        │
+    ═══════════╧════════╧══════════════
+         Painel MDF 5mm
+    
+    Cooler fica nivelado com traseira do painel</div>
+        </div>
+
+        <!-- SEÇÃO 2: MAPEAMENTO COMPLETO DE FURAÇÕES -->
+        <div class="section page-break">
+            <div class="section-title">2. MAPEAMENTO COMPLETO DE FURAÇÕES</div>
+
+            <div class="subsection-title">2.1. Vista Geral Traseira do Painel</div>
+
+            <div class="diagram">PAINEL TRASEIRO - TODAS AS FURAÇÕES (12 FUROS TOTAIS)
+Dimensões: 1550mm (altura) × 1760mm (largura)
+
+TOPO ═══════════════════════════════════════════════════════════════ 1550mm
+     0     200    440    880    1320   1560   1760mm (horizontal)
+     ├──────┼──────┼──────┼──────┼──────┼──────┤
+     │                                          │
+     │ F1            C1            C2        F2 │ 1480 (topo útil)
+     │ ○      ┌──────────┐  ┌──────────┐    ○  │
+     │        │ COOLER 1 │  │ COOLER 2 │       │ 1400
+     │        │ EXPULSA  │  │ EXPULSA  │       │
+     │ F3     │  135×135 │  │  135×135 │    F4 │ 1300 (centro)
+     │ ○      │    AR    │  │    AR    │    ○  │
+     │        │   ↑↑↑    │  │   ↑↑↑    │       │ 1200
+     │        └──────────┘  └──────────┘       │
+     │                                          │
+     │            REGIÃO SUPERIOR               │ 1100
+     │                                          │
+     │                                          │ 1000
+     │ ║     ║     ║     ║     ║     ║     ║   │
+     │ ║  1  ║  2  ║  3  ║  4  ║  5  ║  6  ║   │ 900 (apoios)
+     │ ║     ║     ║     ║     ║     ║     ║   │
+     │ INSTRUMENTOS SUPERIORES PENDURADOS      │ 800
+     │ ║     ║     ║     ║     ║     ║     ║   │
+     │                                          │ 700
+     │        ESPAÇO LIVRE (GAP 5cm)            │
+     │                                          │ 600
+     │ ║     ║     ║     ║     ║     ║     ║   │
+     │ INSTRUMENTOS INFERIORES APOIADOS        │ 500
+     │ ║     ║     ║     ║     ║     ║     ║   │ 400
+     │                                          │ 300
+     │        ┌──────────┐  ┌──────────┐       │ 200
+     │        │   ↓↓↓    │  │   ↓↓↓    │       │
+     │ F5     │    AR    │  │    AR    │    F6 │ 150
+     │ ○      │  135×135 │  │  135×135 │    ○  │
+     │        │ COOLER 3 │  │ COOLER 4 │       │ 100
+     │        │  ADMITE  │  │  ADMITE  │       │
+     │ F7     └──────────┘  └──────────┘    F8 │ 50
+     │ ○          C3            C4          ○  │
+     │                                          │
+     │            REGIÃO INFERIOR               │
+BASE ═══════════════════════════════════════════════════════════════ 0mm
+
+LEGENDA:
+────────────────────────────────────────────────────────
+C1-C4 = Coolers 140mm (furos quadrados 135×135mm)
+F1-F8 = Furos passivos (furos redondos Ø15mm)
+═══   = Borda do painel
+║     = Separadores verticais (já executados)
+────────────────────────────────────────────────────────</div>
+
+            <div class="subsection-title">2.2. Tabela de Coordenadas - Furos Coolers</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Componente</th>
+                    <th>Centro Horizontal (mm)</th>
+                    <th>Centro Vertical (mm)</th>
+                    <th>Dimensões Furo</th>
+                    <th>Função</th>
+                </tr>
+                <tr>
+                    <td><strong>C1</strong></td>
+                    <td>Cooler Superior Esquerdo</td>
+                    <td><span class="dimension">440mm</span></td>
+                    <td><span class="dimension">1300mm</span></td>
+                    <td>135×135mm</td>
+                    <td>Expulsa ar quente</td>
+                </tr>
+                <tr>
+                    <td><strong>C2</strong></td>
+                    <td>Cooler Superior Direito</td>
+                    <td><span class="dimension">1320mm</span></td>
+                    <td><span class="dimension">1300mm</span></td>
+                    <td>135×135mm</td>
+                    <td>Expulsa ar quente</td>
+                </tr>
+                <tr>
+                    <td><strong>C3</strong></td>
+                    <td>Cooler Inferior Esquerdo</td>
+                    <td><span class="dimension">440mm</span></td>
+                    <td><span class="dimension">175mm</span></td>
+                    <td>135×135mm</td>
+                    <td>Admite ar fresco</td>
+                </tr>
+                <tr>
+                    <td><strong>C4</strong></td>
+                    <td>Cooler Inferior Direito</td>
+                    <td><span class="dimension">1320mm</span></td>
+                    <td><span class="dimension">175mm</span></td>
+                    <td>135×135mm</td>
+                    <td>Admite ar fresco</td>
+                </tr>
+            </table>
+
+            <div class="critical-box">
+                <div class="title">COORDENADAS DETALHADAS - COOLERS</div>
+                
+                <p><strong>COMO MEDIR:</strong></p>
+                <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li>Origem (0,0) = canto inferior esquerdo do painel</li>
+                    <li>Eixo X (horizontal) = medido da BORDA ESQUERDA do painel</li>
+                    <li>Eixo Y (vertical) = medido da BASE (borda inferior) do painel</li>
+                    <li>Coordenadas são do CENTRO do furo</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>CÁLCULO DAS BORDAS DOS FUROS:</strong></p>
+                <table style="width: 100%; margin: 10px 0; font-size: 9pt;">
+                    <tr style="background: #e8e8e8; font-weight: bold;">
+                        <td style="padding: 4px; border: 1px solid #000;">Furo</td>
+                        <td style="padding: 4px; border: 1px solid #000;">Centro</td>
+                        <td style="padding: 4px; border: 1px solid #000;">Borda Esq</td>
+                        <td style="padding: 4px; border: 1px solid #000;">Borda Dir</td>
+                        <td style="padding: 4px; border: 1px solid #000;">Borda Inf</td>
+                        <td style="padding: 4px; border: 1px solid #000;">Borda Sup</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px; border: 1px solid #000;">C1</td>
+                        <td style="padding: 4px; border: 1px solid #000;">440, 1300</td>
+                        <td style="padding: 4px; border: 1px solid #000;">372,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">507,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1232,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1367,5mm</td>
+                    </tr>
+                    <tr style="background: #f8f8f8;">
+                        <td style="padding: 4px; border: 1px solid #000;">C2</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1320, 1300</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1252,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1387,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1232,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1367,5mm</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px; border: 1px solid #000;">C3</td>
+                        <td style="padding: 4px; border: 1px solid #000;">440, 175</td>
+                        <td style="padding: 4px; border: 1px solid #000;">372,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">507,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">107,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">242,5mm</td>
+                    </tr>
+                    <tr style="background: #f8f8f8;">
+                        <td style="padding: 4px; border: 1px solid #000;">C4</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1320, 175</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1252,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">1387,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">107,5mm</td>
+                        <td style="padding: 4px; border: 1px solid #000;">242,5mm</td>
+                    </tr>
+                </table>
+
+                <p style="margin-top: 10px;"><strong>Cálculo:</strong> Centro ± 67,5mm (metade de 135mm)</p>
+            </div>
+
+            <div class="subsection-title">2.3. Tabela de Coordenadas - Furos Passivos</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>ID</th>
+                    <th>Localização</th>
+                    <th>Horizontal (mm)</th>
+                    <th>Vertical (mm)</th>
+                    <th>Diâmetro</th>
+                    <th>Função</th>
+                </tr>
+                <tr>
+                    <td><strong>F1</strong></td>
+                    <td>Superior Esquerdo Alto</td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td><span class="dimension">1350mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Saída passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F2</strong></td>
+                    <td>Superior Direito Alto</td>
+                    <td><span class="dimension">1560mm</span></td>
+                    <td><span class="dimension">1350mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Saída passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F3</strong></td>
+                    <td>Superior Esquerdo Baixo</td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td><span class="dimension">1250mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Saída passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F4</strong></td>
+                    <td>Superior Direito Baixo</td>
+                    <td><span class="dimension">1560mm</span></td>
+                    <td><span class="dimension">1250mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Saída passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F5</strong></td>
+                    <td>Inferior Esquerdo Alto</td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Entrada passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F6</strong></td>
+                    <td>Inferior Direito Alto</td>
+                    <td><span class="dimension">1560mm</span></td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Entrada passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F7</strong></td>
+                    <td>Inferior Esquerdo Baixo</td>
+                    <td><span class="dimension">200mm</span></td>
+                    <td><span class="dimension">120mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Entrada passiva</td>
+                </tr>
+                <tr>
+                    <td><strong>F8</strong></td>
+                    <td>Inferior Direito Baixo</td>
+                    <td><span class="dimension">1560mm</span></td>
+                    <td><span class="dimension">120mm</span></td>
+                    <td>Ø15mm</td>
+                    <td>Entrada passiva</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">ATENÇÃO - DISTRIBUIÇÃO DOS FUROS PASSIVOS</div>
+                <p>Os 8 furos passivos Ø15mm estão distribuídos nos 4 cantos do painel:</p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li><strong>Cantos superiores (F1-F4):</strong> Permitem saída de ar quente adicional</li>
+                    <li><strong>Cantos inferiores (F5-F8):</strong> Permitem entrada de ar fresco adicional</li>
+                    <li><strong>Distância horizontal:</strong> 200mm das bordas (evita região dos separadores)</li>
+                    <li><strong>Pares verticais:</strong> Espaçamento de 100mm e 80mm entre furos</li>
+                </ul>
+                <p style="margin-top: 10px;">Estes furos trabalham em conjunto com os coolers, fornecendo ventilação passiva complementar.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: VISTAS DETALHADAS -->
+        <div class="section page-break">
+            <div class="section-title">3. VISTAS DETALHADAS E CORTES</div>
+
+            <div class="subsection-title">3.1. Vista Superior (Profundidade)</div>
+
+            <div class="diagram">CORTE HORIZONTAL - VISTA SUPERIOR
+Mostra profundidade de 44cm e posicionamento dos coolers
+
+TRASEIRA (parede cristaleira)
+═════════════════════════════════════════════════════════════
+║ PAINEL MDF 5mm
+║
+║           ┌─────────┐         ┌─────────┐
+║           │ COOLER  │         │ COOLER  │
+║           │  140mm  │         │  140mm  │  ← Coolers ficam
+║           │ x 25mm  │         │ x 25mm  │    DENTRO do painel
+║           └─────────┘         └─────────┘    (não ultrapassam)
+║
+║    [Desumid]              [Desumid]
+║    Inferior               Superior
+║    (90mm)                 (90mm)
+║      │                       │
+║      │                       │
+║    440mm                   1320mm
+║    (horiz)                 (horiz)
+║
+║
+║                ║    ║    ║    ║    ║
+║              Instrumentos pendurados
+║                ║    ║    ║    ║    ║
+║
+═════════════════════════════════════════════════════════════
+FRENTE (portas de vidro)
+
+    ├───────── 440mm ─────────┤ Profundidade total
+
+NOTAS:
+- Coolers: 25mm de espessura (não atrapalham instrumentos)
+- Desumidificadores: ~90mm diâmetro × 60mm altura
+- Espaço livre frente dos instrumentos: ~350mm
+- Circulação de ar: atrás dos instrumentos</div>
+
+            <div class="subsection-title">3.2. Vista Lateral Esquerda</div>
+
+            <div class="diagram">CORTE VERTICAL LATERAL - LADO ESQUERDO DO PAINEL
+Mostra distribuição vertical dos componentes
+
+1550mm ────── TOPO DO PAINEL
+  │
+  │  70mm região não utilizada
+  │
+1480mm ────── Topo útil
+  │
+  │            ┌──────────┐
+  │  50mm      │          │ F1 (1350mm)
+  │            │ COOLER 1 │
+1400mm         │ Superior │ 
+  │            │ Expulsa  │
+  │  100mm     │  135×135 │ F3 (1250mm)
+  │            └──────────┘
+1300mm ────── Centro Cooler Superior
+  │
+  │
+  │  200mm            ║
+  │                   ║ Barra horizontal
+  │                   ║ @ 1300mm
+1100mm                ║
+  │                   ║
+  │  200mm            ║ Separadores superiores
+  │                   ║ (580mm altura)
+  │                   ║
+900mm  ──────────────▓────── Apoios anti-balanço
+  │
+  │                   ║
+  │  50mm GAP         ║
+  │                   ║
+850mm  ────────────────────── Divisão níveis
+  │
+  │                   ║
+  │  150mm            ║ Separadores inferiores
+  │                   ║ (700mm altura)
+  │                   ║
+  │  300mm            ║
+  │                   ║
+  │                   ║
+400mm  ──────────────▓────── Apoios de braço
+  │                   ║
+  │                   ║
+  │  225mm            ║
+  │            ┌──────────┐
+  │            │          │ F5 (200mm)
+  │   67,5mm   │ COOLER 3 │
+175mm  ──────  │ Inferior │ Centro Cooler Inferior
+  │            │  Admite  │
+  │   67,5mm   │  135×135 │ F7 (120mm)
+  │            └──────────┘
+107,5mm ────── Borda inferior C3
+  │
+  │  107,5mm
+  │
+0mm ──────── BASE DO PAINEL
+
+COMPONENTES:
+────────────────────────────────────────────────────
+C1/C2 = Coolers superiores @ 1300mm (expulsam)
+C3/C4 = Coolers inferiores @ 175mm (admitem)
+F1-F4 = Furos passivos superiores (1350mm, 1250mm)
+F5-F8 = Furos passivos inferiores (200mm, 120mm)
+▓     = Apoios (anti-balanço superior, braço inferior)
+║     = Separadores e instrumentos
+────────────────────────────────────────────────────</div>
+
+            <div class="subsection-title">3.3. Detalhe do Furo Quadrado (Cooler)</div>
+
+            <div class="diagram">DETALHE CONSTRUTIVO - FURO QUADRADO 135×135mm
+
+Vista Frontal do Furo:
+                    135mm
+        ├───────────────────────┤
+        
+      A ●─────────────────────● B    ─┬─
+        │                     │       │
+        │                     │       │
+        │                     │       │
+        │        FURO         │      135mm
+        │      QUADRADO       │       │
+        │      VAZADO         │       │
+        │                     │       │
+      D ●─────────────────────● C    ─┴─
+
+A, B, C, D = Pontos de furação inicial (Ø10mm)
+Conectar os 4 pontos com serra tico-tico
+
+Sequência de corte:
+1. Marcar centro do furo
+2. Marcar quadrado 135×135mm centralizado
+3. Furar 4 cantos (A, B, C, D) com broca 10mm
+4. Cortar: A→B, B→C, C→D, D→A
+5. Lixar bordas internas
+
+Corte Lateral (espessura):
+                         
+    FRENTE  │           │  TRASEIRA
+            │   FURO    │
+            │  VAZADO   │
+    ════════╧═══════════╧════════════
+          Painel MDF 5mm
+          
+    Furo é PASSANTE (atravessa os 5mm)
+    Bordas devem estar perpendiculares
+
+TOLERÂNCIAS:
+────────────────────────────────────────────────────
+Dimensão do furo: 135mm ± 1mm
+Esquadro: ângulos 90° ± 1°
+Perpendicularidade: bordas 90° ± 2°
+Acabamento: lixar grão 150, sem farpas
+────────────────────────────────────────────────────</div>
+
+            <div class="subsection-title">3.4. Posicionamento dos Desumidificadores</div>
+
+            <div class="diagram">POSICIONAMENTO DOS 2 DESUMIDIFICADORES THERMOMATIC CRISTAL
+
+Vista Frontal (olhando de frente para os instrumentos):
+
+1550mm ────── TOPO
+  │
+  │
+1200mm ────── [DESUMIDIFICADOR SUPERIOR]  ← OPCIONAL
+  │            Dimensões: Ø90mm × H60mm      (dias chuvosos)
+  │            Centro Horizontal: 880mm
+  │            Apoiado em prateleira/suporte
+  │            Controle: MANUAL (interruptor)
+  │
+  │                 ║    ║    ║    ║
+  │               Instrumentos
+  │                 ║    ║    ║    ║
+  │
+  │
+  │
+  │
+  │
+  │
+ 50mm ─────── [DESUMIDIFICADOR INFERIOR]   ← PRINCIPAL
+  │            Dimensões: Ø90mm × H60mm      (sempre ativo)
+  │            Centro Horizontal: 880mm
+  │            Apoiado no chão/base
+  │            Controle: TIMER (12h/dia)
+  │
+0mm ──────── BASE
+
+Vista Superior (posicionamento horizontal):
+
+TRASEIRA
+═══════════════════════════════════════════════════════
+    200   440       880       1320    1560  (mm)
+     │     │         │          │       │
+     │     C1/C3  [Desum]    C2/C4     │
+     │     cooler central cooler       │
+     │            880mm                │
+     │         (centro do             │
+     │          painel)               │
+═══════════════════════════════════════════════════════
+FRENTE (portas vidro)
+
+NOTAS IMPORTANTES:
+────────────────────────────────────────────────────────
+1. Desumidificadores NÃO precisam de furação no painel
+2. Ficam DENTRO da cristaleira (não atrás do painel)
+3. Desumidificador inferior: apoiado no chão, centralizado
+4. Desumidificador superior: apoiado em prateleira/suporte
+5. Posição horizontal: centralizados (880mm = meio do painel)
+6. Distância dos coolers: mínimo 300mm (não interferem)
+────────────────────────────────────────────────────────</div>
+
+            <div class="critical-box">
+                <div class="title">IMPORTANTE - DESUMIDIFICADORES</div>
+                <p><strong>NÃO HÁ FURAÇÕES ADICIONAIS para os desumidificadores.</strong></p>
+                <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li>Desumidificadores ficam DENTRO da cristaleira (espaço frontal)</li>
+                    <li>NÃO ficam fixados no painel traseiro</li>
+                    <li>Cliente posiciona após instalação do painel</li>
+                    <li>Cabos elétricos passam pela parte inferior da cristaleira</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4: PROCEDIMENTO DE EXECUÇÃO -->
+        <div class="section page-break">
+            <div class="section-title">4. PROCEDIMENTO DE EXECUÇÃO DAS FURAÇÕES</div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 1</div>
+                <p><strong>Preparação e Marcação do Painel</strong></p>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Painel deve estar completamente montado (barra, separadores, apoios)</li>
+                    <li>Posicionar painel traseiro HORIZONTAL sobre bancada limpa</li>
+                    <li>Verificar que painel está esquadrejado</li>
+                    <li>Limpar superfície completamente</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 2</div>
+                <p><strong>Marcação dos Centros (Coolers)</strong></p>
+                
+                <p><strong>Ferramentas necessárias:</strong> Trena metálica, esquadro, lápis, riscador</p>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li><strong>Estabelecer sistema de coordenadas:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Origem (0,0) = canto inferior esquerdo do painel</li>
+                            <li>Marcar linha vertical de referência na borda esquerda</li>
+                            <li>Marcar linha horizontal de referência na base</li>
+                        </ul>
+                    </li>
+                    <li><strong>Marcar centros horizontais:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Medir 440mm da borda esquerda → marcar linha vertical</li>
+                            <li>Medir 1320mm da borda esquerda → marcar linha vertical</li>
+                        </ul>
+                    </li>
+                    <li><strong>Marcar centros verticais:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Medir 175mm da base → marcar linha horizontal</li>
+                            <li>Medir 1300mm da base → marcar linha horizontal</li>
+                        </ul>
+                    </li>
+                    <li><strong>Identificar 4 intersecções:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>C1: (440, 1300) - Superior Esquerdo</li>
+                            <li>C2: (1320, 1300) - Superior Direito</li>
+                            <li>C3: (440, 175) - Inferior Esquerdo</li>
+                            <li>C4: (1320, 175) - Inferior Direito</li>
+                        </ul>
+                    </li>
+                    <li>Marcar cada intersecção com cruz de precisão (+)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 3</div>
+                <p><strong>Marcação dos Quadrados (135×135mm)</strong></p>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Em cada centro marcado, traçar quadrado de <span class="dimension">135mm × 135mm</span></li>
+                    <li><strong>Método:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Do centro, medir 67,5mm em cada direção (↑↓←→)</li>
+                            <li>Marcar os 4 pontos extremos</li>
+                            <li>Conectar os pontos com esquadro (linhas paralelas às bordas)</li>
+                        </ul>
+                    </li>
+                    <li>Verificar com esquadro que cantos estão a 90°</li>
+                    <li>Identificar cada quadrado: C1, C2, C3, C4</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 4</div>
+                <p><strong>Furação dos Cantos (Furos Coolers)</strong></p>
+                
+                <p><strong>Ferramentas:</strong> Furadeira, broca Ø10mm, punção</p>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Marcar com punção os 4 cantos de cada quadrado</li>
+                    <li>Fixar painel firmemente (grampos ou morsa)</li>
+                    <li>Furar os 4 cantos com broca Ø10mm:
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Furadeira perpendicular ao painel</li>
+                            <li>Velocidade média (800-1000 RPM)</li>
+                            <li>Pressão constante e suave</li>
+                            <li>Usar base de sacrifício (madeira) embaixo</li>
+                        </ul>
+                    </li>
+                    <li>Lixar rebarbas dos furos</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 5</div>
+                <p><strong>Corte com Serra Tico-Tico (Furos Coolers)</strong></p>
+                
+                <p><strong>Ferramentas:</strong> Serra tico-tico, lâmina para madeira (dente fino)</p>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Inserir lâmina da serra em um dos furos de canto</li>
+                    <li>Cortar seguindo as linhas marcadas:
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Velocidade baixa-média</li>
+                            <li>Manter base da serra apoiada no painel</li>
+                            <li>Cortar DENTRO da linha (deixar linha visível)</li>
+                            <li>Cortar os 4 lados do quadrado</li>
+                        </ul>
+                    </li>
+                    <li>Remover o centro do quadrado</li>
+                    <li>Repetir para os 4 furos (C1, C2, C3, C4)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 6</div>
+                <p><strong>Acabamento dos Furos Quadrados</strong></p>
+                
+                <p><strong>Ferramentas:</strong> Lima, lixa grão 150, lixa grão 220</p>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Acertar dimensões com lima (se necessário)</li>
+                    <li>Verificar: cooler deve entrar no furo com folga de 1-2mm</li>
+                    <li>Lixar todas as bordas internas:
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Lixa grão 150 para remover irregularidades</li>
+                            <li>Lixa grão 220 para acabamento final</li>
+                            <li>Bordas devem estar suaves ao toque</li>
+                        </ul>
+                    </li>
+                    <li>Remover completamente farpas e lascas</li>
+                    <li>Limpar pó com pincel e pano</li>
+                    <li><strong>TESTE:</strong> Encaixar cooler real em cada furo para verificar ajuste</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">ATENÇÃO - VERIFICAÇÃO CRÍTICA</div>
+                <p><strong>Antes de prosseguir para os furos passivos, VERIFIQUE:</strong></p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li>4 furos quadrados executados</li>
+                    <li>Dimensões: 135mm × 135mm (±1mm)</li>
+                    <li>Cooler encaixa confortavelmente (testar com cooler real)</li>
+                    <li>Bordas lixadas sem farpas</li>
+                    <li>Furos limpos e sem resíduos</li>
+                </ul>
+                <p style="margin-top: 10px;">Somente após confirmação, executar os furos passivos!</p>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 7</div>
+                <p><strong>Marcação dos Furos Passivos (Ø15mm)</strong></p>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Marcar os 8 pontos conforme tabela de coordenadas (Seção 2.3)</li>
+                    <li><strong>Região Superior (F1-F4):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Horizontal: 200mm e 1560mm</li>
+                            <li>Vertical: 1350mm e 1250mm</li>
+                            <li>4 combinações = 4 furos superiores</li>
+                        </ul>
+                    </li>
+                    <li><strong>Região Inferior (F5-F8):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Horizontal: 200mm e 1560mm</li>
+                            <li>Vertical: 200mm e 120mm</li>
+                            <li>4 combinações = 4 furos inferiores</li>
+                        </ul>
+                    </li>
+                    <li>Marcar cada ponto com punção</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 8</div>
+                <p><strong>Execução dos Furos Passivos (Ø15mm)</strong></p>
+                
+                <p><strong>Ferramentas:</strong> Furadeira, broca chata Ø15mm ou serra copo Ø15mm</p>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Fixar painel firmemente</li>
+                    <li>Usar base de sacrifício embaixo do painel</li>
+                    <li>Furar cada um dos 8 pontos marcados:
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Broca perpendicular ao painel (90°)</li>
+                            <li>Velocidade baixa-média (600-800 RPM)</li>
+                            <li>Pressão constante</li>
+                            <li>Furar até atravessar completamente (5mm)</li>
+                        </ul>
+                    </li>
+                    <li>Lixar bordas de cada furo (lixa grão 150)</li>
+                    <li>Remover todas as rebarbas</li>
+                    <li>Limpar completamente</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 9</div>
+                <p><strong>Inspeção Final e Limpeza</strong></p>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li><strong>Verificar dimensões:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>4 furos quadrados: 135×135mm</li>
+                            <li>8 furos redondos: Ø15mm</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verificar acabamento:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Todas bordas lixadas</li>
+                            <li>Sem farpas ou lascas</li>
+                            <li>Furos limpos internamente</li>
+                        </ul>
+                    </li>
+                    <li>Limpar todo o painel com pano seco</li>
+                    <li>Aspirar pó de todos os furos</li>
+                    <li>Testar encaixe final dos coolers</li>
+                    <li>Fotografar resultado final (recomendado)</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5: COMPARAÇÃO E JUSTIFICATIVA -->
+        <div class="section page-break">
+            <div class="section-title">5. JUSTIFICATIVA TÉCNICA - 4 COOLERS vs 2 COOLERS</div>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Configuração 2 Coolers</th>
+                    <th>Configuração 4 Coolers</th>
+                </tr>
+                <tr>
+                    <td><strong>Posicionamento</strong></td>
+                    <td>1 cooler central superior<br>1 cooler central inferior</td>
+                    <td class="best-option">2 coolers superiores (esq + dir)<br>2 coolers inferiores (esq + dir)</td>
+                </tr>
+                <tr>
+                    <td><strong>Distância entre coolers</strong></td>
+                    <td>Centro a centro: 0mm<br>(empilhados verticalmente)</td>
+                    <td class="best-option">Centro a centro: 880mm<br>(distribuídos horizontalmente)</td>
+                </tr>
+                <tr>
+                    <td><strong>Cobertura horizontal</strong></td>
+                    <td>Fluxo concentrado no centro<br>Cantos com circulação fraca</td>
+                    <td class="best-option">Fluxo cruzado bilateral<br>Cobertura uniforme 176cm</td>
+                </tr>
+                <tr>
+                    <td><strong>Zonas mortas</strong></td>
+                    <td>Possíveis nos extremos<br>(primeiros 30cm de cada lado)</td>
+                    <td class="best-option">Mínimas ou inexistentes<br>Coolers cobrem toda extensão</td>
+                </tr>
+                <tr>
+                    <td><strong>Eficiência volumétrica</strong></td>
+                    <td>Boa para ≤120cm largura</td>
+                    <td class="best-option">Excelente para 150-200cm largura</td>
+                </tr>
+                <tr>
+                    <td><strong>Fluxo de ar total</strong></td>
+                    <td>60-80 CFM<br>(2 coolers × 30-40 CFM)</td>
+                    <td class="best-option">120-160 CFM<br>(4 coolers × 30-40 CFM)</td>
+                </tr>
+                <tr>
+                    <td><strong>Consumo elétrico</strong></td>
+                    <td>2,6-2,8W<br>(2 × 1,3-1,4W)</td>
+                    <td>5,2-5,6W<br>(4 × 1,3-1,4W)</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo adicional</strong></td>
+                    <td>R$ 50<br>(2 coolers × R$ 25)</td>
+                    <td>R$ 100<br>(4 coolers × R$ 25)</td>
+                </tr>
+                <tr>
+                    <td><strong>Redundância</strong></td>
+                    <td>Se 1 falhar: -50% capacidade<br>Sistema comprometido</td>
+                    <td class="best-option">Se 1 falhar: -25% capacidade<br>Sistema continua eficaz</td>
+                </tr>
+                <tr>
+                    <td><strong>Ruído</strong></td>
+                    <td>18-20 dBA<br>(2 ventoinhas)</td>
+                    <td>22-25 dBA<br>(4 ventoinhas, mas RPM menor)</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexidade instalação</strong></td>
+                    <td>Simples<br>(2 furos quadrados)</td>
+                    <td>Moderada<br>(4 furos quadrados)</td>
+                </tr>
+                <tr>
+                    <td><strong>Manutenção</strong></td>
+                    <td>Mesma periodicidade</td>
+                    <td>Mesma periodicidade</td>
+                </tr>
+            </table>
+
+            <div class="critical-box">
+                <div class="title">RECOMENDAÇÃO FINAL</div>
+                
+                <p><strong>Para cristaleira de 176cm de largura: CONFIGURAÇÃO 4 COOLERS</strong></p>
+
+                <p style="margin-top: 15px;"><strong>Justificativa:</strong></p>
+                <ol style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li><strong>Proporção largura/altura:</strong> 176cm × 155cm é um painel LARGO, não quadrado. Ventilação central (2 coolers) deixaria extremos mal ventilados.</li>
+                    
+                    <li><strong>Física do fluxo de ar:</strong> Ar tende a seguir caminho de menor resistência. Com coolers apenas no centro, extremos teriam circulação pobre (princípio de Bernoulli).</li>
+                    
+                    <li><strong>Eficiência vs custo:</strong> Diferença de R$ 50 (2 coolers extras) aumenta eficiência em ~80%, reduzindo risco de zonas com umidade estagnada.</li>
+                    
+                    <li><strong>Cálculo de cobertura:</strong> Cada cooler cobre efetivamente ~60cm de raio. Para 176cm, são necessários mínimo 3 coolers. 4 coolers (2 pares) garantem sobreposição e cobertura total.</li>
+                    
+                    <li><strong>Redundância:</strong> Instrumentos têm valor muito superior a R$ 50. Perder 1 cooler em sistema de 4 mantém 75% da capacidade. Em sistema de 2, perder 1 cooler = 50% capacidade.</li>
+                </ol>
+
+                <p style="margin-top: 15px; padding: 10px; background: #fff; border: 2px solid #000;">
+                    <strong>Conclusão:</strong> Investimento adicional de R$ 50 (custo de 2 coolers) é amplamente justificado pelo ganho em eficiência, cobertura uniforme e redundância do sistema. Para cristaleira de 176cm, configuração com 4 coolers é tecnicamente superior.
+                </p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 6: SISTEMA DUAL DE DESUMIDIFICAÇÃO -->
+        <div class="section page-break">
+            <div class="section-title">6. SISTEMA DUAL DE DESUMIDIFICAÇÃO</div>
+
+            <div class="subsection-title">6.1. Conceito e Estratégia</div>
+
+            <p><strong>Sistema adaptativo com 2 desumidificadores Thermomatic Cristal:</strong></p>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Desumidificador</th>
+                    <th>Posição</th>
+                    <th>Controle</th>
+                    <th>Operação</th>
+                    <th>Quando Usar</th>
+                </tr>
+                <tr>
+                    <td><strong>PRINCIPAL<br>(Inferior)</strong></td>
+                    <td>Base<br>(5cm altura)</td>
+                    <td>Timer Digital<br>Automático</td>
+                    <td>12h/dia<br>Todo dia</td>
+                    <td class="best-option">SEMPRE LIGADO<br>Uso contínuo</td>
+                </tr>
+                <tr>
+                    <td><strong>BACKUP<br>(Superior)</strong></td>
+                    <td>Prateleira<br>(120cm altura)</td>
+                    <td>Interruptor<br>Manual</td>
+                    <td>Sob demanda<br>Variável</td>
+                    <td>Dias chuvosos<br>UR > 70%</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">6.2. Especificações do Desumidificador</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Especificação</th>
+                    <th>Valor</th>
+                </tr>
+                <tr>
+                    <td>Modelo</td>
+                    <td>Desumidificador Thermomatic Cristal 250g</td>
+                </tr>
+                <tr>
+                    <td>Dimensões</td>
+                    <td>Ø 90mm × 60mm altura (aprox.)</td>
+                </tr>
+                <tr>
+                    <td>Peso</td>
+                    <td>250g (cristais secos)</td>
+                </tr>
+                <tr>
+                    <td>Consumo</td>
+                    <td>20W</td>
+                </tr>
+                <tr>
+                    <td>Capacidade remoção</td>
+                    <td>20-40ml/dia por unidade</td>
+                </tr>
+                <tr>
+                    <td>Tensão</td>
+                    <td>110/220V (bivolt automático)</td>
+                </tr>
+                <tr>
+                    <td>Alcance</td>
+                    <td>Até 10m³ (efetivo ~5m³ por unidade)</td>
+                </tr>
+                <tr>
+                    <td>Preço</td>
+                    <td>R$ 50-80 por unidade</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">6.3. Tabela de Decisão - Quando Ativar 2º Desumidificador</div>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Condição Climática</th>
+                    <th>UR Externa</th>
+                    <th>Desumid. Ativo</th>
+                    <th>Capacidade Total</th>
+                </tr>
+                <tr>
+                    <td>Dia seco e ensolarado</td>
+                    <td>< 55%</td>
+                    <td>1 (inferior)</td>
+                    <td>20-40ml/dia</td>
+                </tr>
+                <tr>
+                    <td>Dia nublado normal</td>
+                    <td>55-65%</td>
+                    <td>1 (inferior)</td>
+                    <td>20-40ml/dia</td>
+                </tr>
+                <tr>
+                    <td>Dia úmido</td>
+                    <td>65-75%</td>
+                    <td>1 (inferior)</td>
+                    <td>20-40ml/dia</td>
+                </tr>
+                <tr class="best-option">
+                    <td>Dia chuvoso</td>
+                    <td>75-85%</td>
+                    <td>2 (inferior + superior)</td>
+                    <td>40-80ml/dia</td>
+                </tr>
+                <tr class="best-option">
+                    <td>Chuva intensa/prolongada</td>
+                    <td>> 85%</td>
+                    <td>2 (inferior + superior)</td>
+                    <td>40-80ml/dia</td>
+                </tr>
+                <tr class="best-option">
+                    <td>Temporada chuvosa</td>
+                    <td>Variável alta</td>
+                    <td>2 (inferior + superior)</td>
+                    <td>40-80ml/dia</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">CRITÉRIOS PRÁTICOS DE ATIVAÇÃO</div>
+                <p><strong>Ligue o 2º desumidificador (superior) quando:</strong></p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li>Previsão de chuva por 2+ dias consecutivos</li>
+                    <li>Higrômetro interno marca UR > 60% por mais de 6h</li>
+                    <li>Desumidificador inferior enche em menos de 7 dias</li>
+                    <li>Temporada de chuvas (verão no BR: Dez-Mar)</li>
+                    <li>Após detectar condensação no vidro da cristaleira</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Desligue o 2º desumidificador quando:</strong></p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li>Tempo seco por 2+ dias consecutivos</li>
+                    <li>UR interna estável < 55%</li>
+                    <li>Economia de energia desejada</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">6.4. Posicionamento Detalhado</div>
+
+            <div class="critical-box">
+                <div class="title">POSICIONAMENTO DOS DESUMIDIFICADORES</div>
+                
+                <p><strong>DESUMIDIFICADOR INFERIOR (Principal):</strong></p>
+                <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li><strong>Altura:</strong> Apoiado na base da cristaleira (0-5cm do chão)</li>
+                    <li><strong>Horizontal:</strong> Centro do painel (880mm = meio da largura 176cm)</li>
+                    <li><strong>Profundidade:</strong> Meio do espaço (20-22cm da traseira)</li>
+                    <li><strong>Distância coolers:</strong> Mínimo 30cm do Cooler 3 e Cooler 4</li>
+                    <li><strong>Conexão elétrica:</strong> Cabo passa por baixo/lateral, conecta ao timer</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>DESUMIDIFICADOR SUPERIOR (Backup):</strong></p>
+                <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li><strong>Altura:</strong> Prateleira ou suporte a ~120cm</li>
+                    <li><strong>Horizontal:</strong> Centro do painel (880mm)</li>
+                    <li><strong>Profundidade:</strong> Meio do espaço (20-22cm da traseira)</li>
+                    <li><strong>Distância coolers:</strong> Mínimo 30cm do Cooler 1 e Cooler 2</li>
+                    <li><strong>Conexão elétrica:</strong> Tomada separada com interruptor manual</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>IMPORTANTE:</strong></p>
+                <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                    <li>Desumidificadores NÃO interferem com fluxo dos coolers</li>
+                    <li>Ficam centralizados entre os instrumentos (não obstruem)</li>
+                    <li>Cliente ajusta posição final após instalação conforme necessidade</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">6.5. Análise Custo-Benefício</div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 15px 0;">
+                <tr style="background: #e0e0e0; font-weight: bold;">
+                    <td style="padding: 8px; border: 1px solid #000;">Configuração</td>
+                    <td style="padding: 8px; border: 1px solid #000;">Custo Inicial</td>
+                    <td style="padding: 8px; border: 1px solid #000;">Custo Mensal</td>
+                    <td style="padding: 8px; border: 1px solid #000;">Vantagens</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #000;">1 Desumidificador</td>
+                    <td style="padding: 8px; border: 1px solid #000;">R$ 50-80</td>
+                    <td style="padding: 8px; border: 1px solid #000;">R$ 9-11</td>
+                    <td style="padding: 8px; border: 1px solid #000;">Economia, simplicidade</td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td style="padding: 8px; border: 1px solid #000;"><strong>2 Desumidificadores</strong></td>
+                    <td style="padding: 8px; border: 1px solid #000;"><strong>R$ 100-160</strong></td>
+                    <td style="padding: 8px; border: 1px solid #000;"><strong>R$ 9-19</strong><br>(variável)</td>
+                    <td style="padding: 8px; border: 1px solid #000;"><strong>Redundância, adaptabilidade,<br>proteção máxima em crises</strong></td>
+                </tr>
+            </table>
+
+            <p><strong>Análise:</strong></p>
+            <ul style="margin: 10px 0 10px 25px; line-height: 1.8;">
+                <li><strong>Custo adicional:</strong> R$ 50-80 (1 desumidificador extra)</li>
+                <li><strong>Consumo adicional:</strong> Apenas quando ativado (dias chuvosos) = R$ 8-10/mês extras apenas nesses períodos</li>
+                <li><strong>Benefício:</strong> Dobra capacidade quando mais necessário (chuvas prolongadas)</li>
+                <li><strong>Segurança:</strong> Se 1 falhar, tem backup imediato</li>
+                <li><strong>Flexibilidade:</strong> Controle manual do 2º = liga só quando precisa</li>
+            </ul>
+
+            <div class="critical-box">
+                <div class="title">RECOMENDAÇÃO: ADQUIRIR 2 DESUMIDIFICADORES</div>
+                <p><strong>Justificativa:</strong> Investimento adicional de R$ 50-80 é mínimo comparado ao valor dos instrumentos. Sistema dual fornece:</p>
+                <ul style="margin: 10px 0 0 25px; line-height: 1.8;">
+                    <li>Proteção máxima em dias críticos (chuvas prolongadas)</li>
+                    <li>Redundância (backup se 1 falhar)</li>
+                    <li>Economia em dias normais (só 1 ligado)</li>
+                    <li>Tranquilidade total</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 7: LISTA DE MATERIAIS -->
+        <div class="section page-break">
+            <div class="section-title">7. LISTA DE MATERIAIS COMPLETA</div>
+
+            <div class="subsection-title">7.1. Componentes de Ventilação</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Fan Cooler 140mm</td>
+                    <td>12V, 1000 RPM, 1.3W, silencioso</td>
+                    <td>4</td>
+                    <td>R$ 24,94</td>
+                    <td><strong>R$ 99,76</strong></td>
+                </tr>
+                <tr>
+                    <td>Fonte 12V 5A</td>
+                    <td>Bivolt, proteção curto-circuito</td>
+                    <td>1</td>
+                    <td>R$ 45-60</td>
+                    <td><strong>R$ 45-60</strong></td>
+                </tr>
+                <tr>
+                    <td>Parafusos 3×15mm</td>
+                    <td>Fixação coolers (4 por cooler)</td>
+                    <td>16</td>
+                    <td>R$ 0,50</td>
+                    <td><strong>R$ 8</strong></td>
+                </tr>
+                <tr>
+                    <td>Fio elétrico 2×0,75mm</td>
+                    <td>Cabo para conexões</td>
+                    <td>5m</td>
+                    <td>R$ 3/m</td>
+                    <td><strong>R$ 15</strong></td>
+                </tr>
+                <tr>
+                    <td>Conectores elétricos</td>
+                    <td>Borne ou derivação (paralelo)</td>
+                    <td>10</td>
+                    <td>R$ 1</td>
+                    <td><strong>R$ 10</strong></td>
+                </tr>
+                <tr style="font-weight: bold; background: #f0f0f0;">
+                    <td colspan="4">SUBTOTAL VENTILAÇÃO:</td>
+                    <td>R$ 177-192</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">7.2. Sistema de Desumidificação</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Desumidificador Thermomatic</td>
+                    <td>Cristal 250g, 20W, bivolt</td>
+                    <td>2</td>
+                    <td>R$ 50-80</td>
+                    <td><strong>R$ 100-160</strong></td>
+                </tr>
+                <tr>
+                    <td>Timer Digital</td>
+                    <td>Programável, 110/220V</td>
+                    <td>1</td>
+                    <td>R$ 40-60</td>
+                    <td><strong>R$ 40-60</strong></td>
+                </tr>
+                <tr>
+                    <td>Interruptor simples</td>
+                    <td>Para controle manual do 2º desumid.</td>
+                    <td>1</td>
+                    <td>R$ 10-15</td>
+                    <td><strong>R$ 10-15</strong></td>
+                </tr>
+                <tr>
+                    <td>Benjamim/Régua</td>
+                    <td>Para múltiplas conexões</td>
+                    <td>1</td>
+                    <td>R$ 20-30</td>
+                    <td><strong>R$ 20-30</strong></td>
+                </tr>
+                <tr style="font-weight: bold; background: #f0f0f0;">
+                    <td colspan="4">SUBTOTAL DESUMIDIFICAÇÃO:</td>
+                    <td>R$ 170-265</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">7.3. Resumo Financeiro Total</div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+                <tr style="background: #d0d0d0; font-weight: bold;">
+                    <td style="padding: 10px; border: 2px solid #000;">Componente</td>
+                    <td style="padding: 10px; border: 2px solid #000; text-align: right;">Valor</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #000;">Marcenaria (painel completo conforme projeto)</td>
+                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">R$ 1.541-1.745</td>
+                </tr>
+                <tr style="background: #f8f8f8;">
+                    <td style="padding: 8px; border: 1px solid #000;">+ Sistema de ventilação (4 coolers)</td>
+                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">+ R$ 177-192</td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #000;">+ Sistema dual desumidificação (2 unidades)</td>
+                    <td style="padding: 8px; border: 1px solid #000; text-align: right;">+ R$ 170-265</td>
+                </tr>
+                <tr style="font-weight: bold; font-size: 12pt; background: #e0e0e0;">
+                    <td style="padding: 12px; border: 2px solid #000;"><strong>INVESTIMENTO TOTAL:</strong></td>
+                    <td style="padding: 12px; border: 2px solid #000; text-align: right;"><strong>R$ 1.888 - 2.202</strong></td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">7.4. Custo Operacional Mensal</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Cenário</th>
+                    <th>Componentes Ativos</th>
+                    <th>Consumo</th>
+                    <th>Custo/Mês</th>
+                </tr>
+                <tr>
+                    <td>Dias normais</td>
+                    <td>4 coolers + 1 desumidificador</td>
+                    <td>24-26W × 12h/dia</td>
+                    <td><strong>R$ 9-11</strong></td>
+                </tr>
+                <tr>
+                    <td>Dias chuvosos</td>
+                    <td>4 coolers + 2 desumidificadores</td>
+                    <td>44-46W × 12h/dia</td>
+                    <td><strong>R$ 17-19</strong></td>
+                </tr>
+            </table>
+
+            <p style="margin: 15px 0; padding: 10px; background: #f5f5f5; border: 2px solid #000;">
+                <strong>Cálculo:</strong> Consumo (W) × horas/dia × 30 dias ÷ 1000 × R$ 0,82/kWh (tarifa média Brasil)
+            </p>
+        </div>
+
+        <!-- CHECKLIST FINAL -->
+        <div class="section page-break">
+            <div class="section-title">8. CHECKLIST DE VERIFICAÇÃO - MARCENEIRO</div>
+
+            <div style="border: 3px solid #000; padding: 20px; background: #f8f8f8;">
+                <p style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">FURAÇÕES EXECUTADAS</p>
+                
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">FUROS QUADRADOS (COOLERS):</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> C1 - Superior Esquerdo: 440mm (H) × 1300mm (V) - 135×135mm
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> C2 - Superior Direito: 1320mm (H) × 1300mm (V) - 135×135mm
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> C3 - Inferior Esquerdo: 440mm (H) × 175mm (V) - 135×135mm
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> C4 - Inferior Direito: 1320mm (H) × 175mm (V) - 135×135mm
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">FUROS REDONDOS PASSIVOS (Ø15mm):</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> F1: 200mm (H) × 1350mm (V) | F2: 1560mm (H) × 1350mm (V)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> F3: 200mm (H) × 1250mm (V) | F4: 1560mm (H) × 1250mm (V)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> F5: 200mm (H) × 200mm (V) | F6: 1560mm (H) × 200mm (V)
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> F7: 200mm (H) × 120mm (V) | F8: 1560mm (H) × 120mm (V)
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">ACABAMENTO E VERIFICAÇÕES:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Todas as bordas dos furos lixadas (grão 150 + 220)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sem farpas ou lascas em nenhum furo
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Furos quadrados: verificadas dimensões 135×135mm (±1mm)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Furos redondos: verificados Ø15mm (±0,5mm)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Cooler real testado em cada furo quadrado (encaixe OK)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Painel completamente limpo e aspirado
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Fotos tiradas de cada furo para registro
+                    </label>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #000;">
+                    <p><strong>Marceneiro:</strong> ___________________________________</p>
+                    <p style="margin-top: 10px;"><strong>Data de conclusão:</strong> _____ / _____ / _____</p>
+                    <p style="margin-top: 10px;"><strong>Assinatura:</strong> ___________________________________</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div style="margin-top: 40px; padding-top: 15px; border-top: 3px solid #000; font-size: 9pt; text-align: center;">
+            <p><strong>ADENDO TÉCNICO - Sistema de Ventilação Forçada Otimizado</strong></p>
+            <p>Configuração: 4 Coolers 140mm + 8 Furos Passivos + Sistema Dual Desumidificação</p>
+            <p>Cristaleira 158×179×44cm | Painel 155×176cm | Rev: 03 OTIMIZADO</p>
+            <p>Documento complementar ao Guia Técnico de Execução Principal</p>
+            <p style="margin-top: 8px;">___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>

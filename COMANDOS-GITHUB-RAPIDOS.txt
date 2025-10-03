@@ -1,0 +1,94 @@
+========================================
+  COMANDOS RÁPIDOS PARA GITHUB
+  Usuário: anderson-ferreira-83
+========================================
+
+PASSO 1: CRIAR REPOSITÓRIO NO GITHUB (Via Web)
+-----------------------------------------------
+1. Acesse: https://github.com/anderson-ferreira-83
+2. Clique em "New" ou no botão "+" → "New repository"
+3. Preencha:
+   - Repository name: projeto-cristaleira-guitarras
+   - Description: Sistema profissional de controle climático para cristaleira de guitarras
+   - Public ou Private (sua escolha)
+   - NÃO marque "Initialize with README"
+4. Clique "Create repository"
+
+
+PASSO 2: CONFIGURAR GIT LOCAL (Primeira Vez)
+---------------------------------------------
+git config --global user.name "Anderson Ferreira"
+git config --global user.email "seu.email@exemplo.com"
+
+
+PASSO 3: EXECUTAR NO GIT BASH (No Diretório do Projeto)
+---------------------------------------------------------
+
+# Navegar para o diretório (se necessário)
+cd /d/10_Projeto_cristaleira_vedante
+
+# Inicializar Git
+git init
+
+# Adicionar todos os arquivos
+git add .
+
+# Ver o que será commitado
+git status
+
+# Fazer primeiro commit
+git commit -m "Initial commit: Projeto Cristaleira A+ - Sistema de Controle Climático
+
+- Documentação completa Cenário A+ (passivo + circulação interna)
+- Guias de instalação e materiais
+- Investimento: R$ 1.113-1.347
+- Sistema para 10 instrumentos (158×179×44cm)"
+
+# Conectar ao GitHub
+git remote add origin https://github.com/anderson-ferreira-83/projeto-cristaleira-guitarras.git
+
+# Renomear branch para main
+git branch -M main
+
+# Enviar para GitHub
+git push -u origin main
+
+
+QUANDO PEDIR CREDENCIAIS:
+--------------------------
+Username: anderson-ferreira-83
+Password: [Use Personal Access Token - NÃO a senha do GitHub!]
+
+
+CRIAR PERSONAL ACCESS TOKEN:
+-----------------------------
+1. Acesse: https://github.com/settings/tokens
+2. "Generate new token" → "Generate new token (classic)"
+3. Note: Git Bash - Projeto Cristaleira
+4. Expiration: 90 days (ou No expiration)
+5. Scope: Marque apenas "repo"
+6. Generate token
+7. COPIE E SALVE o token (ghp_xxxxxxxxxxxx)
+8. Use este token como password no git push
+
+
+APÓS O PRIMEIRO PUSH (Atualizações Futuras):
+---------------------------------------------
+git add .
+git commit -m "Descrição da alteração"
+git push
+
+
+VERIFICAR STATUS:
+-----------------
+git status
+
+
+VER SEU REPOSITÓRIO:
+--------------------
+https://github.com/anderson-ferreira-83/projeto-cristaleira-guitarras
+
+
+========================================
+CONSULTE GUIA-GITHUB.md PARA DETALHES
+========================================

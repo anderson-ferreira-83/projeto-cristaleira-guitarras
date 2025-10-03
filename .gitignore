@@ -1,0 +1,32 @@
+# Sistema Operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.log
+
+# Arquivos do Windows
+$RECYCLE_BIN/
+*.lnk
+
+# Arquivos pessoais
+notas-pessoais/
+rascunhos/
+*.draft
+
+# Node modules (caso adicione processamento futuro)
+node_modules/
+
+# Arquivos de backup
+backup/
+*.backup

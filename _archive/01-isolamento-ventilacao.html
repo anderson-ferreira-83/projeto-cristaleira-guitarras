@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Técnico - Isolamento e Ventilação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 3px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            background: #f0f0f0;
+        }
+
+        .header h1 {
+            font-size: 20pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .critical-box {
+            border: 3px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            background: #f5f5f5;
+        }
+
+        .critical-box .title {
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 25px 0;
+            border-bottom: 2px solid #000;
+            padding-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 16pt;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding: 8px;
+            border: 2px solid #000;
+            background: #e0e0e0;
+            text-align: center;
+        }
+
+        .subsection-title {
+            font-size: 13pt;
+            font-weight: bold;
+            margin: 20px 0 10px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 5px;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 7.5pt;
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 20px 0;
+            white-space: pre;
+            line-height: 1.3;
+            background: #fff;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #e0e0e0;
+        }
+
+        .dimension {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            background: #fff;
+            border: 2px solid #000;
+            padding: 3px 8px;
+            display: inline-block;
+        }
+
+        .step-box {
+            border: 2px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            background: #fafafa;
+        }
+
+        .step-number {
+            font-size: 14pt;
+            font-weight: bold;
+            background: #000;
+            color: #fff;
+            padding: 5px 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .warning {
+            border: 3px double #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #fff3cd;
+        }
+
+        .warning-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .thermal-box {
+            background: #e3f2fd;
+            border: 2px solid #1976d2;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .option-box {
+            background: #f0f0f0;
+            border: 2px solid #666;
+            padding: 12px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>GUIA TÉCNICO - ISOLAMENTO E VENTILAÇÃO</h1>
+            <div style="font-size: 14pt; margin-top: 10px; font-weight: bold;">Sistema Completo de Controle Climático</div>
+            <div style="font-size: 11pt; margin-top: 8px;">Cristaleira 158cm × 179cm × 44cm - 10 Instrumentos</div>
+            <div style="margin-top: 12px; font-size: 10pt; border-top: 1px solid #000; padding-top: 8px;">
+                Data: ___/___/_____ | Rev: 05 - Com Sistema de Ventilação
+            </div>
+        </div>
+
+        <div class="critical-box">
+            <div class="title">OBJETIVO DO SISTEMA INTEGRADO</div>
+            
+            <p><strong>O sistema combina 3 tecnologias:</strong></p>
+            <ol style="margin: 10px 0 10px 25px; line-height: 2;">
+                <li><strong>Isolamento Térmico Passivo:</strong> Manta térmica + insulfilm (reduz ganho/perda de calor 70-80%)</li>
+                <li><strong>Ventilação Passiva:</strong> Furos estratégicos (circulação natural do ar por convecção)</li>
+                <li><strong>Controle Ativo de Umidade:</strong> Desumidificador elétrico (mantém 45-55% UR)</li>
+            </ol>
+
+            <p style="margin-top: 15px;"><strong>META DE DESEMPENHO:</strong></p>
+            <ul style="margin: 8px 0 0 25px;">
+                <li>Temperatura: 18-28°C (variação máxima ±3°C/dia)</li>
+                <li>Umidade: 45-55% UR (variação máxima ±5%)</li>
+                <li>Circulação: Renovação natural do ar 2-3×/dia</li>
+            </ul>
+        </div>
+
+        <!-- SEÇÃO 1: SISTEMA DE VENTILAÇÃO -->
+        <div class="section">
+            <div class="section-title">1. SISTEMA DE VENTILAÇÃO PASSIVA</div>
+
+            <div class="thermal-box">
+                <p style="font-weight: bold; font-size: 12pt; margin-bottom: 10px;">POR QUE A VENTILAÇÃO É CRÍTICA?</p>
+                <p>Sem ventilação, mesmo com isolamento perfeito, você terá:</p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li>Ar estagnado com zonas de alta umidade (cantos, embaixo)</li>
+                    <li>Condensação quando temperatura externa cai rápido</li>
+                    <li>Mofo em áreas sem circulação</li>
+                    <li>Desumidificador trabalhando sozinho sem eficiência</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Solução:</strong> Furos estratégicos criam circulação natural SEM energia elétrica!</p>
+            </div>
+
+            <div class="subsection-title">1.1. Princípio de Funcionamento</div>
+
+            <div class="diagram">VENTILAÇÃO CRUZADA POR CONVECÇÃO NATURAL
+
+                    TETO
+    ╔═══════════════════════════════╗
+    ║  ○ ○ ○ ○  Furos saída        ║
+    ║  ↑ ↑ ↑ ↑  Ø15mm               ║ 158cm
+    ║                               ║ altura
+    ║   AR QUENTE SOBE              ║
+    ║   (convecção natural)         ║
+    ║                               ║
+    ║  ║ ║ ║ ║ ║ ║ ║ ║ ║ ║         ║
+    ║  ║ ║ ║ ║ ║ ║ ║ ║ ║ ║         ║
+    ║  Instrumentos suspensos       ║
+    ║                               ║
+    ║   AR FRESCO CIRCULA           ║
+    ║   ← → ↑ ↓                     ║
+    ║                               ║
+    ║  ↓ ↓ ↓ ↓  Furos entrada       ║
+    ║  ○ ○ ○ ○  Ø15mm               ║
+    ╚═══════════════════════════════╝
+                    BASE
+
+FLUXO NATURAL:
+1. Ar fresco entra embaixo (mais frio = mais denso)
+2. Aquece ao contato com ar interno
+3. Sobe (menos denso)
+4. Sai pelos furos superiores
+5. Cria pressão negativa que puxa mais ar fresco
+
+RESULTADO: Renovação contínua SEM ventiladores!</div>
+
+            <div class="subsection-title">1.2. Localização Estratégica dos Furos</div>
+
+            <div class="diagram">VISTA TRASEIRA - POSICIONAMENTO DOS FUROS DE VENTILAÇÃO
+
+PAREDE TRASEIRA (painel MDF 6mm do marceneiro)
+╔═══════════════════════════════════════════════════╗
+║                  176cm largura                     ║ 155cm
+║                                                    ║ altura
+║ ┌─────────────────────────────────────────────┐  ║
+║ │ ZONA SUPERIOR - SAÍDA AR QUENTE             │  ║
+║ │                                              │  ║
+║ │    ○        ○        ○        ○              │  ║ 150cm
+║ │  Furo1    Furo2    Furo3    Furo4            │  ║
+║ │  30cm     74cm     118cm    162cm            │  ║ 145cm
+║ │  (esq)   (centro-esq) (centro-dir) (dir)    │  ║
+║ └─────────────────────────────────────────────┘  ║
+║                                                    ║
+║          REGIÃO CENTRAL (livre)                    ║ 80cm
+║          Instrumentos aqui                         ║
+║                                                    ║
+║ ┌─────────────────────────────────────────────┐  ║
+║ │  Furo5    Furo6    Furo7    Furo8            │  ║ 10cm
+║ │  30cm     74cm     118cm    162cm            │  ║
+║ │    ○        ○        ○        ○              │  ║  5cm
+║ │                                              │  ║
+║ │ ZONA INFERIOR - ENTRADA AR FRESCO            │  ║
+║ └─────────────────────────────────────────────┘  ║
+╚═══════════════════════════════════════════════════╝
+
+8 FUROS TOTAIS:
+- 4 superiores (145-150cm altura): saída ar quente
+- 4 inferiores (5-10cm altura): entrada ar fresco
+- Diâmetro: Ø15mm cada
+- Espaçamento: ~44cm entre furos</div>
+
+            <div class="subsection-title">1.3. Materiais para Ventilação</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>Tela mosquiteiro</td>
+                    <td>Malha fina preta<br>20×20cm/peça</td>
+                    <td>8 peças</td>
+                    <td>Cobrir furos (evita insetos/poeira)</td>
+                </tr>
+                <tr>
+                    <td>Cola contact</td>
+                    <td>Multiuso</td>
+                    <td>1 tubo</td>
+                    <td>Fixar telas</td>
+                </tr>
+                <tr>
+                    <td>Filtro esponja (opcional)</td>
+                    <td>Espuma 5mm</td>
+                    <td>8 discos Ø20mm</td>
+                    <td>Filtragem adicional poeira</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.4. Execução dos Furos de Ventilação</div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA VENTILAÇÃO</div>
+                <p><strong>Furação e Instalação das Telas</strong></p>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Marcar 8 posições conforme diagrama acima</li>
+                    <li>Usar broca Ø15mm (madeira/metal)</li>
+                    <li>Furar APÓS instalação do painel MDF pelo marceneiro</li>
+                    <li>Lixar bordas dos furos (remover farpas)</li>
+                    <li>Cortar 8 pedaços de tela: 5×5cm cada</li>
+                    <li>Aplicar cola contact nas bordas do furo (parte interna)</li>
+                    <li>Pressionar tela sobre furo</li>
+                    <li>Aguardar secagem (30min)</li>
+                    <li>Verificar: tela bem aderida, furo livre</li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">ATENÇÃO - INSTRUÇÕES PARA O MARCENEIRO</div>
+                <p><strong>Marceneiro deve:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Instalar painel MDF 6mm SEM furos inicialmente</li>
+                    <li>Marcar posições dos 8 furos conforme este guia</li>
+                    <li>Fazer os furos Ø15mm com broca própria</li>
+                    <li>Entregar lista de materiais de ventilação ao cliente</li>
+                </ul>
+                <p style="margin-top: 8px;">Cliente instalará as telas depois (trabalho simples, 30min).</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: DESUMIDIFICADOR -->
+        <div class="section page-break">
+            <div class="section-title">2. SISTEMA DE CONTROLE ATIVO - DESUMIDIFICADOR</div>
+
+            <div class="subsection-title">2.1. Análise: 1 ou 2 Desumidificadores?</div>
+
+            <div class="thermal-box">
+                <p style="font-weight: bold; font-size: 12pt; margin-bottom: 10px;">CÁLCULO TÉCNICO</p>
+                <table style="width: 100%; margin: 10px 0; font-size: 10pt;">
+                    <tr>
+                        <td style="padding: 5px;"><strong>Volume da cristaleira:</strong></td>
+                        <td style="padding: 5px;">1,58m × 1,79m × 0,44m = <strong>1,24 m³</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;"><strong>Capacidade Thermomatic:</strong></td>
+                        <td style="padding: 5px;"><strong>1,0 m³</strong> (especificação fabricante)</td>
+                    </tr>
+                    <tr style="background: #fff3cd;">
+                        <td style="padding: 5px;"><strong>Diferença:</strong></td>
+                        <td style="padding: 5px;"><strong>+24% acima da capacidade</strong></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="option-box">
+                <p style="font-weight: bold; margin-bottom: 8px;">OPÇÃO 1: 1 Desumidificador (RECOMENDADO INICIAR)</p>
+                <p><strong>Vantagens:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Custo: R$ 234 (metade)</li>
+                    <li>Consumo: 20W (3,6-14,4 kWh/mês)</li>
+                    <li>Mais espaço livre para instrumentos</li>
+                    <li>Suficiente se combinar com ventilação passiva</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>Quando funciona bem:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Região com UR média < 70%</li>
+                    <li>Ventilação passiva instalada corretamente</li>
+                    <li>Desumidificador bem posicionado (centro-baixo)</li>
+                </ul>
+            </div>
+
+            <div class="option-box">
+                <p style="font-weight: bold; margin-bottom: 8px;">OPÇÃO 2: 2 Desumidificadores (OPCIONAL)</p>
+                <p><strong>Vantagens:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Cobertura total do volume (1m³ + 1m³ = 2m³)</li>
+                    <li>Redundância (se 1 falhar, outro continua)</li>
+                    <li>Melhor distribuição (1 embaixo + 1 em cima)</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>Desvantagens:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Custo: R$ 468 (dobro)</li>
+                    <li>Consumo: 40W (7,2-28,8 kWh/mês)</li>
+                    <li>Ocupa mais espaço</li>
+                </ul>
+                <p style="margin-top: 8px;"><strong>Quando é necessário:</strong></p>
+                <ul style="margin: 5px 0 0 20px;">
+                    <li>Região costeira (UR > 80% constante)</li>
+                    <li>Sem possibilidade de furos de ventilação</li>
+                    <li>Instrumentos valor > R$ 50.000</li>
+                    <li>Monitoramento inicial mostrou UR > 60% persistente</li>
+                </ul>
+            </div>
+
+            <div class="critical-box">
+                <div class="title">RECOMENDAÇÃO FINAL - ABORDAGEM GRADUAL</div>
+                <ol style="margin: 10px 0 0 25px; line-height: 2;">
+                    <li><strong>FASE 1 (primeiras 2-3 semanas):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Instalar 1 desumidificador (centro-baixo)</li>
+                            <li>Instalar ventilação passiva (8 furos)</li>
+                            <li>Monitorar UR com higrômetro</li>
+                        </ul>
+                    </li>
+                    <li><strong>FASE 2 (avaliação):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Se UR fica 45-55%: sistema OK, não adicionar 2º</li>
+                            <li>Se UR fica 56-60%: ajustar timer (mais tempo ligado)</li>
+                            <li>Se UR > 60% persistente: adicionar 2º desumidificador</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p style="margin-top: 15px; padding: 10px; background: #d4edda; border-left: 4px solid #28a745;">
+                    <strong>Economia inteligente:</strong> 80% dos casos, 1 desumidificador + ventilação passiva é suficiente. Compre o 2º apenas se realmente precisar!
+                </p>
+            </div>
+
+            <div class="subsection-title">2.2. Posicionamento do(s) Desumidificador(es)</div>
+
+            <div class="diagram">CONFIGURAÇÃO 1 - COM 1 DESUMIDIFICADOR (recomendado iniciar)
+
+VISTA SUPERIOR
+╔═══════════════════════════════════════════════════╗
+║                                                    ║
+║                 TRASEIRA                           ║
+║  Furos ventilação superiores                      ║
+║  ○     ○     ○     ○                              ║
+║                                                    ║
+║              ║  ║  ║  ║  ║  ║  ║  ║  ║  ║         ║
+║              ║  ║  ║  ║  ║  ║  ║  ║  ║  ║         ║
+║          1   2  3  4  5  6  7  8  9  10           ║
+║         Instrumentos (10 posições)                 ║
+║                                                    ║
+║                                                    ║
+║              [DESUMIDIFICADOR]                     ║
+║              Centro-baixo traseiro                 ║
+║                16,5×10cm                           ║
+║                                                    ║
+║  ○     ○     ○     ○                              ║
+║  Furos ventilação inferiores                      ║
+║                 FRENTE                             ║
+╚═══════════════════════════════════════════════════╝
+
+Posição: 88cm da borda esquerda (centro), 5cm da traseira
+Fluxo: Ar fresco entra embaixo → passa pelo desumidificador → circula → sai em cima</div>
+
+            <div class="diagram">CONFIGURAÇÃO 2 - COM 2 DESUMIDIFICADORES (opcional)
+
+VISTA LATERAL
+    158cm ──────┬─── TETO
+                │
+                │  [DESUM 2] 16,5×10cm
+                │  Superior traseiro direito
+    130cm ──────┤  Altura: 130cm
+                │  Posição: canto superior
+                │
+                │
+                │  ║  ║  ║  ║  ║  ║  ║  ║  ║  ║
+                │  Instrumentos
+                │
+     30cm ──────┤
+                │  [DESUM 1] 16,5×10cm
+                │  Inferior traseiro esquerdo
+      5cm ──────┤  Altura: 5cm
+                │  Posição: canto inferior
+      0cm ──────┴─── BASE
+
+VANTAGENS DESTA DISTRIBUIÇÃO:
+- Cobertura vertical completa
+- Desum 1 (embaixo): capta umidade que desce
+- Desum 2 (em cima): capta umidade que sobe com ar quente
+- Circulação otimizada com ventilação</div>
+
+            <div class="subsection-title">2.3. Instalação Elétrica</div>
+
+            <div class="step-box">
+                <div class="step-number">PASSAGEM DE CABO</div>
+                
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li><strong>Para 1 desumidificador:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Fazer furo Ø8mm lateral esquerda (5cm altura, 5cm traseira)</li>
+                            <li>Instalar ilhós borracha</li>
+                            <li>Passar cabo do desumidificador</li>
+                            <li>Vedar com silicone neutro</li>
+                        </ul>
+                    </li>
+                    <li><strong>Para 2 desumidificadores (se adicionar depois):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Fazer 2º furo Ø8mm lateral direita (130cm altura, 5cm traseira)</li>
+                            <li>Mesmo procedimento</li>
+                            <li>Conectar ambos em timer (em série)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: ISOLAMENTO TÉRMICO -->
+        <div class="section page-break">
+            <div class="section-title">3. ISOLAMENTO TÉRMICO PASSIVO</div>
+
+            <div class="subsection-title">3.1. Materiais de Isolamento</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>Insulfilm nanocerâmico G-70</td>
+                    <td>60cm×3m/rolo<br>Bloqueio IR: 93-96%<br>Bloqueio UV: 99%</td>
+                    <td>2 rolos</td>
+                    <td>Portas vidro frontal<br>(2,75m²)</td>
+                </tr>
+                <tr>
+                    <td>Manta térmica dupla face</td>
+                    <td>Largura: 1m<br>TNT metalizado<br>Proteção UV</td>
+                    <td>1 rolo<br>(50m²)</td>
+                    <td>Paredes laterais, topo<br>(~8m² necessário)</td>
+                </tr>
+                <tr>
+                    <td>Fita vedação EVA</td>
+                    <td>6mm espessura<br>25mm largura<br>Autoadesiva</td>
+                    <td>15m</td>
+                    <td>Vedação junções<br>(perímetro painel)</td>
+                </tr>
+                <tr>
+                    <td>Fita dupla face 3M</td>
+                    <td>Espuma acrílica</td>
+                    <td>10m</td>
+                    <td>Fixação manta</td>
+                </tr>
+                <tr>
+                    <td>Silicone neutro</td>
+                    <td>290ml bisnaga</td>
+                    <td>1 un</td>
+                    <td>Vedação cabos</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">IMPORTANTE - SEQUÊNCIA</div>
+                <p><strong>Ordem de instalação CORRETA:</strong></p>
+                <ol style="margin: 5px 0 0 20px;">
+                    <li>Marceneiro instala painel MDF 6mm no fundo (SEM furos ainda)</li>
+                    <li>Aplicar manta térmica nas laterais e topo</li>
+                    <li>Aplicar insulfilm nas portas de vidro</li>
+                    <li>Marceneiro faz 8 furos Ø15mm conforme seção 1.2</li>
+                    <li>Instalar telas mosquiteiro nos furos</li>
+                    <li>Vedar junções com fita EVA</li>
+                    <li>Instalar desumidificador(es)</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">3.2. Instalação Insulfilm (Resumida)</div>
+
+            <div class="step-box">
+                <p><strong>Procedimento Simplificado:</strong></p>
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Limpar vidros rigorosamente (álcool isopropílico)</li>
+                    <li>Preparar solução: 500ml água + 3 gotas detergente</li>
+                    <li>Borrifar generosamente no vidro</li>
+                    <li>Remover liner do insulfilm</li>
+                    <li>Posicionar de cima para baixo</li>
+                    <li>Alisar com espátula (centro → bordas)</li>
+                    <li>Cortar excessos</li>
+                    <li>Aguardar cura 48h</li>
+                </ol>
+                <p style="margin-top: 10px; font-style: italic;">Para procedimento detalhado, consulte manual de instalação do fabricante.</p>
+            </div>
+
+            <div class="subsection-title">3.3. Instalação Manta Térmica (Resumida)</div>
+
+            <div class="step-box">
+                <p><strong>Aplicação em Laterais e Topo:</strong></p>
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li>Medir superfícies: laterais (158×44cm) + topo (179×44cm)</li>
+                    <li>Cortar manta com +5cm margem</li>
+                    <li>Fixar com fita dupla face</li>
+                    <li>Face metalizada voltada PARA DENTRO</li>
+                    <li>Alisar bem (sem bolhas)</li>
+                    <li>Aparar excessos</li>
+                </ol>
+                <p style="margin-top: 10px;"><strong>Nota:</strong> Parede traseira NÃO recebe manta (já tem painel MDF do marceneiro).</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4: MONITORAMENTO -->
+        <div class="section">
+            <div class="section-title">4. SISTEMA DE MONITORAMENTO</div>
+
+            <div class="subsection-title">4.1. Equipamentos de Monitoramento</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Equipamento</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Localização</th>
+                </tr>
+                <tr>
+                    <td>Higrômetro digital</td>
+                    <td>Display LCD<br>Temp + UR%<br>Alarme configurável<br>Precisão ±2%</td>
+                    <td>1</td>
+                    <td>Centro, altura 80cm<br>(visível pela porta)</td>
+                </tr>
+                <tr>
+                    <td>Timer digital programável</td>
+                    <td>110/220V bivolt<br>Programação 24h<br>Múltiplos horários</td>
+                    <td>1</td>
+                    <td>Externo (tomada)</td>
+                </tr>
+                <tr>
+                    <td>Sílica gel regenerável</td>
+                    <td>Indicadora (azul/rosa)<br>500g</td>
+                    <td>1 pacote</td>
+                    <td>Backup (cantos)<br>4 saquinhos de 125g</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">4.2. Configuração de Alarmes</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Faixa Ideal</th>
+                    <th>Alarme Mínimo</th>
+                    <th>Alarme Máximo</th>
+                    <th>Ação Necessária</th>
+                </tr>
+                <tr>
+                    <td>Temperatura</td>
+                    <td>20-26°C</td>
+                    <td>< 16°C</td>
+                    <td>> 30°C</td>
+                    <td>Verificar isolamento/<br>proteção sol</td>
+                </tr>
+                <tr>
+                    <td>Umidade</td>
+                    <td>45-55% UR</td>
+                    <td>< 40% UR</td>
+                    <td>> 60% UR</td>
+                    <td>Ajustar timer/<br>adicionar 2º desumid.</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">4.3. Programação do Timer</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Modo</th>
+                    <th>Quando Usar</th>
+                    <th>Programação</th>
+                    <th>Consumo/mês<br>(1 desumid.)</th>
+                </tr>
+                <tr>
+                    <td>Contínuo</td>
+                    <td>UR > 70%<br>(início ou inverno úmido)</td>
+                    <td>24h ligado</td>
+                    <td>14,4 kWh<br>(R$ 12-14)</td>
+                </tr>
+                <tr>
+                    <td>Intermitente</td>
+                    <td>UR 55-70%<br>(manutenção normal)</td>
+                    <td>00:00-12:00<br>(12h/dia)</td>
+                    <td>7,2 kWh<br>(R$ 6-7)</td>
+                </tr>
+                <tr>
+                    <td>Econômico</td>
+                    <td>UR 45-55%<br>(verão seco)</td>
+                    <td>06:00-12:00<br>(6h/dia)</td>
+                    <td>3,6 kWh<br>(R$ 3-4)</td>
+                </tr>
+                <tr>
+                    <td>Desligado</td>
+                    <td>UR < 45%<br>(excepcional)</td>
+                    <td>Timer OFF</td>
+                    <td>0 kWh</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">PERÍODO DE AJUSTE</div>
+                <p>Nos primeiros 15-30 dias, monitore DIARIAMENTE e ajuste timer conforme necessidade. Depois, check semanal é suficiente.</p>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5: LISTA COMPLETA DE MATERIAIS -->
+        <div class="section page-break">
+            <div class="section-title">5. LISTA COMPLETA DE MATERIAIS</div>
+
+            <div class="subsection-title">5.1. Isolamento Térmico</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Insulfilm G-70</td>
+                    <td>60×300cm</td>
+                    <td>2</td>
+                    <td>R$ 163</td>
+                    <td>R$ 326</td>
+                </tr>
+                <tr>
+                    <td>Manta térmica dupla</td>
+                    <td>50m²</td>
+                    <td>1</td>
+                    <td>R$ 156</td>
+                    <td>R$ 156</td>
+                </tr>
+                <tr>
+                    <td>Fita EVA 6mm</td>
+                    <td>15m total</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>R$ 50-80</td>
+                </tr>
+                <tr>
+                    <td>Fita dupla face 3M</td>
+                    <td>10m</td>
+                    <td>1</td>
+                    <td>R$ 40</td>
+                    <td>R$ 40</td>
+                </tr>
+                <tr>
+                    <td>Silicone neutro</td>
+                    <td>290ml</td>
+                    <td>1</td>
+                    <td>R$ 15</td>
+                    <td>R$ 15</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.2. Ventilação</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Tela mosquiteiro</td>
+                    <td>Rolo (comprar por metro)</td>
+                    <td>1m</td>
+                    <td>R$ 8-12/m</td>
+                    <td>R$ 8-12</td>
+                </tr>
+                <tr>
+                    <td>Cola contact</td>
+                    <td>Tubo 75g</td>
+                    <td>1</td>
+                    <td>R$ 12</td>
+                    <td>R$ 12</td>
+                </tr>
+                <tr>
+                    <td>Broca madeira Ø15mm</td>
+                    <td>-</td>
+                    <td>1</td>
+                    <td>R$ 15-20</td>
+                    <td>R$ 15-20</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.3. Controle Ativo</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>Desumidificador Thermomatic</td>
+                    <td>20W, 1m³, bivolt</td>
+                    <td>1 (+1 opcional)</td>
+                    <td>R$ 234</td>
+                    <td>R$ 234-468</td>
+                </tr>
+                <tr>
+                    <td>Timer digital</td>
+                    <td>Programável 24h</td>
+                    <td>1</td>
+                    <td>R$ 40-60</td>
+                    <td>R$ 40-60</td>
+                </tr>
+                <tr>
+                    <td>Higrômetro digital</td>
+                    <td>Com alarme</td>
+                    <td>1</td>
+                    <td>R$ 50-80</td>
+                    <td>R$ 50-80</td>
+                </tr>
+                <tr>
+                    <td>Sílica gel regenerável</td>
+                    <td>500g</td>
+                    <td>1</td>
+                    <td>R$ 25-35</td>
+                    <td>R$ 25-35</td>
+                </tr>
+                <tr>
+                    <td>Ilhós borracha Ø8mm</td>
+                    <td>-</td>
+                    <td>2</td>
+                    <td>R$ 2</td>
+                    <td>R$ 4</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.4. Proteções dos Instrumentos</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>EVA 5mm autoadesivo</td>
+                    <td>100×50cm</td>
+                    <td>5</td>
+                    <td>R$ 37</td>
+                    <td>R$ 185</td>
+                </tr>
+                <tr>
+                    <td>Cortiça emborrachada</td>
+                    <td>12×17×5mm (pct 20)</td>
+                    <td>1</td>
+                    <td>R$ 144</td>
+                    <td>R$ 144</td>
+                </tr>
+                <tr>
+                    <td>Feltro 3mm autoadesivo</td>
+                    <td>2m² total</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>R$ 40-60</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.5. Resumo Financeiro</div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 11pt;">
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td style="border: 2px solid #000; padding: 10px;">Categoria</td>
+                    <td style="border: 2px solid #000; padding: 10px; text-align: right;">Total (R$)</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 8px;">Isolamento térmico</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: right;">587 - 617</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 8px;">Ventilação</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: right;">35 - 44</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 8px;">Controle ativo (1 desumid.)</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: right;">353 - 413</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td style="border: 1px solid #000; padding: 8px;"><em>Controle ativo (2 desumid.) - OPCIONAL</em></td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: right;"><em>587 - 647</em></td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid #000; padding: 8px;">Proteções instrumentos</td>
+                    <td style="border: 1px solid #000; padding: 8px; text-align: right;">369 - 389</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold; font-size: 13pt;">
+                    <td style="border: 2px solid #000; padding: 12px;">TOTAL (1 desumidificador)</td>
+                    <td style="border: 2px solid #000; padding: 12px; text-align: right;">R$ 1.344 - 1.463</td>
+                </tr>
+                <tr style="background: #fff3cd; font-weight: bold; font-size: 13pt;">
+                    <td style="border: 2px solid #000; padding: 12px;">TOTAL (2 desumidificadores)</td>
+                    <td style="border: 2px solid #000; padding: 12px; text-align: right;">R$ 1.578 - 1.697</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="padding: 15px; font-style: italic; font-size: 10pt;">
+                        <strong>Não incluso:</strong> Materiais marcenaria (MDF, sarrafos, parafusos) = R$ 371-532<br>
+                        <strong>Custo total projeto completo:</strong> R$ 1.715 - 2.229 (com 1 desumid.) ou R$ 1.949 - 2.229 (com 2 desumid.)<br>
+                        <strong>Proteção para:</strong> Instrumentos > R$ 20.000<br>
+                        <strong>Custo-benefício:</strong> 8,5-11% do valor protegido
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- SEÇÃO 6: CHECKLIST FINAL -->
+        <div class="section page-break">
+            <div class="section-title">6. CHECKLIST DE VERIFICAÇÃO</div>
+
+            <div style="border: 2px solid #000; padding: 15px; margin: 20px 0;">
+                <div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">VENTILAÇÃO</div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> 8 furos Ø15mm executados (4 superiores + 4 inferiores)
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Telas mosquiteiro instaladas e aderidas
+                </div>
+                <div style="padding: 8px;">
+                    <input type="checkbox"> Furos livres (sem obstrução)
+                </div>
+            </div>
+
+            <div style="border: 2px solid #000; padding: 15px; margin: 20px 0;">
+                <div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">ISOLAMENTO</div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Insulfilm aplicado nas portas de vidro
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Manta térmica instalada (laterais + topo)
+                </div>
+                <div style="padding: 8px;">
+                    <input type="checkbox"> Vedação EVA em todas junções
+                </div>
+            </div>
+
+            <div style="border: 2px solid #000; padding: 15px; margin: 20px 0;">
+                <div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">CONTROLE ATIVO</div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Desumidificador(es) posicionado(s) corretamente
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Cabo(s) passado(s) e vedado(s)
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Timer programado e testado
+                </div>
+                <div style="padding: 8px;">
+                    <input type="checkbox"> Higrômetro instalado e alarmes configurados
+                </div>
+            </div>
+
+            <div style="border: 2px solid #000; padding: 15px; margin: 20px 0;">
+                <div style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">TESTE FINAL</div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Sistema ligado 72h (teste inicial)
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> UR estabilizada entre 45-55%
+                </div>
+                <div style="padding: 8px; border-bottom: 1px dashed #000;">
+                    <input type="checkbox"> Temperatura entre 20-26°C
+                </div>
+                <div style="padding: 8px;">
+                    <input type="checkbox"> Ventilação funcionando (testar com fumaça/vapor)
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMO DE CONCLUSÃO -->
+        <div style="margin-top: 40px; border: 3px solid #000; padding: 20px;">
+            <p style="font-weight: bold; font-size: 13pt; margin-bottom: 15px; text-align: center;">
+                TERMO DE CONCLUSÃO DO SISTEMA
+            </p>
+            
+            <p>Declaro que o sistema completo de isolamento térmico, ventilação passiva e controle ativo de umidade foi instalado conforme especificações técnicas.</p>
+            
+            <p style="margin-top: 20px;"><strong>Responsável pela instalação:</strong></p>
+            <p style="margin-top: 8px;">Nome: _____________________________________</p>
+            <p style="margin-top: 8px;">Data de conclusão: ___/___/2025</p>
+            <p style="margin-top: 8px;">Assinatura: _____________________________________</p>
+            
+            <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000;">
+                <p style="margin-top: 20px;"><strong>Cliente/Proprietário:</strong></p>
+                <p style="margin-top: 8px;">Nome: _____________________________________</p>
+                <p style="margin-top: 8px;">Data recebimento: ___/___/2025</p>
+                <p style="margin-top: 8px;">Assinatura: _____________________________________</p>
+            </div>
+
+            <div style="margin-top: 20px; padding: 10px; background: #f0f0f0; border: 1px solid #000;">
+                <p style="font-weight: bold;">Configuração instalada:</p>
+                <p style="margin-top: 5px;">
+                    <input type="checkbox"> 1 Desumidificador (configuração padrão)<br>
+                    <input type="checkbox"> 2 Desumidificadores (configuração premium)
+                </p>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #000; font-size: 9pt; text-align: center; color: #666;">
+            <p><strong>GUIA TÉCNICO - Isolamento, Ventilação e Controle Climático</strong></p>
+            <p>Sistema para 10 Instrumentos | Cristaleira: 158×179×44cm | Rev: 05</p>
+            <p>Documento técnico - Outubro 2025</p>
+        </div>
+    </div>
+</body>
+</html>

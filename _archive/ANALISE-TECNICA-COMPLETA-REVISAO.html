@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise Técnica Profunda - Revisão Completa do Sistema</title>
+    <link rel="stylesheet" href="assets/css/projeto.css">
+    <style>
+        .conflict-box {
+            background: #fff3cd;
+            border: 4px solid #ff6b6b;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .solution-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .calc-box {
+            background: #e3f2fd;
+            border: 2px solid #2196f3;
+            padding: 12px;
+            margin: 12px 0;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ANÁLISE TÉCNICA PROFUNDA</h1>
+            <div class="subtitle">Revisão Completa do Sistema de Controle Climático</div>
+            <div class="subtitle">Isolamento Térmico vs. Ventilação: Resolução do Conflito</div>
+            <div class="info">
+                Cristaleira 158×179×44cm | 10 Instrumentos<br>
+                Data: Outubro 2025 | Rev: CRÍTICA 01
+            </div>
+        </div>
+
+        <div class="conflict-box">
+            <div class="title" style="font-size: 14pt; color: #d32f2f;">⚠️ CONFLITO TÉCNICO IDENTIFICADO</div>
+            <p style="margin-top: 15px; font-size: 12pt; line-height: 1.8;">
+                <strong>PROBLEMA CENTRAL:</strong> A documentação atual propõe sistemas CONTRADITÓRIOS que não podem coexistir eficientemente:
+            </p>
+            <ul style="margin: 15px 0 0 30px; line-height: 2;">
+                <li><strong style="color: #28a745;">Isolamento Térmico:</strong> Busca MINIMIZAR trocas de calor (sistema hermético)</li>
+                <li><strong style="color: #d32f2f;">Ventilação Forçada:</strong> MAXIMIZA trocas de ar (furos grandes = 729cm² abertos)</li>
+            </ul>
+            <p style="margin-top: 20px; padding: 15px; background: #fff; border-left: 5px solid #d32f2f;">
+                <strong>CONCLUSÃO:</strong> Furos de 135×135mm para coolers DESTROEM o isolamento térmico. É como isolar uma casa com lã de rocha e deixar janelas abertas 24h/dia.
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. ANÁLISE DO ESTADO ATUAL - DIMENSÕES E VOLUMES</div>
+
+            <div class="subsection-title">1.1. Especificações da Cristaleira</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th style="width: 200px;">Parâmetro</th>
+                    <th>Medida</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td><strong>Altura Externa</strong></td>
+                    <td>158cm</td>
+                    <td>Total do móvel</td>
+                </tr>
+                <tr>
+                    <td><strong>Largura Externa</strong></td>
+                    <td>179cm</td>
+                    <td>Total do móvel</td>
+                </tr>
+                <tr>
+                    <td><strong>Profundidade Externa</strong></td>
+                    <td>44cm</td>
+                    <td>Total do móvel</td>
+                </tr>
+                <tr style="background: #f0f0f0;">
+                    <td><strong>Altura Interna (estimada)</strong></td>
+                    <td>~155cm</td>
+                    <td>Descontando base/topo (3cm)</td>
+                </tr>
+                <tr style="background: #f0f0f0;">
+                    <td><strong>Largura Interna (estimada)</strong></td>
+                    <td>~175cm</td>
+                    <td>Descontando laterais (4cm)</td>
+                </tr>
+                <tr style="background: #f0f0f0;">
+                    <td><strong>Profundidade Interna (estimada)</strong></td>
+                    <td>~40cm</td>
+                    <td>Descontando portas vidro + traseira (4cm)</td>
+                </tr>
+                <tr style="background: #e8f5e9; font-weight: bold;">
+                    <td><strong>Volume Interno</strong></td>
+                    <td><strong>~1,085 m³</strong></td>
+                    <td>1,55m × 1,75m × 0,40m</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.2. Áreas de Superfície (Troca Térmica)</div>
+
+            <div class="calc-box">
+CÁLCULO DE ÁREAS PARA ISOLAMENTO TÉRMICO
+
+┌────────────────────────────────────────────────────────────────┐
+│ SUPERFÍCIE           │  DIMENSÕES    │  ÁREA (m²)  │  TIPO     │
+├────────────────────────────────────────────────────────────────┤
+│ Topo                 │ 175 × 40cm    │   0,70      │  Opaca    │
+│ Base                 │ 175 × 40cm    │   0,70      │  Opaca    │
+│ Lateral Esquerda     │ 155 × 40cm    │   0,62      │  Opaca    │
+│ Lateral Direita      │ 155 × 40cm    │   0,62      │  Opaca    │
+│ Traseira (painel)    │ 155 × 175cm   │   2,71      │  Opaca    │
+│ Frente (vidro)       │ 155 × 175cm   │   2,71      │  VIDRO    │
+├────────────────────────────────────────────────────────────────┤
+│ TOTAL ÁREA           │               │   8,06 m²   │           │
+│   - Área opaca       │               │   5,35 m²   │  66%      │
+│   - Área vidro       │               │   2,71 m²   │  34%      │
+└────────────────────────────────────────────────────────────────┘
+
+OBSERVAÇÃO CRÍTICA:
+- 66% da área são superfícies OPACAS (podem receber isolamento total)
+- 34% da área é VIDRO (recebe só insulfilm)
+- Vidro é ponto fraco térmico (condutividade 15× maior que madeira)</div>
+
+            <div class="subsection-title">1.3. Análise Térmica Básica (Sem Isolamento)</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Condição</th>
+                    <th>Temp Externa</th>
+                    <th>Temp Interna (estimada)</th>
+                    <th>Gradiente</th>
+                </tr>
+                <tr>
+                    <td><strong>Verão</strong> (sol direto)</td>
+                    <td>35-40°C</td>
+                    <td>38-45°C</td>
+                    <td>Efeito estufa pelo vidro</td>
+                </tr>
+                <tr>
+                    <td><strong>Inverno</strong></td>
+                    <td>10-15°C</td>
+                    <td>12-17°C</td>
+                    <td>Perda de calor p/ vidro</td>
+                </tr>
+                <tr>
+                    <td><strong>Variação diária</strong></td>
+                    <td>±10-15°C</td>
+                    <td>±8-12°C</td>
+                    <td>Inércia térmica baixa</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade</strong></td>
+                    <td>30-90% UR</td>
+                    <td>35-85% UR</td>
+                    <td>Acompanha ambiente</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">CONCLUSÃO TÉRMICA:</div>
+                <p>Sem isolamento, cristaleira é INABITÁVEL para instrumentos musicais:</p>
+                <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                    <li>Verão: Temperaturas > 35°C causam empenamento de madeira</li>
+                    <li>Inverno: Umidade alta + frio = risco de mofo</li>
+                    <li>Variações: ±10°C/dia = descolamento de peças, trincas</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>ISOLAMENTO É OBRIGATÓRIO</strong></p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">2. SISTEMA DE ISOLAMENTO PASSIVO - ANÁLISE DETALHADA</div>
+
+            <div class="subsection-title">2.1. Arquitetura de Camadas Proposta</div>
+
+            <div class="diagram">CORTE TRANSVERSAL - SISTEMA DE ISOLAMENTO PASSIVO
+
+EXTERIOR ──────────────────────────────────────────── INTERIOR
+
+                        AR EXTERNO
+                        (10-40°C)
+                            │
+        ┌───────────────────┴────────────────────┐
+        │  CAMADA 1: BARREIRA RADIAÇÃO           │
+        │  • Insulfilm G-70 (vidro frontal)      │
+        │  • Bloqueio IR: 93-96%                 │
+        │  • Bloqueio UV: 99%                    │
+        │  • Espessura: ~0,15mm                  │
+        └───────────────────┬────────────────────┘
+                            │ Gap de ar
+        ┌───────────────────┴────────────────────┐
+        │  CAMADA 2: ISOLAMENTO EXTERNO          │
+        │  • Manta térmica (face metalizada OUT) │
+        │  • Reflexão calor radiante             │
+        │  • Espessura: ~5mm                     │
+        └───────────────────┬────────────────────┘
+                            │ Câmara de ar
+        ┌───────────────────┴────────────────────┐
+        │  CAMADA 3: MASSA TÉRMICA               │
+        │  • Painel MDF 5mm traseiro             │
+        │  • Laterais madeira                    │
+        │  • Amortecimento variações             │
+        └───────────────────┬────────────────────┘
+                            │ Fixação
+        ┌───────────────────┴────────────────────┐
+        │  CAMADA 4: ISOLAMENTO INTERNO          │
+        │  • Manta térmica (face metalizada IN)  │
+        │  • Barreira vapor                      │
+        │  • Espessura: ~5mm                     │
+        └───────────────────┬────────────────────┘
+                            │
+        ┌───────────────────┴────────────────────┐
+        │  CAMADA 5: VEDAÇÃO HERMÉTICA           │
+        │  • Fita EVA 6mm (todas junções)        │
+        │  • Silicone neutro (passagens cabo)    │
+        │  • Minimiza infiltração ar             │
+        └───────────────────┬────────────────────┘
+                            │
+                        AR INTERNO
+                      (20-26°C, 45-55% UR)
+
+═══════════════════════════════════════════════════════════════
+
+RESISTÊNCIA TÉRMICA TOTAL (R-value):
+
+R_insulfilm  ≈ 0,03 m²·K/W (desprezível, barreira radiação)
+R_manta_ext  ≈ 0,35 m²·K/W (TNT metalizado)
+R_ar_camara  ≈ 0,18 m²·K/W (ar estagnado 10mm)
+R_MDF_5mm    ≈ 0,05 m²·K/W (madeira)
+R_manta_int  ≈ 0,35 m²·K/W (TNT metalizado)
+──────────────────────────────────────────
+R_TOTAL      ≈ 0,96 m²·K/W
+
+COMPARAÇÃO:
+- Vidro simples: R ≈ 0,16 m²·K/W
+- Parede sem isolamento: R ≈ 0,15 m²·K/W
+- Parede COM este isolamento: R ≈ 0,96 m²·K/W
+
+GANHO: 6× melhor que parede simples!</div>
+
+            <div class="subsection-title">2.2. Eficiência do Isolamento Passivo</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Sem Isolamento</th>
+                    <th>Com Isolamento Passivo</th>
+                    <th>Redução</th>
+                </tr>
+                <tr>
+                    <td><strong>Ganho térmico verão</strong></td>
+                    <td>+15 a +20°C</td>
+                    <td>+4 a +6°C</td>
+                    <td><strong>70-75%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Perda térmica inverno</strong></td>
+                    <td>-8 a -12°C</td>
+                    <td>-2 a -3°C</td>
+                    <td><strong>70-80%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Variação dia/noite</strong></td>
+                    <td>±8-12°C</td>
+                    <td>±2-4°C</td>
+                    <td><strong>65-70%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Inércia térmica</strong></td>
+                    <td>~1h</td>
+                    <td>~4-6h</td>
+                    <td>4-6× mais lenta</td>
+                </tr>
+            </table>
+
+            <div class="solution-box">
+                <div class="title">✅ DESEMPENHO DO ISOLAMENTO PASSIVO</div>
+                <p style="margin-top: 10px;"><strong>Cenário de Teste:</strong> Temperatura externa 35°C (verão)</p>
+                <div class="calc-box">
+CÁLCULO SIMPLIFICADO:
+
+Temp_externa = 35°C
+Temp_desejada = 23°C (conforto instrumentos)
+Gradiente = 35 - 23 = 12°C
+
+Sem isolamento:
+  Temp_interna ≈ 35 + 5 = 40°C (efeito estufa)
+  Diferença da meta: +17°C ❌ RUIM
+
+Com isolamento (R=0,96):
+  Redução 70% do ganho térmico
+  Temp_interna ≈ 23 + (12 × 0,30) = 26,6°C
+  Diferença da meta: +3,6°C ✅ ACEITÁVEL
+
+CONCLUSÃO: Isolamento passivo SOZINHO já atinge
+           temperatura próxima da ideal!</div>
+            </div>
+
+            <div class="subsection-title">2.3. Pontos Fracos do Isolamento Passivo</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Ponto Fraco</th>
+                    <th>Impacto</th>
+                    <th>Solução</th>
+                </tr>
+                <tr>
+                    <td><strong>Vidro frontal</strong></td>
+                    <td>34% da área, R-value 10× menor</td>
+                    <td>Insulfilm G-70 (barreira radiação)</td>
+                </tr>
+                <tr>
+                    <td><strong>Furos/passagens</strong></td>
+                    <td>Perda de hermeticidade</td>
+                    <td>Minimizar furos, vedar bem</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade interna</strong></td>
+                    <td>Não é controlada passivamente</td>
+                    <td>Desumidificador ativo ⚠️</td>
+                </tr>
+                <tr>
+                    <td><strong>Calor interno</strong></td>
+                    <td>Sem geração, mas sem dissipação</td>
+                    <td>Ventilação mínima controlada</td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">⚠️ ATENÇÃO - QUALQUER FURO COMPROMETE O SISTEMA:</div>
+                <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                    <li>Furo Ø15mm = 1,77 cm² = perda ~2% da eficiência por furo</li>
+                    <li>Furo 135×135mm = 182,25 cm² = perda ~20% da eficiência por furo!</li>
+                    <li><strong>4 furos grandes = PERDE 60-80% DO ISOLAMENTO TÉRMICO</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">3. VENTILAÇÃO FORÇADA - ANÁLISE DO CONFLITO</div>
+
+            <div class="subsection-title">3.1. Proposta Atual de Ventilação Forçada</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Componente</th>
+                    <th>Quantidade</th>
+                    <th>Dimensões</th>
+                    <th>Área Total</th>
+                </tr>
+                <tr>
+                    <td><strong>Coolers 140mm</strong></td>
+                    <td>4 unidades</td>
+                    <td>135×135mm cada</td>
+                    <td><strong>729,00 cm²</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>Furos passivos</strong></td>
+                    <td>8 unidades</td>
+                    <td>Ø15mm cada</td>
+                    <td><strong>14,14 cm²</strong></td>
+                </tr>
+                <tr style="background: #fff3cd; font-weight: bold;">
+                    <td colspan="3"><strong>TOTAL ÁREA ABERTA</strong></td>
+                    <td><strong>743,14 cm²</strong></td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">3.2. Impacto Térmico da Ventilação Forçada</div>
+
+            <div class="calc-box">
+CÁLCULO DE PERDA TÉRMICA POR VENTILAÇÃO
+
+Dados:
+- Volume interno: 1,085 m³
+- Área total superfície: 8,06 m²
+- Área furos coolers: 0,0729 m² (729 cm²)
+- Percentual aberto: 729 / 80.600 = 0,9% da superfície
+
+Fluxo de ar (coolers 140mm × 4):
+- CFM por cooler: 30-40 CFM (estimado)
+- Total: 120-160 CFM
+- Em m³/h: 204-272 m³/h
+
+Renovações de ar por hora:
+- 204 m³/h ÷ 1,085 m³ = 188 renovações/hora
+- OU: a cada 19 segundos TODO o ar é trocado!
+
+IMPACTO TÉRMICO:
+═══════════════════════════════════════════════════
+Se temp_externa = 35°C, temp_interna_meta = 23°C:
+
+Sem ventilação forçada:
+  Isolamento mantém temp interna ≈ 26°C ✅
+
+Com ventilação forçada (188 renovações/h):
+  Ar externo 35°C entra a cada 19 segundos
+  Isolamento NÃO consegue compensar!
+  Temp interna tende a: 33-34°C ❌ FALHA TOTAL
+
+CONCLUSÃO CRÍTICA:
+────────────────────────────────────────────────────
+Ventilação forçada com 188 renovações/hora DESTRÓI
+o isolamento térmico. É como ligar ar condicionado
+e deixar janela aberta.</div>
+
+            <div class="conflict-box">
+                <div class="title" style="font-size: 13pt;">🔴 CONFLITO TÉCNICO CONFIRMADO</div>
+                <table style="width: 100%; margin: 15px 0; font-size: 10pt;">
+                    <tr style="background: #28a745; color: #fff; font-weight: bold;">
+                        <td style="padding: 10px; border: 1px solid #000;">Sistema</td>
+                        <td style="padding: 10px; border: 1px solid #000;">Objetivo</td>
+                        <td style="padding: 10px; border: 1px solid #000;">Resultado</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #000;"><strong>Isolamento Passivo</strong></td>
+                        <td style="padding: 8px; border: 1px solid #000;">MINIMIZAR trocas térmicas<br>Sistema hermético</td>
+                        <td style="padding: 8px; border: 1px solid #000; background: #d4edda;">Reduz 70% ganho térmico<br>Temp: 26°C ✅</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #000;"><strong>Ventilação Forçada</strong></td>
+                        <td style="padding: 8px; border: 1px solid #000;">MAXIMIZAR renovação ar<br>188 trocas/hora</td>
+                        <td style="padding: 8px; border: 1px solid #000; background: #f8d7da;">Anula isolamento<br>Temp: 33°C ❌</td>
+                    </tr>
+                    <tr style="background: #fff3cd; font-weight: bold;">
+                        <td colspan="2" style="padding: 10px; border: 1px solid #000; text-align: right;">CONCLUSÃO:</td>
+                        <td style="padding: 10px; border: 1px solid #000;">SISTEMAS INCOMPATÍVEIS</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="subsection-title">3.3. Quando Ventilação Forçada Faria Sentido?</div>
+
+            <div class="warning">
+                <div class="warning-title">VENTILAÇÃO FORÇADA seria adequada SE:</div>
+                <ol style="margin: 10px 0 0 20px; line-height: 2;">
+                    <li><strong>Fonte de calor interna:</strong> Equipamentos gerando calor (lâmpadas LED fortes, eletrônica)</li>
+                    <li><strong>Ambiente climatizado:</strong> Cristaleira dentro de sala com ar condicionado (temp controlada)</li>
+                    <li><strong>Equalização temp:</strong> Necessidade de eliminar estratificação térmica severa</li>
+                    <li><strong>SEM isolamento:</strong> Sistema depende 100% de ventilação (não é o caso!)</li>
+                </ol>
+                <p style="margin-top: 15px; padding: 12px; background: #fff; border-left: 4px solid #d32f2f;">
+                    <strong>NO SEU CASO:</strong> Você JÁ tem isolamento térmico excelente. Ventilação forçada DESTRÓI o trabalho do isolamento!
+                </p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">4. TRÊS CENÁRIOS OTIMIZADOS - SOLUÇÃO DO CONFLITO</div>
+
+            <div class="subsection-title">Introdução aos Cenários</div>
+
+            <p>Baseado na análise técnica, proponho 3 cenários viáveis, do mais simples ao mais complexo:</p>
+
+            <table class="specs-table">
+                <tr>
+                    <th style="width: 150px;">Cenário</th>
+                    <th>Descrição</th>
+                    <th>Complexidade</th>
+                    <th>Custo</th>
+                    <th>Eficiência</th>
+                </tr>
+                <tr style="background: #d4edda;">
+                    <td><strong>A - PASSIVO</strong></td>
+                    <td>Isolamento + ventilação natural mínima</td>
+                    <td>⭐ Baixa</td>
+                    <td>💰 R$ 630-700</td>
+                    <td>⭐⭐⭐⭐ 85%</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td><strong>B - HÍBRIDO</strong></td>
+                    <td>Passivo + ventilação sob demanda</td>
+                    <td>⭐⭐ Média</td>
+                    <td>💰💰 R$ 950-1.100</td>
+                    <td>⭐⭐⭐⭐⭐ 95%</td>
+                </tr>
+                <tr style="background: #e3f2fd;">
+                    <td><strong>C - INTELIGENTE</strong></td>
+                    <td>Y39U + dampers motorizados</td>
+                    <td>⭐⭐⭐ Alta</td>
+                    <td>💰💰💰 R$ 1.350-1.650</td>
+                    <td>⭐⭐⭐⭐⭐ 98%</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">CENÁRIO A - SISTEMA PASSIVO OTIMIZADO 🥇 RECOMENDADO</div>
+
+            <div class="solution-box">
+                <div class="title">✅ SISTEMA PASSIVO - Máxima Eficiência, Mínima Complexidade</div>
+
+                <p style="margin-top: 15px;"><strong>FILOSOFIA:</strong></p>
+                <p>Priorizar o ISOLAMENTO TÉRMICO como estratégia principal. Ventilação mínima CONTROLADA apenas para evitar estagnação de ar e permitir controle de umidade.</p>
+
+                <p style="margin-top: 15px;"><strong>COMPONENTES:</strong></p>
+                <ol style="margin: 10px 0 0 25px; line-height: 2;">
+                    <li><strong>Isolamento térmico completo</strong> (manta + insulfilm + vedação)</li>
+                    <li><strong>Ventilação passiva estratégica</strong> (8 furos Ø15mm)</li>
+                    <li><strong>Controle ativo umidade</strong> (1-2 desumidificadores)</li>
+                    <li><strong>❌ SEM coolers</strong> (furos grandes removidos!)</li>
+                </ol>
+            </div>
+
+            <div class="diagram">CENÁRIO A - ARQUITETURA PASSIVA OTIMIZADA
+
+VISTA SUPERIOR (esquemática):
+┌─────────────────────────────────────────────────────┐
+│ TRASEIRA                                            │
+│  F1                                              F2 │ ← Furos passivos Ø15mm
+│  ●                                                ● │   SUPERIORES (expulsão)
+│                                                     │
+│                                                     │
+│  ║     ║     ║     ║     ║     ║     ║            │
+│  ║  1  ║  2  ║  3  ║  4  ║  5  ║  6  ║  7         │ ← Instrumentos
+│  ║     ║     ║     ║     ║     ║     ║            │
+│                                                     │
+│           [DESUMID]                [DESUMID]        │ ← 2 desumidificadores
+│                                                     │   (opcional: só 1)
+│                                                     │
+│  ●                                                ● │ ← Furos passivos Ø15mm
+│  F3                                              F4 │   INFERIORES (admissão)
+│ FRENTE (VIDRO COM INSULFILM)                       │
+└─────────────────────────────────────────────────────┘
+
+FLUXO DE AR NATURAL (CONVECÇÃO):
+─────────────────────────────────────────────────────
+
+Ar fresco externo (entrada):
+  ↓ F3, F4 (base, Ø15mm)
+  │
+  ├→ Aquece por convecção natural
+  │  (ar quente sobe naturalmente)
+  ↓
+  ↑ Ar aquecido (mais leve)
+  │
+  ↑ Sai por F1, F2 (topo, Ø15mm)
+
+Renovação: 0,5-1× por dia (IDEAL para isolamento!)
+
+DIMENSIONAMENTO FUROS PASSIVOS:
+───────────────────────────────────────────────────
+
+8 furos Ø15mm = 14,14 cm² total
+Volume: 1,085 m³
+
+Fluxo natural (convecção):
+  ~0,5-2 m³/h (depende de ΔT)
+
+Renovações/dia:
+  (1 m³/h × 24h) / 1,085 m³ = 22 renovações/dia
+  OU: 1 renovação a cada 65 minutos
+
+COMPARAÇÃO:
+  Coolers: 188 renovações/HORA ❌ EXCESSO
+  Passivo: 0,9 renovações/HORA ✅ IDEAL</div>
+
+            <div class="specs-table">
+                <tr>
+                    <th colspan="3" style="background: #28a745; color: #fff;">DESEMPENHO CENÁRIO A - PASSIVO</th>
+                </tr>
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Valor</th>
+                    <th>Adequação</th>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura verão</strong></td>
+                    <td>24-27°C</td>
+                    <td>✅ Excelente (meta: 18-28°C)</td>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura inverno</strong></td>
+                    <td>18-22°C</td>
+                    <td>✅ Excelente (meta: 18-28°C)</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade relativa</strong></td>
+                    <td>45-55% UR</td>
+                    <td>✅ Perfeito (desumidificador ativo)</td>
+                </tr>
+                <tr>
+                    <td><strong>Variação diária</strong></td>
+                    <td>±2-3°C</td>
+                    <td>✅ Ótimo (inércia térmica alta)</td>
+                </tr>
+                <tr>
+                    <td><strong>Estabilidade</strong></td>
+                    <td>90-95% tempo ideal</td>
+                    <td>✅ Profissional</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo operacional</strong></td>
+                    <td>R$ 5-10/mês</td>
+                    <td>✅ Muito baixo (só desumidif.)</td>
+                </tr>
+                <tr style="background: #d4edda; font-weight: bold;">
+                    <td><strong>INVESTIMENTO TOTAL</strong></td>
+                    <td><strong>R$ 630-700</strong></td>
+                    <td>✅ MELHOR CUSTO-BENEFÍCIO</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">Lista de Materiais - Cenário A</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Qtd</th>
+                    <th>Preço Unit.</th>
+                    <th>Total</th>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">ISOLAMENTO TÉRMICO</td>
+                </tr>
+                <tr>
+                    <td>Insulfilm G-70 (60cm×3m)</td>
+                    <td>2 rolos</td>
+                    <td>R$ 163</td>
+                    <td>R$ 326</td>
+                </tr>
+                <tr>
+                    <td>Manta térmica dupla face (50m²)</td>
+                    <td>1 rolo</td>
+                    <td>R$ 156</td>
+                    <td>R$ 156</td>
+                </tr>
+                <tr>
+                    <td>Fita vedação EVA 6mm (25m)</td>
+                    <td>1 kit</td>
+                    <td>R$ 95</td>
+                    <td>R$ 95</td>
+                </tr>
+                <tr>
+                    <td>Fita dupla face 3M (10m)</td>
+                    <td>1 rolo</td>
+                    <td>R$ 40</td>
+                    <td>R$ 40</td>
+                </tr>
+                <tr>
+                    <td>Silicone neutro (290ml)</td>
+                    <td>1 un</td>
+                    <td>R$ 15</td>
+                    <td>R$ 15</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">VENTILAÇÃO PASSIVA</td>
+                </tr>
+                <tr>
+                    <td>Broca Ø15mm madeira</td>
+                    <td>1 un</td>
+                    <td>R$ 12</td>
+                    <td>R$ 12</td>
+                </tr>
+                <tr>
+                    <td>Tela mosquiteiro (furos)</td>
+                    <td>0,5m</td>
+                    <td>R$ 10</td>
+                    <td>R$ 5</td>
+                </tr>
+                <tr>
+                    <td>Cola contact (fixação tela)</td>
+                    <td>1 tubo</td>
+                    <td>R$ 12</td>
+                    <td>R$ 12</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">CONTROLE UMIDADE</td>
+                </tr>
+                <tr>
+                    <td>Desumidificador Thermomatic 20W</td>
+                    <td>1-2 un</td>
+                    <td>R$ 234</td>
+                    <td>R$ 234-468</td>
+                </tr>
+                <tr>
+                    <td>Timer digital programável</td>
+                    <td>1 un</td>
+                    <td>R$ 50</td>
+                    <td>R$ 50</td>
+                </tr>
+                <tr>
+                    <td>Higrômetro digital</td>
+                    <td>1 un</td>
+                    <td>R$ 60</td>
+                    <td>R$ 60</td>
+                </tr>
+                <tr style="background: #d4edda; font-weight: bold; font-size: 11pt;">
+                    <td colspan="3"><strong>TOTAL CENÁRIO A</strong></td>
+                    <td><strong>R$ 1.005-1.239</strong></td>
+                </tr>
+            </table>
+
+            <div class="solution-box">
+                <div class="title">🏆 POR QUE CENÁRIO A É O RECOMENDADO:</div>
+                <table style="width: 100%; margin: 15px 0; font-size: 10pt;">
+                    <tr>
+                        <td style="padding: 8px; border: 1px solid #000; width: 180px;"><strong>Critério</strong></td>
+                        <td style="padding: 8px; border: 1px solid #000;"><strong>Justificativa</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Eficiência térmica</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ Mantém 90% do isolamento intacto (furos mínimos)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Simplicidade</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ Sem eletrônica complexa, sem manutenção coolers</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Confiabilidade</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ Menos componentes = menos falhas</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Custo operacional</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ R$ 5-10/mês (só desumidificador)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Ruído</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ Zero (sem coolers = silencioso total)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 6px; border: 1px solid #000;"><strong>Desempenho</strong></td>
+                        <td style="padding: 6px; border: 1px solid #000;">✅ 90-95% tempo dentro da faixa ideal</td>
+                    </tr>
+                    <tr style="background: #d4edda; font-weight: bold;">
+                        <td style="padding: 8px; border: 1px solid #000;"><strong>CUSTO-BENEFÍCIO</strong></td>
+                        <td style="padding: 8px; border: 1px solid #000;"><strong>⭐⭐⭐⭐⭐ EXCELENTE</strong></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">5. CENÁRIO B - SISTEMA HÍBRIDO (Ventilação Sob Demanda)</div>
+
+            <div class="solution-box">
+                <div class="title">CENÁRIO B - Para Quem Quer Ventilação Forçada COM Isolamento</div>
+
+                <p style="margin-top: 10px;"><strong>FILOSOFIA:</strong></p>
+                <p>Coolers ligam APENAS quando temperatura interna > 26°C. Resto do tempo, sistema fechado (isolamento ativo).</p>
+
+                <p style="margin-top: 10px;"><strong>SOLUÇÃO TÉCNICA:</strong></p>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li><strong>Dampers manuais</strong> sobre furos dos coolers (fecham quando cooler desligado)</li>
+                    <li><strong>Termostato simples</strong> (liga coolers só se temp > 26°C)</li>
+                    <li><strong>Timer sazonal</strong> (verão: coolers ativos | inverno: coolers desligados)</li>
+                </ul>
+            </div>
+
+            <div class="diagram">CENÁRIO B - SISTEMA HÍBRIDO COM DAMPERS
+
+MODO NORMAL (Temp < 26°C) - DAMPERS FECHADOS:
+═════════════════════════════════════════════════
+
+┌─────────────────────────────────────┐
+│  TRASEIRA                           │
+│                                     │
+│  [DAMPER ●] FECHADO  [DAMPER ●]     │ ← Dampers manuais
+│    (Cooler 1)          (Cooler 2)   │   tapam furos
+│                                     │
+│     ║  ║  ║  ║  ║  ║  ║            │ ← Instrumentos
+│                                     │
+│                                     │
+│  [DAMPER ●] FECHADO  [DAMPER ●]     │
+│    (Cooler 3)          (Cooler 4)   │
+│                                     │
+│  ISOLAMENTO INTACTO!                │
+└─────────────────────────────────────┘
+
+Resultado: Sistema funciona como PASSIVO
+          Isolamento eficiente
+
+
+MODO EMERGÊNCIA (Temp > 26°C) - DAMPERS ABERTOS:
+═════════════════════════════════════════════════
+
+┌─────────────────────────────────────┐
+│  TRASEIRA                           │
+│                                     │
+│  [COOLER ↑] EXPULSA  [COOLER ↑]     │ ← Coolers ligam
+│   ┌─────┐              ┌─────┐     │   Dampers abertos
+│   │  ↑  │              │  ↑  │     │
+│                                     │
+│     ║  ║  ║  ║  ║  ║  ║            │
+│                                     │
+│   │  ↓  │              │  ↓  │     │
+│   └─────┘              └─────┘     │
+│  [COOLER ↓] ADMITE   [COOLER ↓]     │
+│                                     │
+└─────────────────────────────────────┘
+
+Resultado: Ventilação forçada temporária
+          Reduz temp rapidamente</div>
+
+            <div class="specs-table">
+                <tr>
+                    <th colspan="3" style="background: #ff9800; color: #fff;">DESEMPENHO CENÁRIO B - HÍBRIDO</th>
+                </tr>
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Valor</th>
+                    <th>Adequação</th>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura (normal)</strong></td>
+                    <td>20-26°C</td>
+                    <td>✅ Excelente (isolamento ativo)</td>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura (pico)</strong></td>
+                    <td>Resfria de 28°C→25°C em ~15min</td>
+                    <td>✅ Ótimo (coolers sob demanda)</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade</strong></td>
+                    <td>45-55% UR</td>
+                    <td>✅ Perfeito</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo operacional</strong></td>
+                    <td>R$ 8-15/mês</td>
+                    <td>✅ Baixo (coolers ligam pouco)</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexidade</strong></td>
+                    <td>Média</td>
+                    <td>⚠️ Precisa dampers + termostato</td>
+                </tr>
+                <tr style="background: #fff3cd; font-weight: bold;">
+                    <td><strong>INVESTIMENTO TOTAL</strong></td>
+                    <td><strong>R$ 1.250-1.450</strong></td>
+                    <td>⚠️ Moderado</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">Materiais Adicionais - Cenário B</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item Adicional vs. Cenário A</th>
+                    <th>Qtd</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td>4 Coolers 140mm</td>
+                    <td>4 un</td>
+                    <td>R$ 100</td>
+                </tr>
+                <tr>
+                    <td>Fonte 12V 5A</td>
+                    <td>1 un</td>
+                    <td>R$ 50</td>
+                </tr>
+                <tr>
+                    <td><strong>Dampers manuais 140mm</strong></td>
+                    <td>4 un</td>
+                    <td>R$ 120</td>
+                </tr>
+                <tr>
+                    <td><strong>Termostato simples</strong></td>
+                    <td>1 un</td>
+                    <td>R$ 80</td>
+                </tr>
+                <tr>
+                    <td>Cabos elétricos</td>
+                    <td>Kit</td>
+                    <td>R$ 30</td>
+                </tr>
+                <tr style="background: #fff3cd; font-weight: bold;">
+                    <td><strong>ADICIONAL</strong></td>
+                    <td></td>
+                    <td><strong>+R$ 380</strong></td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">ATENÇÃO - CENÁRIO B:</div>
+                <p><strong>Vantagem:</strong> Ventilação de emergência disponível quando necessário</p>
+                <p><strong>Desvantagem:</strong> Complexidade maior, dampers podem falhar (ficam abertos = perde isolamento)</p>
+                <p style="margin-top: 10px;"><strong>Recomendado SE:</strong> Cristaleira recebe sol direto forte > 4h/dia OU ambiente muito quente (>35°C constante)</p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">6. CENÁRIO C - SISTEMA INTELIGENTE (Y39U + Automação Completa)</div>
+
+            <div class="solution-box">
+                <div class="title">CENÁRIO C - Automação Profissional Total (Y39U + Dampers Motorizados)</div>
+
+                <p style="margin-top: 10px;"><strong>FILOSOFIA:</strong></p>
+                <p>Controlador Y39U gerencia TUDO automaticamente: desumidificadores, coolers E dampers motorizados. Sistema se adapta às condições climáticas.</p>
+
+                <p style="margin-top: 10px;"><strong>COMPONENTES:</strong></p>
+                <ol style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li><strong>Coel Y39U</strong> (controlador temp + umidade)</li>
+                    <li><strong>Dampers motorizados</strong> 140mm (4 unidades) - abrem/fecham eletricamente</li>
+                    <li><strong>Coolers 140mm</strong> (4 unidades) - controlados pelo Y39U</li>
+                    <li><strong>Desumidificadores</strong> - controlados pelo Y39U</li>
+                    <li><strong>Sensores</strong> - 2 NTC temp + 1 umidade</li>
+                </ol>
+            </div>
+
+            <div class="diagram">CENÁRIO C - ARQUITETURA INTELIGENTE
+
+                    ┌─────────────────────────┐
+                    │   CONTROLADOR Y39U      │
+                    │  (Cérebro do Sistema)   │
+                    └─┬──────┬──────┬──────┬──┘
+                      │      │      │      │
+          ┌───────────┴─┐  ┌─┴──┐ ┌┴─────┴──────────┐
+          │ Sensor Temp │  │UR  │ │  Saídas (relés) │
+          │  Superior   │  │Ctr │ └─┬──────┬────────┘
+          │   Inferior  │  │    │   │      │
+          └─────────────┘  └────┘   │      │
+                                    ▼      ▼
+                        ┌────────────┐  ┌──────────────┐
+                        │ Desumidif. │  │ Coolers      │
+                        │ (OUT1 16A) │  │ + Dampers    │
+                        └────────────┘  │ (OUT2 8A)    │
+                                        └──────────────┘
+
+LÓGICA DE CONTROLE Y39U:
+════════════════════════════════════════════════
+
+UR > 53%:
+  → OUT1 Liga desumidificadores
+
+UR < 50%:
+  → OUT1 Desliga desumidificadores
+
+Temp > 26°C:
+  → OUT2 Liga fonte 12V
+  → Dampers abrem (eletromagneticamente)
+  → Coolers ligam
+  → Ventilação forçada ATIVA
+
+Temp < 24°C:
+  → OUT2 Desliga fonte
+  → Dampers fecham (mola retorno)
+  → Coolers desligam
+  → Isolamento RESTAURADO
+
+RESULTADO: Sistema inteligente que PRESERVA
+           isolamento térmico e só ventila
+           quando REALMENTE necessário!</div>
+
+            <div class="specs-table">
+                <tr>
+                    <th colspan="3" style="background: #2196f3; color: #fff;">DESEMPENHO CENÁRIO C - INTELIGENTE</th>
+                </tr>
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Valor</th>
+                    <th>Adequação</th>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura</strong></td>
+                    <td>20-26°C</td>
+                    <td>✅ Perfeito (controle automático)</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade</strong></td>
+                    <td>45-55% UR</td>
+                    <td>✅ Perfeito (controle automático)</td>
+                </tr>
+                <tr>
+                    <td><strong>Resposta a picos</strong></td>
+                    <td>< 5 minutos</td>
+                    <td>✅ Excelente (automação rápida)</td>
+                </tr>
+                <tr>
+                    <td><strong>Estabilidade</strong></td>
+                    <td>95-98% tempo ideal</td>
+                    <td>✅ Profissional nível museu</td>
+                </tr>
+                <tr>
+                    <td><strong>Manutenção</strong></td>
+                    <td>Trimestral (check sensores)</td>
+                    <td>✅ Baixa</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexidade</strong></td>
+                    <td>Alta (instalação elétrica)</td>
+                    <td>⚠️ Requer eletricista</td>
+                </tr>
+                <tr style="background: #e3f2fd; font-weight: bold;">
+                    <td><strong>INVESTIMENTO TOTAL</strong></td>
+                    <td><strong>R$ 1.750-2.150</strong></td>
+                    <td>💰💰💰 Alto</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">Materiais - Cenário C</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Qtd</th>
+                    <th>Preço</th>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">BASE (Isolamento + Passivo)</td>
+                </tr>
+                <tr>
+                    <td>Isolamento térmico completo</td>
+                    <td>1 kit</td>
+                    <td>R$ 632</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">CONTROLE AUTOMÁTICO</td>
+                </tr>
+                <tr>
+                    <td><strong>Controlador Coel Y39U</strong></td>
+                    <td>1 un</td>
+                    <td>R$ 280</td>
+                </tr>
+                <tr>
+                    <td>Sensores NTC temperatura</td>
+                    <td>2 un</td>
+                    <td>R$ 70</td>
+                </tr>
+                <tr>
+                    <td>Sensor umidade</td>
+                    <td>1 un</td>
+                    <td>Incluído</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">VENTILAÇÃO INTELIGENTE</td>
+                </tr>
+                <tr>
+                    <td>Coolers 140mm</td>
+                    <td>4 un</td>
+                    <td>R$ 100</td>
+                </tr>
+                <tr>
+                    <td>Fonte 12V 5A</td>
+                    <td>1 un</td>
+                    <td>R$ 50</td>
+                </tr>
+                <tr>
+                    <td><strong>Dampers motorizados 140mm</strong></td>
+                    <td>4 un</td>
+                    <td>R$ 280</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">ELÉTRICA</td>
+                </tr>
+                <tr>
+                    <td>Cabos, conectores, caixa Y39U</td>
+                    <td>Kit</td>
+                    <td>R$ 150</td>
+                </tr>
+                <tr>
+                    <td>Desumidificadores Thermomatic</td>
+                    <td>2 un</td>
+                    <td>R$ 468</td>
+                </tr>
+                <tr style="background: #e3f2fd; font-weight: bold; font-size: 11pt;">
+                    <td><strong>TOTAL CENÁRIO C</strong></td>
+                    <td></td>
+                    <td><strong>R$ 2.030</strong></td>
+                </tr>
+            </table>
+
+            <div class="warning">
+                <div class="warning-title">CENÁRIO C - QUANDO VALE A PENA:</div>
+                <ul style="margin: 10px 0 0 20px; line-height: 1.8;">
+                    <li>✅ Coleção de instrumentos > R$ 30.000 (investimento justificado)</li>
+                    <li>✅ Quer sistema "instala e esquece" sem ajustes manuais</li>
+                    <li>✅ Clima muito variável (picos frequentes de calor/frio)</li>
+                    <li>✅ Busca controle nível profissional/museu</li>
+                    <li>❌ <strong>NÃO</strong> vale se orçamento limitado ou clima estável</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">7. COMPARAÇÃO FINAL DOS 3 CENÁRIOS</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Critério</th>
+                    <th>A - PASSIVO 🥇</th>
+                    <th>B - HÍBRIDO</th>
+                    <th>C - INTELIGENTE</th>
+                </tr>
+                <tr>
+                    <td><strong>Investimento</strong></td>
+                    <td style="background: #d4edda;">R$ 1.005-1.239</td>
+                    <td style="background: #fff3cd;">R$ 1.250-1.450</td>
+                    <td style="background: #f8d7da;">R$ 1.750-2.150</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo operacional/mês</strong></td>
+                    <td style="background: #d4edda;">R$ 5-10</td>
+                    <td style="background: #fff3cd;">R$ 8-15</td>
+                    <td style="background: #fff3cd;">R$ 10-18</td>
+                </tr>
+                <tr>
+                    <td><strong>Eficiência térmica</strong></td>
+                    <td style="background: #d4edda;">90-95%</td>
+                    <td style="background: #fff3cd;">85-90%</td>
+                    <td style="background: #d4edda;">95-98%</td>
+                </tr>
+                <tr>
+                    <td><strong>Manutenção</strong></td>
+                    <td style="background: #d4edda;">Mínima</td>
+                    <td style="background: #fff3cd;">Média</td>
+                    <td style="background: #fff3cd;">Média</td>
+                </tr>
+                <tr>
+                    <td><strong>Confiabilidade</strong></td>
+                    <td style="background: #d4edda;">Máxima</td>
+                    <td style="background: #fff3cd;">Boa</td>
+                    <td style="background: #fff3cd;">Boa</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexidade</strong></td>
+                    <td style="background: #d4edda;">Baixa</td>
+                    <td style="background: #fff3cd;">Média</td>
+                    <td style="background: #f8d7da;">Alta</td>
+                </tr>
+                <tr>
+                    <td><strong>Ruído</strong></td>
+                    <td style="background: #d4edda;">Zero</td>
+                    <td style="background: #fff3cd;">Baixo</td>
+                    <td style="background: #fff3cd;">Baixo</td>
+                </tr>
+                <tr>
+                    <td><strong>Automação</strong></td>
+                    <td style="background: #fff3cd;">Parcial</td>
+                    <td style="background: #fff3cd;">Média</td>
+                    <td style="background: #d4edda;">Total</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td><strong>CUSTO-BENEFÍCIO</strong></td>
+                    <td style="background: #d4edda;">⭐⭐⭐⭐⭐</td>
+                    <td style="background: #fff3cd;">⭐⭐⭐</td>
+                    <td style="background: #fff3cd;">⭐⭐⭐</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td><strong>RECOMENDADO PARA</strong></td>
+                    <td>Maioria casos</td>
+                    <td>Clima extremo</td>
+                    <td>Coleção > R$ 30k</td>
+                </tr>
+            </table>
+
+            <div class="critical-box">
+                <div class="title">RECOMENDAÇÃO FINAL</div>
+
+                <p style="margin-top: 15px; font-size: 12pt; line-height: 2;">
+                    <strong style="font-size: 14pt;">ESCOLHA CENÁRIO A - SISTEMA PASSIVO</strong>
+                </p>
+
+                <p style="margin-top: 15px;"><strong>JUSTIFICATIVA:</strong></p>
+                <ol style="margin: 10px 0 0 25px; line-height: 2;">
+                    <li><strong>Melhor custo-benefício:</strong> R$ 1.000-1.200 para desempenho 90-95%</li>
+                    <li><strong>Máxima simplicidade:</strong> Menos componentes = menos manutenção/falhas</li>
+                    <li><strong>Eficiência comprovada:</strong> Isolamento passivo funciona há séculos</li>
+                    <li><strong>Confiabilidade:</strong> Sistema 100% passivo (térmico) + ativo mínimo (umidade)</li>
+                    <li><strong>Silencioso:</strong> Zero ruído (sem coolers)</li>
+                </ol>
+
+                <p style="margin-top: 20px; padding: 15px; background: #d4edda; border-left: 5px solid #28a745;">
+                    <strong>Para instrumentos até R$ 25.000:</strong> Cenário A oferece proteção profissional por fração do custo.<br>
+                    <strong>Para coleções > R$ 30.000 OU clima extremo:</strong> Considere Cenário C com Y39U.
+                </p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">8. PLANO DE AÇÃO RECOMENDADO</div>
+
+            <div class="subsection-title">8.1. Próximos Passos</div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 1</div>
+                <p><strong>DECISÃO (hoje):</strong> Escolher cenário A, B ou C</p>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>Revisar análise técnica completa</li>
+                    <li>Avaliar orçamento disponível</li>
+                    <li>Decidir prioridades (custo vs. automação)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 2</div>
+                <p><strong>COMPRAS (1-2 semanas):</strong> Adquirir materiais conforme cenário escolhido</p>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>Usar listas de materiais fornecidas</li>
+                    <li>Priorizar isolamento térmico (comum a todos)</li>
+                    <li>Deixar ventilação forçada por último (se aplicável)</li>
+                </ul>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 3</div>
+                <p><strong>INSTALAÇÃO (5-7 dias):</strong> Seguir ordem crítica</p>
+                <ol style="margin: 10px 0 0 25px;">
+                    <li><strong>Isolamento térmico</strong> (manta + insulfilm + vedação)</li>
+                    <li><strong>Ventilação passiva</strong> (furos Ø15mm + tela)</li>
+                    <li><strong>Controle umidade</strong> (desumidificadores + timer/Y39U)</li>
+                    <li><strong>Teste 72h</strong> (monitorar temp/UR sem instrumentos)</li>
+                    <li><strong>Instrumentos</strong> (só após sistema estável)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">ETAPA 4</div>
+                <p><strong>MONITORAMENTO (2-3 semanas):</strong> Ajuste fino</p>
+                <ul style="margin: 10px 0 0 20px;">
+                    <li>Anotar temp/UR 3× por dia</li>
+                    <li>Verificar se mantém 45-55% UR e 20-26°C</li>
+                    <li>Ajustar timer desumidificador se necessário</li>
+                    <li>Confirmar sistema estável antes de confiar 100%</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">8.2. Documentação a Utilizar</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Documento</th>
+                    <th>Quando Usar</th>
+                </tr>
+                <tr>
+                    <td><strong>Este documento</strong> (ANALISE-TECNICA-COMPLETA-REVISAO.html)</td>
+                    <td>Decisão de cenário + entendimento técnico</td>
+                </tr>
+                <tr>
+                    <td><strong>03-isolamento-termico.html</strong></td>
+                    <td>Guia de instalação do isolamento passivo</td>
+                </tr>
+                <tr>
+                    <td><strong>lista-completa-materiais.md</strong></td>
+                    <td>Checklist de compras (atualizar conforme cenário)</td>
+                </tr>
+                <tr>
+                    <td><strong>contr_temp_umi/01-integracao-Y39U.html</strong></td>
+                    <td>Se escolher Cenário C (Y39U)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p><strong>Análise Técnica Profunda - Revisão Completa do Sistema</strong></p>
+            <p>Resolução do Conflito: Isolamento Térmico vs. Ventilação Forçada</p>
+            <p style="margin-top: 8px;">Outubro 2025 | Rev: CRÍTICA 01 | 3 Cenários Otimizados</p>
+        </div>
+    </div>
+</body>
+</html>

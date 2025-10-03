@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Fornecedores - Materiais do Projeto</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+            a { color: #000; text-decoration: underline; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .section {
+            margin: 20px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .item-box {
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 12px 0;
+            background: #f9f9f9;
+        }
+
+        .item-title {
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 8px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table td {
+            padding: 4px 8px;
+            vertical-align: top;
+        }
+
+        .specs-table td:first-child {
+            font-weight: bold;
+            width: 140px;
+        }
+
+        .link-box {
+            background: #fff;
+            border: 1px dashed #000;
+            padding: 8px;
+            margin: 8px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 9pt;
+            word-break: break-all;
+        }
+
+        .note {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 10pt;
+            background: #f5f5f5;
+        }
+
+        .note .note-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .price-info {
+            font-style: italic;
+            margin-top: 5px;
+            font-size: 10pt;
+        }
+
+        .qr-placeholder {
+            width: 80px;
+            height: 80px;
+            border: 1px solid #000;
+            display: inline-block;
+            text-align: center;
+            line-height: 80px;
+            font-size: 8pt;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lista de Fornecedores</h1>
+            <div class="subtitle">Materiais para Sistema de Isolamento e Suportes</div>
+            <div class="subtitle">Links Mercado Livre - Produtos Verificados</div>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                Data: _________________ | Projeto: Sistema 14 Instrumentos
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="note-title">INSTRUÇÕES DE COMPRA</div>
+            <p>Esta lista contém os links diretos dos materiais selecionados no Mercado Livre. Todos os produtos foram verificados quanto às especificações técnicas necessárias para o projeto.</p>
+            <p style="margin-top: 8px;"><strong>Recomendação:</strong> Adquirir todos os materiais antes de iniciar a instalação para evitar interrupções no cronograma.</p>
+        </div>
+
+        <!-- SEÇÃO 1: ISOLAMENTO TÉRMICO -->
+        <div class="section">
+            <div class="section-title">1. MATERIAIS DE ISOLAMENTO TÉRMICO</div>
+
+            <div class="item-box">
+                <div class="item-title">1.1. Insulfilm Nanocerâmico G-70 (Transparente)</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Especificação:</td>
+                        <td>Insulfilm térmico transparente para sacadas de vidro</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensões:</td>
+                        <td>60cm (largura) × 3m (comprimento) por rolo</td>
+                    </tr>
+                    <tr>
+                        <td>Tecnologia:</td>
+                        <td>Nanocerâmica com mais de 300 camadas de micropartículas</td>
+                    </tr>
+                    <tr>
+                        <td>Bloqueio IR:</td>
+                        <td>93-96% dos raios infravermelhos (calor)</td>
+                    </tr>
+                    <tr>
+                        <td>Bloqueio UV:</td>
+                        <td>99% dos raios UVA/UVB</td>
+                    </tr>
+                    <tr>
+                        <td>Transparência:</td>
+                        <td>100% de visibilidade (levemente azulado em certos ângulos)</td>
+                    </tr>
+                    <tr>
+                        <td>Garantia:</td>
+                        <td>15 anos de fábrica</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>2 rolos</strong> (cobertura completa portas frontais 2,75m²)</td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://produto.mercadolivre.com.br/MLB-4172971356-insulfilm-tremico-transparente-p-sacadas-de-vidro-60cmx3m-_JM" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Insulfilm Térmico Transparente para Sacadas de Vidro 60cm×3m</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço unitário:</strong> R$ 162,98 por rolo<br>
+                    <strong>Total (2 rolos):</strong> R$ 325,96<br>
+                    * Oferece serviço de recorte personalizado (consultar vendedor via chat)
+                </div>
+            </div>
+
+            <div class="item-box">
+                <div class="item-title">1.2. Manta Térmica Dupla Face Tetto</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Especificação:</td>
+                        <td>Manta térmica de subcobertura dupla face com fita de emenda</td>
+                    </tr>
+                    <tr>
+                        <td>Marca:</td>
+                        <td>Tetto LAR E CONSTRUÇÃO</td>
+                    </tr>
+                    <tr>
+                        <td>Estrutura:</td>
+                        <td>TNT com filme metalizado em ambas as faces + proteção UV</td>
+                    </tr>
+                    <tr>
+                        <td>Largura:</td>
+                        <td>1 metro (rolo)</td>
+                    </tr>
+                    <tr>
+                        <td>Metragem:</td>
+                        <td>50m² por rolo</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>1 rolo</strong> (área necessária ~10m², sobra para futuras manutenções)</td>
+                    </tr>
+                    <tr>
+                        <td>Inclui:</td>
+                        <td>1 fita de emenda Fita Cristal Metalizada</td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://www.mercadolivre.com.br/manta-termica-dupla-face-50m2-forro---fita-p-emenda/up/MLBU3406002868" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Manta Térmica Dupla Face 50m² Tetto + Fita de Emenda</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço unitário:</strong> R$ 155,69 por rolo<br>
+                    <strong>Total (1 rolo):</strong> R$ 155,69<br>
+                    * Produto novo, direto do fabricante
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 2: VEDAÇÃO -->
+        <div class="section">
+            <div class="section-title">2. MATERIAIS DE VEDAÇÃO</div>
+
+            <div class="item-box">
+                <div class="item-title">2.1. Fita de Vedação EVA Simplefix</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Especificação:</td>
+                        <td>Fita vedação de EVA auto colante cor preto</td>
+                    </tr>
+                    <tr>
+                        <td>Marca:</td>
+                        <td>Simplefix</td>
+                    </tr>
+                    <tr>
+                        <td>Espessura:</td>
+                        <td>6mm</td>
+                    </tr>
+                    <tr>
+                        <td>Largura:</td>
+                        <td>25mm</td>
+                    </tr>
+                    <tr>
+                        <td>Material:</td>
+                        <td>EVA de borracha de alta qualidade</td>
+                    </tr>
+                    <tr>
+                        <td>Aplicação:</td>
+                        <td>Vedação de janelas, portas e junções internas</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>25 metros</strong> (vedação completa de todas junções)</td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://www.mercadolivre.com.br/fita-vedaco-de-eva-auto-colante-cor-preto-simplefix/p/MLB24649716" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Fita de Vedação EVA Auto Colante Preta 6mm×25mm - Simplefix</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço unitário:</strong> R$ 31,70<br>
+                    * Verificar metragem por unidade no anúncio<br>
+                    * Adquirir rolos suficientes para totalizar 25m (calcular quantidade necessária)
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 3: PROTEÇÃO INSTRUMENTOS -->
+        <div class="section page-break">
+            <div class="section-title">3. MATERIAIS DE PROTEÇÃO DOS INSTRUMENTOS</div>
+
+            <div class="item-box">
+                <div class="item-title">3.1. Placa EVA Adesivada 5mm</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Especificação:</td>
+                        <td>Folha EVA autocolante 5mm de espessura</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensões:</td>
+                        <td>100cm (comprimento) × 50cm (largura) por placa</td>
+                    </tr>
+                    <tr>
+                        <td>Espessura:</td>
+                        <td>5mm</td>
+                    </tr>
+                    <tr>
+                        <td>Cor:</td>
+                        <td>Verificar disponibilidade (preto, marrom ou similar)</td>
+                    </tr>
+                    <tr>
+                        <td>Aplicação:</td>
+                        <td>Bases de apoio inferior (7 unidades) e apoios anti-balanço (7 unidades)</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>7 placas</strong></td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://www.mercadolivre.com.br/placa-eva-adesivado-5mm-folha-eva-autocolante-100-cm-x-50-cm/up/MLBU3324133362" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Placa EVA Adesivada 5mm - Folha Autocolante 100cm×50cm</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço unitário:</strong> R$ 36,72 por placa<br>
+                    <strong>Total (7 placas):</strong> R$ 257,04<br>
+                    * Área total disponível: 3,5m² (suficiente com margem de segurança)
+                </div>
+            </div>
+
+            <div class="item-box">
+                <div class="item-title">3.2. Cortiça Emborrachada Autoadesiva</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Especificação:</td>
+                        <td>Cortiça emborrachada preta auto adesiva</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensões:</td>
+                        <td>12cm × 17cm × 5mm (por placa)</td>
+                    </tr>
+                    <tr>
+                        <td>Espessura:</td>
+                        <td>5mm</td>
+                    </tr>
+                    <tr>
+                        <td>Cor:</td>
+                        <td>Preta</td>
+                    </tr>
+                    <tr>
+                        <td>Material:</td>
+                        <td>Cortiça emborrachada de alta densidade</td>
+                    </tr>
+                    <tr>
+                        <td>Aplicação:</td>
+                        <td>Apoios de braço reguláveis (7 unidades) e reforços opcionais</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>1 pacote com 20 placas</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Área total:</td>
+                        <td>0,408m² (suficiente para aplicação + sobras para reparos)</td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://www.mercadolivre.com.br/cortica-emborrachada-preta-auto-adesiva-12x17x5mm-20-placas/up/MLBU1720411024" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Cortiça Emborrachada Preta Auto Adesiva 12×17×5mm - Pacote com 20 Placas</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço:</strong> R$ 143,61 (pacote com 20 placas)<br>
+                    <strong>Total:</strong> R$ 143,61<br>
+                    * Uso: 14 placas para apoios (7×2) + 6 placas reserva
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 4: CONTROLE ATIVO -->
+        <div class="section">
+            <div class="section-title">4. SISTEMA DE CONTROLE ATIVO DE UMIDADE</div>
+
+            <div class="item-box">
+                <div class="item-title">4.1. Desumidificador Thermomatic Desidrat Cristal</div>
+                
+                <table class="specs-table">
+                    <tr>
+                        <td>Modelo:</td>
+                        <td>Desidrat Cristal CRISTAL_BIV</td>
+                    </tr>
+                    <tr>
+                        <td>Marca:</td>
+                        <td>Thermomatic</td>
+                    </tr>
+                    <tr>
+                        <td>Tipo:</td>
+                        <td>Desumidificador elétrico com sílica regenerável</td>
+                    </tr>
+                    <tr>
+                        <td>Potência:</td>
+                        <td>20W</td>
+                    </tr>
+                    <tr>
+                        <td>Voltagem:</td>
+                        <td>Bivolt (110/220V automático)</td>
+                    </tr>
+                    <tr>
+                        <td>Alcance:</td>
+                        <td>1 metro cúbico</td>
+                    </tr>
+                    <tr>
+                        <td>Dimensões:</td>
+                        <td>165mm (L) × 100mm (P) × 45mm (A)</td>
+                    </tr>
+                    <tr>
+                        <td>Peso:</td>
+                        <td>0,4 kg (sem embalagem)</td>
+                    </tr>
+                    <tr>
+                        <td>Filtro:</td>
+                        <td>Sílica gel regenerável (indicador de saturação)</td>
+                    </tr>
+                    <tr>
+                        <td>Certificação:</td>
+                        <td>INMETRO</td>
+                    </tr>
+                    <tr>
+                        <td>Garantia:</td>
+                        <td>12 meses</td>
+                    </tr>
+                    <tr>
+                        <td>Vida útil:</td>
+                        <td>Equivalente a 120 potes tradicionais de sílica</td>
+                    </tr>
+                    <tr>
+                        <td>Quantidade:</td>
+                        <td><strong>1 unidade</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Consumo mensal:</td>
+                        <td>3,6-14,4 kWh (~R$ 3-12 dependendo do modo)</td>
+                    </tr>
+                </table>
+
+                <div class="link-box">
+                    <a href="https://www.mercadolivre.com.br/desumidificador-de-ar-eletrico-desidrat-cristal--bivolt/up/MLBU749154343" target="_blank" style="color: #000; text-decoration: none;">
+                        <strong>→ Desumidificador de Ar Elétrico Thermomatic Desidrat Cristal - Bivolt</strong>
+                    </a>
+                </div>
+
+                <div class="price-info">
+                    <strong>Preço:</strong> R$ 234,08<br>
+                    <strong>Total:</strong> R$ 234,08<br>
+                    * Produto ideal para espaços pequenos e fechados<br>
+                    * Sílica regenerável: não precisa trocar, apenas aquecer em forno<br>
+                    * Consumo muito baixo comparado a desumidificadores convencionais
+                </div>
+            </div>
+        </div>
+
+        <!-- SEÇÃO 5: MATERIAIS COMPLEMENTARES -->
+        <div class="section">
+            <div class="section-title">5. MATERIAIS COMPLEMENTARES (NÃO INCLUSOS NOS LINKS)</div>
+
+            <div class="note">
+                <div class="note-title">ATENÇÃO - ADQUIRIR SEPARADAMENTE:</div>
+                <p>Os seguintes materiais não possuem links específicos e devem ser adquiridos em lojas de materiais de construção, ferragens ou lojas especializadas:</p>
+            </div>
+
+            <div class="item-box">
+                <div class="item-title">5.1. Materiais de Fixação e Instalação</div>
+                <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+                    <li>Fita dupla face 3M (espuma acrílica) - 10 metros</li>
+                    <li>Silicone neutro (bisnaga 290ml) - 1 unidade</li>
+                    <li>Ilhós de borracha Ø 8-10mm - 2 unidades</li>
+                    <li>Feltro 3mm autoadesivo - 3m² (para separadores e ganchos)</li>
+                </ul>
+            </div>
+
+            <div class="item-box">
+                <div class="item-title">5.2. Sistema de Monitoramento e Controle</div>
+                <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+                    <li>Timer digital programável 110/220V - 1 unidade</li>
+                    <li>Higrômetro digital com alarme (temperatura + umidade) - 1 unidade</li>
+                    <li>Sílica gel indicadora regenerável - 500g</li>
+                </ul>
+            </div>
+
+            <div class="item-box">
+                <div class="item-title">5.3. Ferramentas e Consumíveis</div>
+                <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+                    <li>Estilete profissional 18mm</li>
+                    <li>Régua metálica 60cm</li>
+                    <li>Espátula plástica para insulfilm (10-15cm)</li>
+                    <li>Pulverizador 500ml</li>
+                    <li>Álcool isopropílico 500ml</li>
+                    <li>Detergente neutro 50ml</li>
+                    <li>Broca 8mm para madeira/metal</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- RESUMO DE COMPRAS -->
+        <div class="section page-break">
+            <div class="section-title">6. RESUMO DE COMPRAS - CHECKLIST</div>
+
+            <table style="width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt;">
+                <thead style="background: #f0f0f0;">
+                    <tr>
+                        <th style="border: 1px solid #000; padding: 8px; text-align: left;">Item</th>
+                        <th style="border: 1px solid #000; padding: 8px; text-align: center; width: 80px;">Qtd</th>
+                        <th style="border: 1px solid #000; padding: 8px; text-align: center; width: 60px;">✓</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Insulfilm Nanocerâmico G-70 (60cm×3m)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">2 rolos</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Manta Térmica Dupla Face Tetto (50m²)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 rolo</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Fita Vedação EVA 6mm Simplefix</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">25m</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Placa EVA 5mm Autoadesiva (100×50cm)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">7 placas</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Cortiça Emborrachada (12×17×5mm)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">20 placas</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Desumidificador Thermomatic Desidrat Cristal</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 un</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr style="background: #f5f5f5;">
+                        <td colspan="3" style="border: 1px solid #000; padding: 6px; font-weight: bold;">MATERIAIS COMPLEMENTARES (adquirir separadamente):</td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Fita dupla face 3M espuma acrílica</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">10m</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Silicone neutro (bisnaga)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 un</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Feltro 3mm autoadesivo</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">3m²</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Timer digital programável</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 un</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Higrômetro digital com alarme</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 un</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Sílica gel indicadora</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">500g</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid #000; padding: 6px;">Kit ferramentas (estilete, régua, espátula, etc.)</td>
+                        <td style="border: 1px solid #000; padding: 6px; text-align: center;">1 kit</td>
+                        <td style="border: 1px solid #000; padding: 6px;"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ORIENTAÇÕES FINAIS -->
+        <div class="section">
+            <div class="section-title">7. ORIENTAÇÕES DE COMPRA</div>
+
+            <div class="note">
+                <div class="note-title">ANTES DE COMPRAR:</div>
+                <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+                    <li>Verificar disponibilidade de todos os produtos nos links fornecidos</li>
+                    <li>Confirmar especificações técnicas (dimensões, espessura, voltagem)</li>
+                    <li>Comparar preços com outros vendedores se necessário</li>
+                    <li>Verificar reputação do vendedor no Mercado Livre</li>
+                    <li>Confirmar prazo de entrega para planejar cronograma de instalação</li>
+                    <li>Para insulfilm: consultar vendedor sobre recorte personalizado se desejar</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <div class="note-title">DICAS DE ECONOMIA:</div>
+                <ul style="margin-left: 20px; margin-top: 8px; line-height: 1.8;">
+                    <li>Comprar todos materiais do mesmo vendedor quando possível (economia no frete)</li>
+                    <li>Verificar cupons de desconto do Mercado Livre</li>
+                    <li>Considerar frete grátis para compras acima de determinado valor</li>
+                    <li>Timer e higrômetro: comparar preços em lojas físicas de eletrônicos</li>
+                    <li>Ferramentas: verificar se já possui alguma antes de comprar</li>
+                </ul>
+            </div>
+
+            <div class="note" style="background: #fff; border: 2px solid #000;">
+                <div class="note-title">RESUMO FINANCEIRO ATUALIZADO:</div>
+                <table style="width: 100%; margin-top: 10px; font-size: 10pt;">
+                    <tr style="background: #f5f5f5; font-weight: bold;">
+                        <td colspan="2" style="padding: 6px; border-bottom: 1px solid #000;">MATERIAIS MERCADO LIVRE (Preços Verificados):</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Insulfilm G-70 (2 rolos × R$ 162,98)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 325,96</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Manta Térmica Tetto (1 rolo × R$ 155,69)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 155,69</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Fita Vedação EVA (verificar metragem/unidade)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 95,10-158,50*</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Placa EVA 5mm (7 placas × R$ 36,72)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 257,04</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Cortiça Emborrachada (1 pacote × R$ 143,61)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 143,61</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Desumidificador Thermomatic (1 un × R$ 234,08)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 234,08</td>
+                    </tr>
+                    <tr style="border-top: 1px solid #000; font-weight: bold;">
+                        <td style="padding: 6px;"><strong>Subtotal Mercado Livre:</strong></td>
+                        <td style="padding: 6px; text-align: right;"><strong>R$ 1.211,48-1.274,88</strong></td>
+                    </tr>
+                    <tr style="background: #f5f5f5;">
+                        <td colspan="2" style="padding: 6px; border-top: 1px solid #000; border-bottom: 1px solid #000;"><strong>MATERIAIS COMPLEMENTARES:</strong></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Fita dupla face, silicone, feltro, ilhós</td>
+                        <td style="padding: 4px; text-align: right;">R$ 150-200</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Timer digital, higrômetro, sílica gel</td>
+                        <td style="padding: 4px; text-align: right;">R$ 100-150</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 4px;">Ferramentas (se necessário)</td>
+                        <td style="padding: 4px; text-align: right;">R$ 80-120</td>
+                    </tr>
+                    <tr style="border-top: 1px solid #000; font-weight: bold;">
+                        <td style="padding: 6px;"><strong>Subtotal Complementares:</strong></td>
+                        <td style="padding: 6px; text-align: right;"><strong>R$ 330-470</strong></td>
+                    </tr>
+                    <tr style="border-top: 2px solid #000; font-weight: bold; font-size: 12pt; background: #f0f0f0;">
+                        <td style="padding: 10px;"><strong>INVESTIMENTO TOTAL:</strong></td>
+                        <td style="padding: 10px; text-align: right;"><strong>R$ 1.541,48-1.744,88</strong></td>
+                    </tr>
+                </table>
+                <p style="margin-top: 10px; font-style: italic; font-size: 9pt;">
+                    * Fita EVA: preço depende da metragem por unidade (R$ 31,70/un). Verificar se vem em rolos de 5m, 10m ou outra metragem. Para 25m necessários: 3 rolos (se 10m/un) = R$ 95,10 ou 5 rolos (se 5m/un) = R$ 158,50<br>
+                    <strong>Preços atualizados em:</strong> Setembro/2025<br>
+                    <strong>Proteção para:</strong> Instrumentos avaliados em R$ 20.000+<br>
+                    <strong>Custo-benefício:</strong> 7,7-8,7% do valor protegido
+                </p>
+            </div>
+        </div>
+
+        <!-- RODAPÉ -->
+        <div style="margin-top: 40px; padding-top: 15px; border-top: 2px solid #000;">
+            <p style="font-size: 10pt;"><strong>Observações de compra:</strong></p>
+            <p style="margin-top: 10px; line-height: 1.6;">_________________________________________________________________</p>
+            <p style="margin-top: 10px; line-height: 1.6;">_________________________________________________________________</p>
+            <p style="margin-top: 10px; line-height: 1.6;">_________________________________________________________________</p>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 9pt; text-align: center;">
+            <p>Lista de Fornecedores - Projeto Sistema 14 Instrumentos</p>
+            <p>Documento complementar aos Projetos Técnicos de Marcenaria e Isolamento</p>
+            <p>Rev: 01 | ___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>

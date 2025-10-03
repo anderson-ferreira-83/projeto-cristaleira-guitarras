@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integração Coel Y39U - Sistema de Controle Automático</title>
+    <link rel="stylesheet" href="../assets/css/projeto.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>INTEGRAÇÃO CONTROLADOR COEL Y39U</h1>
+            <div class="subtitle">Sistema de Controle Automático de Temperatura e Umidade</div>
+            <div class="info">
+                Upgrade Profissional | Automação Total | Rev: 01<br>
+                Data: ___/___/_____ | Cristaleira 158×179×44cm
+            </div>
+        </div>
+
+        <div class="critical-box">
+            <div class="title">SOBRE ESTA ATUALIZAÇÃO</div>
+            <p><strong>Objetivo:</strong> Transformar o sistema básico (timer manual + higrômetro) em controle automático profissional com o Coel Y39U.</p>
+
+            <p style="margin-top: 10px;"><strong>O que muda:</strong></p>
+            <ul style="margin: 8px 0 0 25px; line-height: 1.8;">
+                <li><strong>REMOVE:</strong> Timer digital manual + Higrômetro básico</li>
+                <li><strong>ADICIONA:</strong> Controlador Y39U (temperatura + umidade integrado)</li>
+                <li><strong>RESULTADO:</strong> Sistema 100% automático que liga/desliga dispositivos conforme necessário</li>
+            </ul>
+
+            <p style="margin-top: 15px; padding: 10px; background: #d4edda; border-left: 4px solid #28a745;">
+                <strong>Investimento adicional:</strong> R$ 100-150 (substituindo timer + higrômetro)<br>
+                <strong>Ganho:</strong> Controle profissional automático com precisão ±0,5°C e ±2% UR
+            </p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. ESPECIFICAÇÕES TÉCNICAS - COEL Y39U</div>
+
+            <div class="subsection-title">1.1. Dados Gerais do Controlador</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th style="width: 180px;">Característica</th>
+                    <th>Especificação</th>
+                </tr>
+                <tr>
+                    <td><strong>Modelo</strong></td>
+                    <td>Coel Y39U HRRR (Temperatura + Umidade + Refrigeração)</td>
+                </tr>
+                <tr>
+                    <td><strong>Alimentação</strong></td>
+                    <td>100 a 240 Vca (bivolt automático) - 50/60 Hz</td>
+                </tr>
+                <tr>
+                    <td><strong>Consumo</strong></td>
+                    <td>≤ 6 VA</td>
+                </tr>
+                <tr>
+                    <td><strong>Display</strong></td>
+                    <td>3 dígitos LED azul, 15,5mm altura</td>
+                </tr>
+                <tr>
+                    <td><strong>Dimensões</strong></td>
+                    <td>71mm (largura) × 29mm (altura) × 61mm (profundidade)</td>
+                </tr>
+                <tr>
+                    <td><strong>Recorte painel</strong></td>
+                    <td>67,5mm × 25,5mm</td>
+                </tr>
+                <tr>
+                    <td><strong>Proteção frontal</strong></td>
+                    <td>IP67 (com guarnição instalada)</td>
+                </tr>
+                <tr>
+                    <td><strong>Temperatura operação</strong></td>
+                    <td>0 a 55°C</td>
+                </tr>
+                <tr>
+                    <td><strong>Umidade operação</strong></td>
+                    <td>20 a 85% UR (sem condensação)</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.2. Entradas (Sensores)</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Entrada</th>
+                    <th>Tipo</th>
+                    <th>Faixa</th>
+                    <th>Precisão</th>
+                </tr>
+                <tr>
+                    <td><strong>Sensor 1 (Temperatura)</strong></td>
+                    <td>NTC 10kΩ a 25°C</td>
+                    <td>-50 a 109°C</td>
+                    <td>±0,5°C</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensor 2 (Umidade)</strong></td>
+                    <td>Sensor capacitivo</td>
+                    <td>0 a 100% UR</td>
+                    <td>±2% UR</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensor 3 (Opcional)</strong></td>
+                    <td>NTC 10kΩ ou entrada digital</td>
+                    <td>-50 a 109°C</td>
+                    <td>±0,5°C</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.3. Saídas (Relés)</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Saída</th>
+                    <th>Tipo</th>
+                    <th>Capacidade</th>
+                    <th>Uso no Projeto</th>
+                </tr>
+                <tr>
+                    <td><strong>Saída 1 (OUT1)</strong></td>
+                    <td>Relé SPST-NO</td>
+                    <td>16A - AC1 250Vca</td>
+                    <td>Desumidificadores (1-2 unidades)</td>
+                </tr>
+                <tr>
+                    <td><strong>Saída 2 (OUT2)</strong></td>
+                    <td>Relé SPDT</td>
+                    <td>8A - AC1 250Vca</td>
+                    <td>Fonte 12V dos Coolers</td>
+                </tr>
+                <tr>
+                    <td><strong>Saída 3 (OUT3)</strong></td>
+                    <td>Relé SPDT-NO</td>
+                    <td>5A - AC1 250Vca</td>
+                    <td>Reserva (aquecedor futuro)</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">NOTA TÉCNICA - CAPACIDADE DOS RELÉS:</div>
+                <p><strong>Saída 1 (16A):</strong> Suficiente para 2 desumidificadores (20W cada = 40W total = 0,36A)</p>
+                <p><strong>Saída 2 (8A):</strong> Suficiente para fonte 12V 5A dos coolers (60W = 0,54A)</p>
+                <p><strong>Margem de segurança:</strong> Todas as cargas estão muito abaixo da capacidade nominal</p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">2. ESQUEMA DE LIGAÇÃO ELÉTRICA</div>
+
+            <div class="subsection-title">2.1. Diagrama Completo do Sistema</div>
+
+            <div class="diagram">ESQUEMA ELÉTRICO COMPLETO - SISTEMA AUTOMÁTICO COM Y39U
+
+═══════════════════════════════════════════════════════════════════════
+ALIMENTAÇÃO PRINCIPAL
+═══════════════════════════════════════════════════════════════════════
+
+                        110/220V (REDE)
+                              │
+                    ┌─────────┴─────────┐
+                    │                   │
+                    │    DISJUNTOR      │
+                    │      10A          │
+                    │                   │
+                    └─────────┬─────────┘
+                              │
+                    ┌─────────┴─────────┐
+                    │                   │
+           ┌────────┴────────┐  ┌──────┴──────┐
+           │                 │  │             │
+     ┌─────▼─────┐     ┌────▼──▼────┐  ┌─────▼─────┐
+     │  TOMADA   │     │   Y39U      │  │  TOMADA   │
+     │ DESUMID.  │     │ CONTROLADOR │  │  COOLERS  │
+     └─────┬─────┘     └─────┬───────┘  └─────┬─────┘
+           │                 │                 │
+           │           ┌─────┴─────┐           │
+           │           │           │           │
+           ▼           ▼           ▼           ▼
+    [DESUMID 1]    SENSORES    SAÍDAS    [FONTE 12V]
+    [DESUMID 2]                              │
+                                             ▼
+                                        [4 COOLERS]
+
+═══════════════════════════════════════════════════════════════════════
+CONEXÕES DO Y39U
+═══════════════════════════════════════════════════════════════════════
+
+ALIMENTAÇÃO:
+  Terminais: L (fase) / N (neutro)
+  Entrada: 110V ou 220V (automático)
+
+SENSORES:
+  Terminal P1 ──→ NTC Temperatura (superior cristaleira)
+  Terminal P2 ──→ Sensor Umidade (centro cristaleira)
+  Terminal P3 ──→ NTC Temperatura (inferior - opcional)
+
+SAÍDAS (RELÉS):
+  OUT1 (16A) ──→ Desumidificador 1 + 2 (série/paralelo)
+               ├─ Comum: C1
+               └─ Normalmente Aberto: NO1
+
+  OUT2 (8A)  ──→ Fonte 12V dos Coolers
+               ├─ Comum: C2
+               ├─ Normalmente Aberto: NO2
+               └─ Normalmente Fechado: NC2
+
+  OUT3 (5A)  ──→ Reserva (aquecedor futuro)
+               ├─ Comum: C3
+               ├─ Normalmente Aberto: NO3
+               └─ Normalmente Fechado: NC3
+
+═══════════════════════════════════════════════════════════════════════
+LIGAÇÃO DETALHADA - SAÍDA 1 (DESUMIDIFICADORES)
+═══════════════════════════════════════════════════════════════════════
+
+                        110/220V
+                           │
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+              │      Y39U - OUT1        │
+              │      C1 ─────┬────── NO1│
+              │              │          │
+              └──────────────┼──────────┘
+                             │
+                   ┌─────────┴─────────┐
+                   │                   │
+            ┌──────▼──────┐     ┌──────▼──────┐
+            │ DESUMID. 1  │     │ DESUMID. 2  │
+            │   20W       │     │   20W       │
+            │  Thermomatic│     │  Thermomatic│
+            └──────┬──────┘     └──────┬──────┘
+                   │                   │
+                   └─────────┬─────────┘
+                             │
+                        NEUTRO (N)
+
+Lógica: Quando Y39U detecta UR > 55%, fecha relé OUT1 e liga desumidificadores
+
+═══════════════════════════════════════════════════════════════════════
+LIGAÇÃO DETALHADA - SAÍDA 2 (COOLERS)
+═══════════════════════════════════════════════════════════════════════
+
+                        110/220V
+                           │
+                           │
+              ┌────────────┴────────────┐
+              │                         │
+              │      Y39U - OUT2        │
+              │      C2 ─────┬────── NO2│
+              │              │          │
+              └──────────────┼──────────┘
+                             │
+                      ┌──────▼──────┐
+                      │  FONTE 12V  │
+                      │    5A       │
+                      │  (60W)      │
+                      └──────┬──────┘
+                             │ 12V DC
+                   ┌─────────┴─────────┐
+                   │                   │
+          ┌────────▼────────┐  ┌───────▼───────┐
+          │ COOLER 1 + 2    │  │ COOLER 3 + 4  │
+          │ (superiores)    │  │ (inferiores)  │
+          │ Paralelo 1.3W×2 │  │ Paralelo 1.3W×2│
+          └─────────────────┘  └───────────────┘
+
+Lógica: Quando Y39U detecta Temp > 26°C, fecha relé OUT2 e liga coolers
+
+═══════════════════════════════════════════════════════════════════════
+POSICIONAMENTO DOS SENSORES NA CRISTALEIRA
+═══════════════════════════════════════════════════════════════════════
+
+VISTA LATERAL:
+                        158cm
+        ┌───────────────────────────────┐ ← TOPO
+        │                               │
+145cm → │  [SENSOR 1 - NTC Temp]       │ ← Superior (ar quente)
+        │  Fio: 2m                      │
+        │                               │
+        │     ║  ║  ║  ║  ║  ║  ║       │
+        │   INSTRUMENTOS                │
+ 80cm → │  [SENSOR 2 - Umidade]         │ ← Centro (representativo)
+        │  Fio: 1,5m                    │
+        │     ║  ║  ║  ║  ║  ║  ║       │
+        │                               │
+ 15cm → │  [SENSOR 3 - NTC Temp]        │ ← Inferior (ar frio) OPCIONAL
+        │  Fio: 1m                      │
+        │                               │
+        └───────────────────────────────┘ ← BASE
+                         0cm
+
+IMPORTANTE:
+- Sensores NÃO devem tocar nos instrumentos
+- Manter sensores longe de correntes de ar diretas (coolers)
+- Sensor umidade no centro = leitura mais representativa
+- Sensor temp superior detecta acúmulo de calor
+- Sensor temp inferior (opcional) para controle fino</div>
+
+            <div class="subsection-title">2.2. Lista de Conexões - Resumo Rápido</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th style="width: 120px;">Terminal Y39U</th>
+                    <th>Conexão</th>
+                    <th>Descrição</th>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">ALIMENTAÇÃO</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>Fase 110/220V</td>
+                    <td>Alimentação principal</td>
+                </tr>
+                <tr>
+                    <td>N</td>
+                    <td>Neutro</td>
+                    <td>Retorno alimentação</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">SENSORES</td>
+                </tr>
+                <tr>
+                    <td>P1</td>
+                    <td>NTC Temperatura Superior</td>
+                    <td>Fio 2m, altura 145cm</td>
+                </tr>
+                <tr>
+                    <td>P2</td>
+                    <td>Sensor Umidade Centro</td>
+                    <td>Fio 1,5m, altura 80cm</td>
+                </tr>
+                <tr>
+                    <td>P3</td>
+                    <td>NTC Temperatura Inferior (opcional)</td>
+                    <td>Fio 1m, altura 15cm</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">SAÍDA 1 - DESUMIDIFICADORES</td>
+                </tr>
+                <tr>
+                    <td>C1</td>
+                    <td>Fase 110/220V</td>
+                    <td>Comum relé 1</td>
+                </tr>
+                <tr>
+                    <td>NO1</td>
+                    <td>→ Desumid. 1 e 2 (paralelo) → Neutro</td>
+                    <td>Normalmente aberto</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">SAÍDA 2 - COOLERS</td>
+                </tr>
+                <tr>
+                    <td>C2</td>
+                    <td>Fase 110/220V</td>
+                    <td>Comum relé 2</td>
+                </tr>
+                <tr>
+                    <td>NO2</td>
+                    <td>→ Fonte 12V → Neutro</td>
+                    <td>Normalmente aberto</td>
+                </tr>
+                <tr>
+                    <td>NC2</td>
+                    <td>Não usado</td>
+                    <td>Normalmente fechado</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="3">SAÍDA 3 - RESERVA</td>
+                </tr>
+                <tr>
+                    <td>C3</td>
+                    <td>Não conectado</td>
+                    <td>Reserva futura</td>
+                </tr>
+                <tr>
+                    <td>NO3</td>
+                    <td>Não conectado</td>
+                    <td>Para aquecedor (opcional)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">3. MATERIAIS NECESSÁRIOS</div>
+
+            <div class="subsection-title">3.1. Controlador e Sensores</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><strong>Controlador Coel Y39U HRRR</strong></td>
+                    <td>100-240Vca, temp+umidade</td>
+                    <td>1</td>
+                    <td>R$ 250-300</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensor NTC 10kΩ (temperatura)</strong></td>
+                    <td>Com cabo 2m</td>
+                    <td>1-2</td>
+                    <td>R$ 30-40 cada</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensor Umidade capacitivo</strong></td>
+                    <td>Com cabo 1,5m (geralmente incluído no Y39U)</td>
+                    <td>1</td>
+                    <td>Incluído ou R$ 80-100</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">3.2. Materiais Elétricos</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Preço</th>
+                </tr>
+                <tr>
+                    <td><strong>Cabo PP 2×1,5mm²</strong></td>
+                    <td>Para alimentação Y39U</td>
+                    <td>2m</td>
+                    <td>R$ 6</td>
+                </tr>
+                <tr>
+                    <td><strong>Cabo PP 2×1,5mm²</strong></td>
+                    <td>Para saídas relés</td>
+                    <td>5m</td>
+                    <td>R$ 15</td>
+                </tr>
+                <tr>
+                    <td><strong>Tomadas 2P+T</strong></td>
+                    <td>10A</td>
+                    <td>3</td>
+                    <td>R$ 15</td>
+                </tr>
+                <tr>
+                    <td><strong>Plugues 2P+T</strong></td>
+                    <td>10A</td>
+                    <td>3</td>
+                    <td>R$ 12</td>
+                </tr>
+                <tr>
+                    <td><strong>Disjuntor</strong></td>
+                    <td>10A bipolar</td>
+                    <td>1</td>
+                    <td>R$ 20-30</td>
+                </tr>
+                <tr>
+                    <td><strong>Caixa hermética</strong></td>
+                    <td>Para montar Y39U</td>
+                    <td>1</td>
+                    <td>R$ 25-40</td>
+                </tr>
+                <tr>
+                    <td><strong>Terminais e conectores</strong></td>
+                    <td>Wago ou borne</td>
+                    <td>Kit</td>
+                    <td>R$ 20-30</td>
+                </tr>
+                <tr>
+                    <td><strong>Eletrodutos/Canaletas</strong></td>
+                    <td>16mm para organização</td>
+                    <td>3m</td>
+                    <td>R$ 15-20</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">3.3. Comparação de Custos: Básico vs. Y39U</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Sistema</th>
+                    <th>Componentes</th>
+                    <th>Custo Total</th>
+                </tr>
+                <tr>
+                    <td><strong>Básico (projeto original)</strong></td>
+                    <td>Timer digital + Higrômetro + cabos</td>
+                    <td>R$ 90-140</td>
+                </tr>
+                <tr style="background: #e8f5e9;">
+                    <td><strong>Y39U Automático</strong></td>
+                    <td>Y39U + sensores + cabos + instalação</td>
+                    <td>R$ 400-500</td>
+                </tr>
+                <tr style="background: #fff3cd;">
+                    <td><strong>Diferença</strong></td>
+                    <td>Investimento adicional</td>
+                    <td><strong>+R$ 310-360</strong></td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">ANÁLISE CUSTO-BENEFÍCIO:</div>
+                <p><strong>Vale a pena?</strong> SIM, se:</p>
+                <ul style="margin: 8px 0 0 20px;">
+                    <li>Instrumentos valem > R$ 20.000 (investimento = 1,5-2% do valor)</li>
+                    <li>Deseja sistema "liga e esquece" sem ajustes manuais</li>
+                    <li>Quer precisão profissional (±0,5°C / ±2% UR)</li>
+                    <li>Planeja monitoramento remoto futuro (Y39U aceita módulo)</li>
+                </ul>
+                <p style="margin-top: 10px;"><strong>Alternativa:</strong> Começar com sistema básico, upgrade depois se necessário.</p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">4. GUIA DE INSTALAÇÃO</div>
+
+            <div class="subsection-title">4.1. Etapa 1 - Preparação (2-3 horas)</div>
+
+            <div class="step-box">
+                <div class="step-number">PREPARAÇÃO</div>
+                <p><strong>Materiais e Ferramentas</strong></p>
+
+                <p><strong>Ferramentas necessárias:</strong></p>
+                <ul style="margin-left: 25px; line-height: 1.8;">
+                    <li>Furadeira com broca 8mm e 25mm</li>
+                    <li>Alicate de corte e desencapador</li>
+                    <li>Chaves de fenda/phillips</li>
+                    <li>Multímetro digital</li>
+                    <li>Fita isolante e abraçadeiras</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>Verificações iniciais:</strong></p>
+                <ol style="margin-left: 25px; line-height: 1.8;">
+                    <li>Confirmar voltagem da rede (110V ou 220V)</li>
+                    <li>Verificar se Y39U está configurado de fábrica</li>
+                    <li>Testar sensores com multímetro (NTC ≈ 10kΩ a 25°C)</li>
+                    <li>Conferir todos os materiais da lista</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">4.2. Etapa 2 - Montagem Caixa de Controle (3-4 horas)</div>
+
+            <div class="step-box">
+                <div class="step-number">MONTAGEM ELÉTRICA</div>
+
+                <ol style="margin-left: 25px; line-height: 1.8;">
+                    <li><strong>Preparar caixa hermética:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Fazer recorte 67,5×25,5mm para Y39U</li>
+                            <li>Furos para prensa-cabos (entrada sensores e saídas)</li>
+                            <li>Furo para disjuntor externo</li>
+                        </ul>
+                    </li>
+                    <li><strong>Instalar Y39U na caixa:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Encaixar pela frente no recorte</li>
+                            <li>Fixar com braçadeiras laterais incluídas</li>
+                            <li>Verificar vedação IP67</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conectar alimentação:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Entrada: cabo PP 2×1,5mm² da rede</li>
+                            <li>Terminal L: fase (fio marrom/preto)</li>
+                            <li>Terminal N: neutro (fio azul)</li>
+                            <li>Aterramento na caixa metálica</li>
+                        </ul>
+                    </li>
+                    <li><strong>Conectar saídas (relés):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>OUT1 (C1→NO1): para tomada desumidificadores</li>
+                            <li>OUT2 (C2→NO2): para tomada fonte coolers</li>
+                            <li>OUT3: deixar livre (reserva)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Organizar cabos internos:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Usar canaletas ou abraçadeiras</li>
+                            <li>Identificar cabos com etiquetas</li>
+                            <li>Deixar folga para manutenção</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">4.3. Etapa 3 - Instalação Sensores (2 horas)</div>
+
+            <div class="step-box">
+                <div class="step-number">POSICIONAMENTO SENSORES</div>
+
+                <ol style="margin-left: 25px; line-height: 1.8;">
+                    <li><strong>Sensor 1 - Temperatura Superior (P1):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Altura: 145cm do piso (zona superior)</li>
+                            <li>Posição: lateral esquerda, 20cm da traseira</li>
+                            <li>Fixação: suporte plástico ou fita dupla-face</li>
+                            <li>Cabo: passar por canaleta até Y39U (2m)</li>
+                            <li>Polaridade: não importa para NTC</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sensor 2 - Umidade Centro (P2):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Altura: 80cm do piso (zona central)</li>
+                            <li>Posição: centro, longe de correntes de ar</li>
+                            <li>Fixação: suporte específico do sensor</li>
+                            <li>Cabo: passar por canaleta até Y39U (1,5m)</li>
+                            <li>Polaridade: verificar manual (geralmente 3 fios)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sensor 3 - Temperatura Inferior (P3) - OPCIONAL:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Altura: 15cm do piso (zona inferior)</li>
+                            <li>Posição: lateral direita, 20cm da traseira</li>
+                            <li>Fixação: suporte plástico</li>
+                            <li>Cabo: passar por canaleta até Y39U (1m)</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="warning">
+                <div class="warning-title">ATENÇÃO - POSICIONAMENTO CRÍTICO DOS SENSORES:</div>
+                <ul style="margin: 8px 0 0 20px; line-height: 1.8;">
+                    <li><strong>NÃO</strong> posicionar sensores próximo aos coolers (leitura distorcida)</li>
+                    <li><strong>NÃO</strong> deixar sensores tocando instrumentos (falsa leitura)</li>
+                    <li><strong>NÃO</strong> colocar sensor umidade muito perto da parede (condensação)</li>
+                    <li><strong>SIM</strong> proteger cabos dos sensores (não tracionar)</li>
+                    <li><strong>SIM</strong> testar leitura antes de fixar permanentemente</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">4.4. Etapa 4 - Conexão dos Dispositivos (1 hora)</div>
+
+            <div class="step-box">
+                <div class="step-number">LIGAÇÃO DISPOSITIVOS</div>
+
+                <ol style="margin-left: 25px; line-height: 1.8;">
+                    <li><strong>Desumidificadores:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Plugar ambos na tomada OUT1</li>
+                            <li>Se usar 2 desumidif.: ligar em paralelo (benjamim)</li>
+                            <li>Ligar chaves dos desumidificadores em ON (sempre)</li>
+                            <li>Controle será feito pelo relé do Y39U</li>
+                        </ul>
+                    </li>
+                    <li><strong>Coolers:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Fonte 12V 5A plugada na tomada OUT2</li>
+                            <li>Ligar os 4 coolers na fonte (em paralelo)</li>
+                            <li>Não precisa interruptor na fonte</li>
+                            <li>Y39U liga/desliga fonte conforme temperatura</li>
+                        </ul>
+                    </li>
+                    <li><strong>Teste inicial (sem energia):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Conferir todas conexões com multímetro</li>
+                            <li>Verificar curto-circuito (ohmímetro)</li>
+                            <li>Confirmar polaridade dos sensores</li>
+                            <li>Revisar checklist de instalação</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">5. PROGRAMAÇÃO E CONFIGURAÇÃO DO Y39U</div>
+
+            <div class="subsection-title">5.1. Parâmetros Básicos Recomendados</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th style="width: 100px;">Parâmetro</th>
+                    <th style="width: 200px;">Descrição</th>
+                    <th style="width: 120px;">Valor Recomendado</th>
+                    <th>Observação</th>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">CONTROLE DE UMIDADE (Desumidificadores)</td>
+                </tr>
+                <tr>
+                    <td>HYS</td>
+                    <td>Setpoint umidade</td>
+                    <td>50% UR</td>
+                    <td>Ponto central da faixa 45-55%</td>
+                </tr>
+                <tr>
+                    <td>HYH</td>
+                    <td>Histerese umidade</td>
+                    <td>2-3% UR</td>
+                    <td>Liga 53%, desliga 50% (se HYH=3)</td>
+                </tr>
+                <tr>
+                    <td>HAH</td>
+                    <td>Alarme UR alta</td>
+                    <td>60% UR</td>
+                    <td>Aviso se umidade muito alta</td>
+                </tr>
+                <tr>
+                    <td>HAL</td>
+                    <td>Alarme UR baixa</td>
+                    <td>40% UR</td>
+                    <td>Aviso se umidade muito baixa</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">CONTROLE DE TEMPERATURA (Coolers)</td>
+                </tr>
+                <tr>
+                    <td>TSE</td>
+                    <td>Setpoint temperatura</td>
+                    <td>23°C</td>
+                    <td>Ponto central da faixa 20-26°C</td>
+                </tr>
+                <tr>
+                    <td>HYT</td>
+                    <td>Histerese temperatura</td>
+                    <td>1-2°C</td>
+                    <td>Liga 24°C, desliga 23°C (se HYT=1)</td>
+                </tr>
+                <tr>
+                    <td>TAH</td>
+                    <td>Alarme temp alta</td>
+                    <td>30°C</td>
+                    <td>Aviso se temperatura muito alta</td>
+                </tr>
+                <tr>
+                    <td>TAL</td>
+                    <td>Alarme temp baixa</td>
+                    <td>16°C</td>
+                    <td>Aviso se temperatura muito baixa</td>
+                </tr>
+                <tr style="background: #f0f0f0; font-weight: bold;">
+                    <td colspan="4">CONFIGURAÇÃO DAS SAÍDAS</td>
+                </tr>
+                <tr>
+                    <td>O1F</td>
+                    <td>Função saída 1</td>
+                    <td>dh (desumidificador)</td>
+                    <td>Controla desumidificadores por umidade</td>
+                </tr>
+                <tr>
+                    <td>O2F</td>
+                    <td>Função saída 2</td>
+                    <td>FA (ventilador)</td>
+                    <td>Controla coolers por temperatura</td>
+                </tr>
+                <tr>
+                    <td>O3F</td>
+                    <td>Função saída 3</td>
+                    <td>OFF</td>
+                    <td>Desabilitada (reserva)</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.2. Sequência de Programação</div>
+
+            <div class="step-box">
+                <div class="step-number">PROGRAMAÇÃO PASSO A PASSO</div>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li><strong>Entrar no menu:</strong> Pressionar SET por 3 segundos</li>
+                    <li><strong>Navegar:</strong> Usar ▲/▼ para mudar parâmetro, SET para confirmar</li>
+                    <li><strong>Programar umidade:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>HYS = 50 (setpoint 50% UR)</li>
+                            <li>HYH = 3 (histerese 3%)</li>
+                            <li>HAH = 60 (alarme alto 60%)</li>
+                            <li>HAL = 40 (alarme baixo 40%)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Programar temperatura:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>TSE = 23 (setpoint 23°C)</li>
+                            <li>HYT = 1 (histerese 1°C)</li>
+                            <li>TAH = 30 (alarme alto 30°C)</li>
+                            <li>TAL = 16 (alarme baixo 16°C)</li>
+                        </ul>
+                    </li>
+                    <li><strong>Configurar saídas:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>O1F = dh (desumidificador)</li>
+                            <li>O2F = FA (ventilador/coolers)</li>
+                            <li>O3F = OFF</li>
+                        </ul>
+                    </li>
+                    <li><strong>Sair do menu:</strong> Pressionar SET por 3 segundos ou aguardar timeout</li>
+                    <li><strong>Verificar display:</strong> Deve mostrar temperatura/umidade alternadamente</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <div class="note-title">DICA - CONSULTAR MANUAL:</div>
+                <p>O manual completo do Y39U está disponível em:</p>
+                <p style="margin: 5px 0 5px 20px; font-family: 'Courier New', monospace; font-size: 9pt;">
+                    https://cdn.media.coel.com.br/uploads/2016/10/Manual-de-Instrucoes-Y39U_r0.pdf
+                </p>
+                <p style="margin-top: 10px;">Contém lista completa de parâmetros, troubleshooting e diagramas elétricos.</p>
+            </div>
+
+            <div class="subsection-title">5.3. Teste e Comissionamento</div>
+
+            <div class="step-box">
+                <div class="step-number">TESTE INICIAL</div>
+
+                <ol style="margin-left: 25px; line-height: 2;">
+                    <li><strong>Ligar sistema vazio (sem instrumentos):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Fechar cristaleira</li>
+                            <li>Ligar disjuntor principal</li>
+                            <li>Y39U deve ligar e mostrar leituras</li>
+                            <li>Aguardar 10min para estabilização</li>
+                        </ul>
+                    </li>
+                    <li><strong>Verificar leituras dos sensores:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Temperatura: deve estar próxima de ambiente (20-25°C)</li>
+                            <li>Umidade: deve estar na faixa local (40-70% UR)</li>
+                            <li>Se diferença > 5°C ou > 10% UR: verificar sensores</li>
+                        </ul>
+                    </li>
+                    <li><strong>Testar saída 1 (desumidificadores):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Aumentar setpoint HYS acima da UR atual</li>
+                            <li>Relé deve fechar e ligar desumidificadores</li>
+                            <li>Ouvir clique do relé e verificar LED OUT1</li>
+                            <li>Retornar HYS para 50%</li>
+                        </ul>
+                    </li>
+                    <li><strong>Testar saída 2 (coolers):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Reduzir setpoint TSE abaixo da temp atual</li>
+                            <li>Relé deve fechar e ligar coolers</li>
+                            <li>Verificar LED OUT2 e rotação dos coolers</li>
+                            <li>Retornar TSE para 23°C</li>
+                        </ul>
+                    </li>
+                    <li><strong>Monitoramento contínuo (72h):</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Deixar sistema funcionando 3 dias</li>
+                            <li>Anotar temp e umidade 3×/dia</li>
+                            <li>Verificar se sistema mantém 45-55% UR e 20-26°C</li>
+                            <li>Ajustar setpoints se necessário</li>
+                        </ul>
+                    </li>
+                    <li><strong>Instalação dos instrumentos:</strong>
+                        <ul style="margin: 5px 0 0 20px;">
+                            <li>Somente após sistema estável por 3 dias</li>
+                            <li>Monitorar primeiras 2 semanas diariamente</li>
+                            <li>Ajustes finos conforme necessário</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">6. OPERAÇÃO E MANUTENÇÃO</div>
+
+            <div class="subsection-title">6.1. Operação Normal</div>
+
+            <div class="component-box">
+                <div class="component-title">O que o Y39U faz automaticamente:</div>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Quando UR > 53%:</strong> Liga desumidificadores (OUT1)</li>
+                    <li><strong>Quando UR < 50%:</strong> Desliga desumidificadores</li>
+                    <li><strong>Quando Temp > 24°C:</strong> Liga coolers (OUT2)</li>
+                    <li><strong>Quando Temp < 23°C:</strong> Desliga coolers</li>
+                    <li><strong>Quando alarme:</strong> Sinal sonoro + LED piscando</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">6.2. Leitura do Display</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Modo Display</th>
+                    <th>O que Mostra</th>
+                    <th>Interpretação</th>
+                </tr>
+                <tr>
+                    <td>Normal alternado</td>
+                    <td>23°C → 50% → 23°C → 50%...</td>
+                    <td>Sistema OK, valores dentro da faixa</td>
+                </tr>
+                <tr>
+                    <td>Piscando + beep</td>
+                    <td>HAL ou HAH ou TAL ou TAH</td>
+                    <td>Alarme ativado (valor fora dos limites)</td>
+                </tr>
+                <tr>
+                    <td>LED OUT1 aceso</td>
+                    <td>Saída 1 ativa</td>
+                    <td>Desumidificadores ligados</td>
+                </tr>
+                <tr>
+                    <td>LED OUT2 aceso</td>
+                    <td>Saída 2 ativa</td>
+                    <td>Coolers ligados</td>
+                </tr>
+                <tr>
+                    <td>Erro "Err"</td>
+                    <td>Erro de sensor</td>
+                    <td>Verificar conexão dos sensores</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">6.3. Manutenção Preventiva</div>
+
+            <div class="component-box">
+                <div class="component-title">Semanal</div>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Verificar leituras no display (temp e UR)</li>
+                    <li>Confirmar que não há alarmes ativos</li>
+                    <li>Observar funcionamento dos coolers quando ligam</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Mensal</div>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Limpar sensores com pano seco (não usar água)</li>
+                    <li>Verificar se relés estão acionando corretamente</li>
+                    <li>Limpar coolers (pó acumulado nas pás)</li>
+                    <li>Regenerar sílica dos desumidificadores</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Trimestral</div>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Conferir aperto de todos os terminais elétricos</li>
+                    <li>Testar alarmes (forçar condições de alarme)</li>
+                    <li>Verificar cabo dos sensores (não tracionar/romper)</li>
+                    <li>Calibração de verificação (comparar com termômetro padrão)</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">6.4. Troubleshooting</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Causa Provável</th>
+                    <th>Solução</th>
+                </tr>
+                <tr>
+                    <td>Y39U não liga</td>
+                    <td>Sem alimentação</td>
+                    <td>Verificar disjuntor e cabos de força</td>
+                </tr>
+                <tr>
+                    <td>Display mostra "Err"</td>
+                    <td>Sensor desconectado</td>
+                    <td>Verificar conexão P1, P2 ou P3</td>
+                </tr>
+                <tr>
+                    <td>Leitura temp errada</td>
+                    <td>Sensor mal posicionado</td>
+                    <td>Afastar de correntes de ar/luz solar</td>
+                </tr>
+                <tr>
+                    <td>UR não estabiliza</td>
+                    <td>Desumidif. não funciona</td>
+                    <td>Verificar OUT1 e desumidificadores</td>
+                </tr>
+                <tr>
+                    <td>Coolers não ligam</td>
+                    <td>Relé OUT2 ou fonte</td>
+                    <td>Testar OUT2 manualmente, verificar fonte 12V</td>
+                </tr>
+                <tr>
+                    <td>Alarme constante</td>
+                    <td>Setpoint inadequado</td>
+                    <td>Ajustar HAH, HAL, TAH, TAL</td>
+                </tr>
+                <tr>
+                    <td>Relés acionam muito</td>
+                    <td>Histerese pequena</td>
+                    <td>Aumentar HYH e HYT (ex: 3% e 2°C)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">7. VANTAGENS DO SISTEMA COM Y39U</div>
+
+            <div class="subsection-title">7.1. Comparação Sistema Básico vs. Y39U</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Aspecto</th>
+                    <th>Sistema Básico<br>(Timer + Higrômetro)</th>
+                    <th>Sistema Y39U<br>(Automático)</th>
+                </tr>
+                <tr>
+                    <td><strong>Controle Temperatura</strong></td>
+                    <td> Manual/Visual</td>
+                    <td> Automático ON/OFF</td>
+                </tr>
+                <tr>
+                    <td><strong>Controle Umidade</strong></td>
+                    <td> Timer horário fixo</td>
+                    <td> Automático por UR real</td>
+                </tr>
+                <tr>
+                    <td><strong>Precisão</strong></td>
+                    <td>±2% UR (higrômetro)</td>
+                    <td> ±0,5°C / ±2% UR</td>
+                </tr>
+                <tr>
+                    <td><strong>Ajuste sazonal</strong></td>
+                    <td> Manual (reprogramar timer)</td>
+                    <td> Automático (responde ao ambiente)</td>
+                </tr>
+                <tr>
+                    <td><strong>Alarmes</strong></td>
+                    <td> Visuais (verificação manual)</td>
+                    <td> Sonoros + visuais</td>
+                </tr>
+                <tr>
+                    <td><strong>Economia energia</strong></td>
+                    <td> Liga/desliga fixo</td>
+                    <td> Liga só quando necessário</td>
+                </tr>
+                <tr>
+                    <td><strong>Monitoramento</strong></td>
+                    <td> Manual (abrir cristaleira)</td>
+                    <td> Display externo sempre visível</td>
+                </tr>
+                <tr>
+                    <td><strong>Complexidade uso</strong></td>
+                    <td> Média (ajustes periódicos)</td>
+                    <td> Baixa (configura uma vez)</td>
+                </tr>
+                <tr>
+                    <td><strong>Confiabilidade</strong></td>
+                    <td> Boa (depende de ajustes)</td>
+                    <td> Excelente (resposta rápida)</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo inicial</strong></td>
+                    <td> R$ 90-140</td>
+                    <td> R$ 400-500</td>
+                </tr>
+                <tr>
+                    <td><strong>Custo operacional</strong></td>
+                    <td> Maior (liga mais que precisa)</td>
+                    <td> Menor (liga sob demanda)</td>
+                </tr>
+                <tr style="background: #e8f5e9; font-weight: bold;">
+                    <td><strong>Recomendado para</strong></td>
+                    <td>Instrumentos até R$ 15.000</td>
+                    <td> Instrumentos > R$ 20.000</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">7.2. ROI (Retorno do Investimento)</div>
+
+            <div class="critical-box">
+                <div class="title">ANÁLISE DE RETORNO</div>
+
+                <p><strong>Investimento adicional:</strong> R$ 310-360 (Y39U vs. sistema básico)</p>
+
+                <p style="margin-top: 15px;"><strong>Economia estimada:</strong></p>
+                <table style="width: 100%; margin: 10px 0; font-size: 10pt;">
+                    <tr>
+                        <td style="padding: 5px;"><strong>Energia elétrica:</strong></td>
+                        <td style="padding: 5px;">R$ 5-10/mês (liga só quando precisa)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;"><strong>Vida útil desumidificadores:</strong></td>
+                        <td style="padding: 5px;">+30% (menos ciclos liga/desliga)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 5px;"><strong>Redução risco:</strong></td>
+                        <td style="padding: 5px;">Resposta 10× mais rápida a variações</td>
+                    </tr>
+                    <tr style="background: #e8f5e9; font-weight: bold;">
+                        <td style="padding: 5px;"><strong>Payback:</strong></td>
+                        <td style="padding: 5px;">2-3 anos (só considerando economia energia)</td>
+                    </tr>
+                </table>
+
+                <p style="margin-top: 15px; padding: 10px; background: #d4edda; border-left: 4px solid #28a745;">
+                    <strong>Valor real:</strong> Tranquilidade e proteção superior dos instrumentos. Para coleção > R$ 20.000, investimento de R$ 360 (1,8%) é mínimo comparado ao risco.
+                </p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">8. CHECKLIST DE INSTALAÇÃO</div>
+
+            <div style="border: 3px solid #000; padding: 20px; background: #f8f8f8;">
+                <p style="font-weight: bold; font-size: 12pt; margin-bottom: 15px;">VERIFICAÇÃO PRÉ-INSTALAÇÃO</p>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">MATERIAIS:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Controlador Coel Y39U HRRR
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensor NTC temperatura (1-2 unidades)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensor umidade capacitivo
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Cabos PP 2×1,5mm² (7m total)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Tomadas, plugues e terminais
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Disjuntor 10A
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Caixa hermética para montagem
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">MONTAGEM ELÉTRICA:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Y39U instalado em caixa hermética
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Alimentação L/N conectada corretamente
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Aterramento da caixa executado
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> OUT1 ligado a tomada desumidificadores
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> OUT2 ligado a tomada fonte coolers
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Cabos organizados e identificados
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">SENSORES:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensor P1 (temp superior) instalado a 145cm
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensor P2 (umidade centro) instalado a 80cm
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensor P3 (temp inferior) instalado a 15cm (opcional)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sensores longe de correntes de ar diretas
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Cabos protegidos em canaletas
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">PROGRAMAÇÃO:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> HYS = 50% (setpoint umidade)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> HYH = 3% (histerese umidade)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> TSE = 23°C (setpoint temperatura)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> HYT = 1°C (histerese temperatura)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> O1F = dh (saída 1 desumidificador)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> O2F = FA (saída 2 ventilador)
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Alarmes configurados (HAH=60, HAL=40, TAH=30, TAL=16)
+                    </label>
+                </div>
+
+                <div style="border: 2px solid #000; padding: 15px; margin: 15px 0; background: #fff;">
+                    <p style="font-weight: bold; margin-bottom: 10px;">TESTE E COMISSIONAMENTO:</p>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Y39U liga e mostra leituras corretas
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Relé OUT1 aciona desumidificadores (teste)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Relé OUT2 aciona coolers (teste)
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Sistema funcionando 72h sem instrumentos
+                    </label>
+                    <label style="display: block; padding: 6px; border-bottom: 1px dashed #000;">
+                        <input type="checkbox"> Temperatura mantida entre 20-26°C
+                    </label>
+                    <label style="display: block; padding: 6px;">
+                        <input type="checkbox"> Umidade mantida entre 45-55% UR
+                    </label>
+                </div>
+
+                <div style="margin-top: 30px; padding-top: 15px; border-top: 2px solid #000;">
+                    <p><strong>Instalador:</strong> ___________________________________</p>
+                    <p style="margin-top: 10px;"><strong>Data de conclusão:</strong> _____ / _____ / _____</p>
+                    <p style="margin-top: 10px;"><strong>Assinatura:</strong> ___________________________________</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Integração Controlador Coel Y39U - Sistema Automático</strong></p>
+            <p>Documentação Técnica de Upgrade | Outubro 2025</p>
+            <p style="margin-top: 8px;">Cristaleira 158×179×44cm | 10 Instrumentos | Rev: 01</p>
+        </div>
+    </div>
+</body>
+</html>

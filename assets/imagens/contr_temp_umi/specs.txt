@@ -1,0 +1,13 @@
+Tensão de Alimentação 110V à 220V
+Faixa de leitura e controle da temperatura: -20 °C até +80 °C
+Faixa de leitura e controle da umidade: 00% à 100%
+Precisão de Leitura: +-1°C e +-0,1% Umidade Relativa
+Corrente Máxima no relé: 10A/240VAC
+Sensor integrado, comprimento da linha 1 metro
+Os relés de trabalho (Temperatura e Umidade) são isolados e independentes da alimentação do controlador, podem acionar cargas de diferentes tensões, alternada ou contínua/direta, sem qualquer incompatibilidade.
+
+Este aparelho serve para manter o aquecimento ou manter o resfriamento, tudo depende das configurações ajustadas. A seção 1 que corresponde ao ajuste do controle de Temperatura, trabalhará aquecendo se a Temperatura de acionamento for menor que a temperatura de desligamento. A Seção 2 que corresponde ao ajuste do controle de Umidade pode trabalhar umidificando ou desumidificando um ambiente.
+
+Itens Inclusos:
+01 x Controlador STC-3028
+01 x Sensor de temperatura e umidade.

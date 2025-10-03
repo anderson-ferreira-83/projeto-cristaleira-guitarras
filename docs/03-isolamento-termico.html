@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Técnico - Sistema de Isolamento e Controle Climático</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .alert-box {
+            border: 2px solid #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #f5f5f5;
+        }
+
+        .alert-box .title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 20px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 8pt;
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.3;
+        }
+
+        .note {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .note .note-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .measurement {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            border: 1px solid #000;
+            padding: 2px 5px;
+            display: inline-block;
+        }
+
+        .component-box {
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .component-title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+        }
+
+        .step-box {
+            border-left: 3px solid #000;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Projeto Técnico de Isolamento</h1>
+            <div class="subtitle">Sistema Híbrido Passivo/Ativo de Controle Climático</div>
+            <div class="subtitle">Para Proteção de Instrumentos Musicais</div>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                Cliente: _________________ | Data: _________________ | Rev: 01
+            </div>
+        </div>
+
+        <div class="alert-box">
+            <div class="title">OBJETIVO DO SISTEMA</div>
+            <p>Implementar sistema de isolamento térmico e controle de umidade para manter 14 instrumentos musicais em condições estáveis e seguras dentro de cristaleira existente.</p>
+            <p style="margin-top: 5px;"><strong>Meta de desempenho:</strong> Temperatura 18-28°C | Umidade 45-55% UR</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. ARQUITETURA DO SISTEMA</div>
+
+            <div class="subsection-title">1.1. Princípio de Funcionamento</div>
+
+            <p>O sistema opera em dois níveis complementares:</p>
+
+            <ol>
+                <li><strong>Isolamento Passivo:</strong> Redução de troca térmica através de barreiras físicas (manta térmica, insulfilm, vedação)</li>
+                <li><strong>Controle Ativo:</strong> Gestão ativa da umidade interna através de desumidificador elétrico de baixo consumo</li>
+            </ol>
+
+            <div class="diagram">DIAGRAMA DE CAMADAS - CORTE TRANSVERSAL
+
+EXTERIOR                                                      INTERIOR
+
+Ambiente Externo (10-40°C, 30-90% UR)
+      ↓
+┌────────────────────────────────────────────────────────────────┐
+│ CAMADA 1: BARREIRA TÉRMICA EXTERNA                            │
+│ • Insulfilm nanocerâmico G-70 (portas vidro)                  │
+│ • Bloqueio: 93-96% radiação infravermelha                     │
+│ • Bloqueio: 99% radiação UV                                   │
+│ • Transparência: 100%                                         │
+└────────────────────────────────────────────────────────────────┘
+      ↓
+┌────────────────────────────────────────────────────────────────┐
+│ CAMADA 2: ISOLAMENTO ESTRUTURAL                               │
+│ • Manta térmica dupla face (paredes/topo)                     │
+│ • Face metalizada externa: reflexão calor                     │
+│ • Câmara de ar 5-10mm: isolamento adicional                   │
+└────────────────────────────────────────────────────────────────┘
+      ↓
+┌────────────────────────────────────────────────────────────────┐
+│ CAMADA 3: ESTRUTURA SUSTENTAÇÃO                               │
+│ • Painel MDF 5mm (projeto marcenaria)                         │
+│ • Massa térmica: amortecimento variações                      │
+│ • Suporte para fixação dos instrumentos                       │
+└────────────────────────────────────────────────────────────────┘
+      ↓
+┌────────────────────────────────────────────────────────────────┐
+│ CAMADA 4: ESTABILIZAÇÃO INTERNA                               │
+│ • Manta térmica face metalizada interna                       │
+│ • Vedação fita EVA 6mm (todas junções)                        │
+│ • Sistema hermético minimiza trocas                           │
+└────────────────────────────────────────────────────────────────┘
+      ↓
+┌────────────────────────────────────────────────────────────────┐
+│ CAMADA 5: CONTROLE ATIVO UMIDADE                              │
+│ • Desumidificador Thermomatic 20W                             │
+│ • Sílica gel regenerável (backup)                             │
+│ • Higrômetro digital com alarme                               │
+└────────────────────────────────────────────────────────────────┘
+      ↓
+Ambiente Interno (20-26°C ±2°C, 45-55% UR ±5%)</div>
+
+            <div class="subsection-title">1.2. Desempenho Esperado</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Sem Sistema</th>
+                    <th>Com Sistema</th>
+                    <th>Melhoria</th>
+                </tr>
+                <tr>
+                    <td>Temperatura verão</td>
+                    <td>35-45°C</td>
+                    <td>24-28°C</td>
+                    <td>-12 a -20°C</td>
+                </tr>
+                <tr>
+                    <td>Temperatura inverno</td>
+                    <td>10-15°C</td>
+                    <td>18-22°C</td>
+                    <td>+3 a +8°C</td>
+                </tr>
+                <tr>
+                    <td>Variação diária</td>
+                    <td>±8-12°C</td>
+                    <td>±2-3°C</td>
+                    <td>75% redução</td>
+                </tr>
+                <tr>
+                    <td>Umidade relativa</td>
+                    <td>30-90% UR</td>
+                    <td>45-55% UR</td>
+                    <td>Controle total</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">2. LISTA DE MATERIAIS</div>
+
+            <div class="subsection-title">2.1. Isolamento Térmico Passivo</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>Insulfilm nanocerâmico G-70</td>
+                    <td>60cm×3m/rolo<br>Bloqueio IR: 93-96%<br>Bloqueio UV: 99%</td>
+                    <td>2 rolos</td>
+                    <td>Portas vidro frontal</td>
+                </tr>
+                <tr>
+                    <td>Manta térmica dupla face</td>
+                    <td>Largura: 1m<br>TNT metalizado<br>Proteção UV</td>
+                    <td>1 rolo<br>(50m²)</td>
+                    <td>Paredes, topo, base</td>
+                </tr>
+                <tr>
+                    <td>Fita vedação EVA</td>
+                    <td>6mm espessura<br>25mm largura<br>Autoadesiva</td>
+                    <td>25m</td>
+                    <td>Vedação junções</td>
+                </tr>
+                <tr>
+                    <td>Fita dupla face 3M</td>
+                    <td>Espuma acrílica<br>Alta aderência</td>
+                    <td>10m</td>
+                    <td>Fixação manta</td>
+                </tr>
+                <tr>
+                    <td>Silicone neutro</td>
+                    <td>290ml bisnaga</td>
+                    <td>1 un</td>
+                    <td>Vedação cabo</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">2.2. Proteção dos Instrumentos</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>EVA 5mm autoadesivo</td>
+                    <td>100cm×50cm/placa</td>
+                    <td>7 placas</td>
+                    <td>Bases apoio<br>Apoios anti-balanço</td>
+                </tr>
+                <tr>
+                    <td>Cortiça emborrachada</td>
+                    <td>12cm×17cm×5mm<br>Autoadesiva</td>
+                    <td>20 placas</td>
+                    <td>Apoios de braço<br>Reforços</td>
+                </tr>
+                <tr>
+                    <td>Feltro 3mm autoadesivo</td>
+                    <td>Rolo ou placas</td>
+                    <td>3 m²</td>
+                    <td>Separadores<br>Ganchos</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">2.3. Sistema de Controle Ativo</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Equipamento</th>
+                    <th>Especificação</th>
+                    <th>Qtd</th>
+                </tr>
+                <tr>
+                    <td>Desumidificador<br>Thermomatic</td>
+                    <td>20W, 1m³, bivolt<br>Sílica regenerável<br>165×100×45mm</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Timer digital</td>
+                    <td>110/220V<br>Programação 24h</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Higrômetro digital</td>
+                    <td>LCD, temp+umidade<br>Alarme, ±2% UR</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Sílica gel</td>
+                    <td>Indicadora, regenerável</td>
+                    <td>500g</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">2.4. Ferramentas Necessárias</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                </tr>
+                <tr><td>Estilete profissional</td><td>18mm retrátil</td></tr>
+                <tr><td>Régua metálica</td><td>60cm graduada</td></tr>
+                <tr><td>Espátula plástica</td><td>10-15cm para insulfilm</td></tr>
+                <tr><td>Pulverizador</td><td>500ml spray manual</td></tr>
+                <tr><td>Álcool isopropílico</td><td>500ml limpeza</td></tr>
+                <tr><td>Detergente neutro</td><td>50ml aplicação</td></tr>
+                <tr><td>Ilhós borracha</td><td>Ø 8-10mm</td></tr>
+                <tr><td>Broca</td><td>8mm madeira/metal</td></tr>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">3. INSTALAÇÃO DO ISOLAMENTO PASSIVO</div>
+
+            <div class="alert-box">
+                <div class="title">SEQUÊNCIA CRÍTICA</div>
+                <p>O isolamento térmico DEVE ser instalado ANTES do painel de marcenaria.</p>
+                <p>Ordem: 1. Isolamento → 2. Painel MDF → 3. Proteções</p>
+            </div>
+
+            <div class="subsection-title">3.1. Preparação (Duração: 2h)</div>
+
+            <div class="step-box">
+                <strong>ETAPA 1: Limpeza e Medição</strong>
+                <ol>
+                    <li>Esvaziar completamente a cristaleira</li>
+                    <li>Limpar todas superfícies internas com pano úmido</li>
+                    <li>Secar completamente (aguardar 1h)</li>
+                    <li>Conferir dimensões internas:
+                        <ul>
+                            <li>Altura: <span class="measurement">157 cm</span></li>
+                            <li>Largura: <span class="measurement">175 cm</span></li>
+                            <li>Profundidade: <span class="measurement">49 cm</span></li>
+                        </ul>
+                    </li>
+                    <li>Identificar pontos de fixação do painel traseiro</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">3.2. Instalação Manta Térmica</div>
+
+            <div class="step-box">
+                <strong>ETAPA 2: Parede Traseira (Duração: 3h)</strong>
+                <ol>
+                    <li>Cortar manta térmica: <span class="measurement">180cm × 180cm</span></li>
+                    <li>Aplicar fita dupla face nas bordas da parede externa</li>
+                    <li>Fixar 1ª camada (face metalizada FORA)</li>
+                    <li>Pressionar eliminando bolhas</li>
+                    <li>Marcar pontos fixação painel MDF através da manta</li>
+                    <li>Instalar espaçadores 5-10mm nos pontos fixação</li>
+                    <li>Fixar painel MDF 5mm (projeto marcenaria)</li>
+                    <li>Cortar 2ª camada: <span class="measurement">174cm × 174cm</span></li>
+                    <li>Fixar 2ª camada no painel (face metalizada DENTRO)</li>
+                </ol>
+            </div>
+
+            <div class="diagram">DETALHE MONTAGEM PAREDE TRASEIRA
+
+EXTERIOR          INTERIOR
+    ↓                ↓
+┌───────┐        ┌───────┐
+│Parede │        │Instru-│
+│Cristal│        │mentos │
+└───┬───┘        └───────┘
+    │ Fita dupla face
+    ├──────────────────
+    │ MANTA 1 (→fora)
+    ├──────────────────
+    │ Câmara ar 5-10mm
+    │ (espaçadores)
+    ├══════════════════
+    │ PAINEL MDF 5mm
+    ├══════════════════
+    │ Fita dupla face
+    ├──────────────────
+    │ MANTA 2 (→dentro)
+    ├──────────────────
+    ↓
+INTERIOR</div>
+
+            <div class="step-box">
+                <strong>ETAPA 3: Laterais (Duração: 2h)</strong>
+                <ol>
+                    <li>Cortar 2 peças: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Aplicar nas paredes laterais internas</li>
+                    <li>Face metalizada voltada DENTRO</li>
+                    <li>Fixar com fita dupla face</li>
+                    <li>Deixar 2-3cm sobra para vedação</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 4: Topo (Duração: 2h)</strong>
+                <ol>
+                    <li>Cortar 2 peças: <span class="measurement">180cm × 49cm</span></li>
+                    <li>1ª camada (face metalizada CIMA)</li>
+                    <li>Espaçadores 10mm</li>
+                    <li>2ª camada (face metalizada BAIXO)</li>
+                    <li>Região crítica: calor acumula no topo</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 5: Base (Duração: 1h)</strong>
+                <ol>
+                    <li>Cortar manta: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Aplicar no piso (face metalizada CIMA)</li>
+                    <li>Opcional: lona plástica sobre manta</li>
+                    <li>Proteção contra umidade do piso</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">3.3. Vedação das Junções</div>
+
+            <div class="step-box">
+                <strong>ETAPA 6: Vedação Hermética (Duração: 2h)</strong>
+                <ol>
+                    <li>Aplicar fita EVA 6mm em todas junções:
+                        <ul>
+                            <li>Parede traseira / laterais</li>
+                            <li>Laterais / topo</li>
+                            <li>Base / laterais</li>
+                            <li>Qualquer gap detectado</li>
+                        </ul>
+                    </li>
+                    <li>Pressionar fita 30 segundos</li>
+                    <li>Testar vedação com lanterna:
+                        <ul>
+                            <li>Fechar cristaleira</li>
+                            <li>Escurecer ambiente</li>
+                            <li>Lanterna dentro</li>
+                            <li>Verificar passagem luz</li>
+                        </ul>
+                    </li>
+                    <li>Reforçar pontos com vazamento</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <div class="note-title">CRÍTICO - VEDAÇÃO:</div>
+                <p>A eficiência depende da qualidade da vedação. Sistema bem vedado reduz troca térmica em até 70%. Dedique tempo adequado a esta etapa.</p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">4. APLICAÇÃO DO INSULFILM</div>
+
+            <div class="alert-box">
+                <div class="title">ÁREA CRÍTICA</div>
+                <p>Portas de vidro são maior fonte de ganho térmico. Insulfilm G-70 bloqueia 93-96% calor sem reduzir visibilidade.</p>
+            </div>
+
+            <div class="subsection-title">4.1. Cálculo de Material</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Superfície</th>
+                    <th>Dimensões</th>
+                    <th>Área</th>
+                    <th>Material</th>
+                </tr>
+                <tr>
+                    <td>Portas frontais</td>
+                    <td>175×157cm</td>
+                    <td>2,75 m²</td>
+                    <td>2 rolos (60×300cm)<br>Total: 3,6m²</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">4.2. Procedimento Aplicação</div>
+
+            <div class="step-box">
+                <strong>ETAPA 7: Preparação (30min)</strong>
+                <ol>
+                    <li>Limpar vidro rigorosamente:
+                        <ul>
+                            <li>Aplicar álcool isopropílico</li>
+                            <li>Passar pano microfibra</li>
+                            <li>Repetir até eliminar gordura</li>
+                        </ul>
+                    </li>
+                    <li>Preparar solução aplicação:
+                        <ul>
+                            <li>500ml água filtrada</li>
+                            <li>3 gotas detergente neutro</li>
+                            <li>Misturar suavemente</li>
+                        </ul>
+                    </li>
+                    <li>Medir e cortar insulfilm (+2cm margem)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 8: Aplicação (1-2h/porta)</strong>
+                <ol>
+                    <li>Borrifar generosamente solução no vidro</li>
+                    <li>Remover liner protetor do insulfilm</li>
+                    <li>Borrifar solução no lado adesivo</li>
+                    <li>Posicionar filme no topo do vidro</li>
+                    <li>Alinhar cuidadosamente</li>
+                    <li>Aplicar de cima para baixo:
+                        <ul>
+                            <li>Espátula plástica</li>
+                            <li>Centro → bordas</li>
+                            <li>Ângulo 45°</li>
+                            <li>Pressão firme mas suave</li>
+                        </ul>
+                    </li>
+                    <li>Reborrifar se necessário</li>
+                    <li>Cortar excesso (régua + estilete)</li>
+                    <li>Passar espátula final nas bordas</li>
+                </ol>
+            </div>
+
+            <div class="diagram">TÉCNICA APLICAÇÃO INSULFILM
+
+VISTA FRONTAL:          DETALHE:
+
+    TOPO                 Vidro
+    ┌─────┐              │
+    │  1  │ Começar      ├─ Insulfilm
+    ├─────┤ aqui         │
+    │  2  │            ╱   ╲
+    ├─────┤ Movimento ╱ 45° ╲
+    │  3  │ descend. ╱       ╲
+    ├─────┤ centro→ │─────────│
+    │  4  │ bordas  └─────────┘
+    ├─────┤
+    │  5  │         ←───•───→
+    └─────┘         Centro Bordas
+    BASE</div>
+
+            <div class="step-box">
+                <strong>ETAPA 9: Cura (48h)</strong>
+                <ol>
+                    <li>Não tocar insulfilm por 48h</li>
+                    <li>Evitar abrir/fechar portas</li>
+                    <li>Bolhas água são normais (desaparecem 3-7 dias)</li>
+                    <li>Após cura, limpar só com pano úmido</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <div class="note-title">DICA:</div>
+                <p>Aplicar em dia nublado ou dentro de casa. Temperatura ideal: 15-25°C. Trabalhe com calma: pressa causa bolhas irreversíveis.</p>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">5. SISTEMA DE CONTROLE ATIVO</div>
+
+            <div class="subsection-title">5.1. Posicionamento Desumidificador</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Especificação</th>
+                </tr>
+                <tr>
+                    <td>Posição</td>
+                    <td>Base, canto traseiro esquerdo</td>
+                </tr>
+                <tr>
+                    <td>Coordenadas</td>
+                    <td>X:50mm | Y:50mm traseira | Z:0mm piso</td>
+                </tr>
+                <tr>
+                    <td>Justificativa</td>
+                    <td>Umidade acumula embaixo<br>Não interfere instrumentos<br>Fácil acesso manutenção</td>
+                </tr>
+            </table>
+
+            <div class="diagram">POSICIONAMENTO - VISTA SUPERIOR
+
+TRASEIRA
+╔════════════════════════════════════════╗
+║  5cm ↓                                 ║
+║  [DESUM] 16,5×10cm                     ║
+║  5cm→                                  ║
+║                                        ║
+║   Base8  Base9  Base10  Base11  Base12║
+║    │      │      │       │       │  13║
+║   [■]    [■]    [■]     [■]     [■] [■]║
+║                                      14║
+║  ← 44cm profundidade →                 ║
+FRENTE
+╚════════════════════════════════════════╝</div>
+
+            <div class="subsection-title">5.2. Passagem Cabo</div>
+
+            <div class="step-box">
+                <strong>ETAPA 10: Furo e Vedação (1h)</strong>
+                <ol>
+                    <li>Marcar ponto saída:
+                        <ul>
+                            <li>Lateral esquerda</li>
+                            <li>30mm do piso</li>
+                            <li>50mm da traseira</li>
+                        </ul>
+                    </li>
+                    <li>Furar broca 8mm</li>
+                    <li>Instalar ilhós borracha</li>
+                    <li>Passar cabo elétrico</li>
+                    <li>Vedar com silicone neutro</li>
+                    <li>Aguardar cura 24h</li>
+                    <li>Conectar tomada externa</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">5.3. Configuração Timer</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Modo</th>
+                    <th>Quando Usar</th>
+                    <th>Programação</th>
+                    <th>Consumo/mês</th>
+                </tr>
+                <tr>
+                    <td>Contínuo</td>
+                    <td>UR > 70%</td>
+                    <td>24h ligado</td>
+                    <td>14,4 kWh<br>(R$ 11-12)</td>
+                </tr>
+                <tr>
+                    <td>Intermitente</td>
+                    <td>UR 50-70%</td>
+                    <td>00:00-12:00</td>
+                    <td>7,2 kWh<br>(R$ 5-6)</td>
+                </tr>
+                <tr>
+                    <td>Econômico</td>
+                    <td>UR < 50%</td>
+                    <td>06:00-12:00</td>
+                    <td>3,6 kWh<br>(R$ 3)</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">AJUSTE:</div>
+                <p>Monitore 2-3 semanas e ajuste timer conforme necessidade. Meta: 45-55% UR.</p>
+            </div>
+
+            <div class="subsection-title">5.4. Manutenção Sílica</div>
+
+            <div class="step-box">
+                <strong>Regeneração (cada 2-4 semanas)</strong>
+                <ol>
+                    <li>Verificar indicador cor:
+                        <ul>
+                            <li>Azul/Laranja = Ativa</li>
+                            <li>Rosa/Transparente = Saturada</li>
+                        </ul>
+                    </li>
+                    <li>Remover compartimento sílica</li>
+                    <li>Colocar em bandeja rasa</li>
+                    <li>Forno 100-120°C por 2-3h</li>
+                    <li>Aguardar esfriar</li>
+                    <li>Verificar retorno cor</li>
+                    <li>Reinstalar</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">6. MONITORAMENTO E PROTEÇÕES</div>
+
+            <div class="subsection-title">6.1. Instalação Higrômetro</div>
+
+            <ul>
+                <li>Altura: meio cristaleira (~80cm piso)</li>
+                <li>Posição: centro (875mm borda esquerda)</li>
+                <li>Fixação: fita dupla face ou ventosa</li>
+                <li>Visibilidade: ler sem abrir portas</li>
+            </ul>
+
+            <div class="subsection-title">6.2. Configuração Alarmes</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Ideal</th>
+                    <th>Alarme Inferior</th>
+                    <th>Alarme Superior</th>
+                </tr>
+                <tr>
+                    <td>Temperatura</td>
+                    <td>20-26°C</td>
+                    <td>< 16°C</td>
+                    <td>> 30°C</td>
+                </tr>
+                <tr>
+                    <td>Umidade</td>
+                    <td>45-55% UR</td>
+                    <td>< 40% UR</td>
+                    <td>> 60% UR</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">6.3. Aplicação Proteções</div>
+
+            <div class="step-box">
+                <strong>Bases de Apoio (7 unidades)</strong>
+                <ol>
+                    <li>Superfície: 140×100mm</li>
+                    <li>Cortar 7 peças EVA 5mm</li>
+                    <li>Limpar com álcool</li>
+                    <li>Aplicar pressionando</li>
+                    <li>Aguardar 24h</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>Apoios de Braço (7 unidades)</strong>
+                <ol>
+                    <li>Superfície: 80×50mm</li>
+                    <li>Cortar cortiça 8×5cm (7 peças)</li>
+                    <li>Aplicar na face frontal</li>
+                    <li>Pressionar 30s</li>
+                    <li>Aguardar 24h</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>Separadores (16 unidades)</strong>
+                <ol>
+                    <li>8 inferiores: 500×140mm = 1,12m²</li>
+                    <li>8 superiores: 450×140mm = 1,01m²</li>
+                    <li>Total feltro: 2,13m²</li>
+                    <li>Aplicar ambas faces</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>Ganchos (7 unidades)</strong>
+                <ol>
+                    <li>Cortar feltro: 50×30mm</li>
+                    <li>Envolver ponta gancho</li>
+                    <li>Fixar com cola/fita</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>Apoios Anti-Balanço (7 unidades)</strong>
+                <ol>
+                    <li>Superfície: 100×60mm</li>
+                    <li>Aplicar EVA 5mm</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">7. CRONOGRAMA E MANUTENÇÃO</div>
+
+            <div class="subsection-title">7.1. Cronograma Execução</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Fase</th>
+                    <th>Dia</th>
+                    <th>Horas</th>
+                    <th>Atividades</th>
+                </tr>
+                <tr>
+                    <td>Preparação</td>
+                    <td>1</td>
+                    <td>4-6h</td>
+                    <td>Esvaziar, limpar, cortar materiais</td>
+                </tr>
+                <tr>
+                    <td>Isolamento passivo</td>
+                    <td>2-3</td>
+                    <td>10-14h</td>
+                    <td>Manta, MDF, vedação, teste</td>
+                </tr>
+                <tr>
+                    <td>Insulfilm</td>
+                    <td>4</td>
+                    <td>4-6h</td>
+                    <td>Limpeza, aplicação, corte</td>
+                </tr>
+                <tr>
+                    <td>Sistema elétrico</td>
+                    <td>5</td>
+                    <td>2-3h</td>
+                    <td>Furo, desumidif., timer, higrômetro</td>
+                </tr>
+                <tr>
+                    <td>Teste</td>
+                    <td>6-8</td>
+                    <td>72h</td>
+                    <td>Monitor, ajuste, cura insulfilm</td>
+                </tr>
+                <tr>
+                    <td>Proteções</td>
+                    <td>9</td>
+                    <td>3-4h</td>
+                    <td>EVA, cortiça, feltro</td>
+                </tr>
+                <tr>
+                    <td>Instrumentos</td>
+                    <td>10</td>
+                    <td>2-3h</td>
+                    <td>Verificar 45-55% UR, instalar</td>
+                </tr>
+            </table>
+
+            <p style="margin-top: 10px;"><strong>Tempo total:</strong> 10 dias (30-40h trabalho efetivo)</p>
+
+            <div class="subsection-title">7.2. Manutenção Preventiva</div>
+
+            <div class="component-box">
+                <div class="component-title">Semanal</div>
+                <ul>
+                    <li>Verificar temp/umidade higrômetro</li>
+                    <li>Confirmar operação desumidificador</li>
+                    <li>Inspeção visual instrumentos</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Mensal</div>
+                <ul>
+                    <li>Verificar cor sílica (regenerar se necessário)</li>
+                    <li>Limpar higrômetro pano seco</li>
+                    <li>Verificar vedações (teste lanterna)</li>
+                    <li>Limpar insulfilm pano úmido</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Trimestral</div>
+                <ul>
+                    <li>Inspeção vedações fita EVA</li>
+                    <li>Verificar fixações painel</li>
+                    <li>Limpar desumidificador</li>
+                    <li>Testar alarmes</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Semestral</div>
+                <ul>
+                    <li>Limpeza completa (esvaziar)</li>
+                    <li>Inspeção insulfilm</li>
+                    <li>Verificar manta térmica</li>
+                    <li>Trocar pilhas higrômetro</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">7.3. Solução Problemas</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Causa</th>
+                    <th>Solução</th>
+                </tr>
+                <tr>
+                    <td>UR > 60%</td>
+                    <td>Desumidif. insuficiente</td>
+                    <td>Regenerar sílica<br>Aumentar tempo ligado</td>
+                </tr>
+                <tr>
+                    <td>UR < 40%</td>
+                    <td>Desumidif. excessivo</td>
+                    <td>Reduzir tempo ligado</td>
+                </tr>
+                <tr>
+                    <td>Temp > 30°C</td>
+                    <td>Insulfilm insuficiente</td>
+                    <td>Verificar cobertura<br>Cortina interna</td>
+                </tr>
+                <tr>
+                    <td>Condensação</td>
+                    <td>Gradiente térmico</td>
+                    <td>Aumentar desumidif.<br>Verificar vedações</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">8. INTEGRAÇÃO E RESULTADO FINAL</div>
+
+            <div class="subsection-title">8.1. Ordem de Montagem</div>
+
+            <div class="diagram">FLUXO COMPLETO
+
+ETAPA 1: ISOLAMENTO PASSIVO
+  • Manta térmica
+  • Vedação EVA
+  • Insulfilm vidros
+        ↓
+ETAPA 2: PAINEL MARCENARIA
+  • Fixação MDF 5mm
+  • Barra horizontal
+  • Ganchos e apoios
+  • Separadores
+        ↓
+ETAPA 3: SISTEMA ATIVO
+  • Desumidificador
+  • Passagem cabo
+  • Timer
+  • Higrômetro
+        ↓
+ETAPA 4: PROTEÇÕES
+  • EVA bases
+  • Cortiça apoios
+  • Feltro separadores
+        ↓
+ETAPA 5: TESTE
+  • 72h monitoramento
+  • Ajuste timer
+  • Verificação
+        ↓
+ETAPA 6: INSTRUMENTOS
+  • 45-55% UR
+  • Instalar guitarras
+  • Monitor intensivo</div>
+
+            <div class="subsection-title">8.2. Desempenho Final</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Performance</th>
+                    <th>Padrão Profissional</th>
+                </tr>
+                <tr>
+                    <td>Temperatura</td>
+                    <td>18-28°C (±2°C)</td>
+                    <td>18-24°C (museus)</td>
+                </tr>
+                <tr>
+                    <td>Umidade</td>
+                    <td>45-55% UR (±5%)</td>
+                    <td>45-55% UR (luthier)</td>
+                </tr>
+                <tr>
+                    <td>Estabilidade</td>
+                    <td>90-95% tempo ideal</td>
+                    <td>85-95% (profissional)</td>
+                </tr>
+                <tr>
+                    <td>Proteção UV</td>
+                    <td>99% bloqueio</td>
+                    <td>98-99% (conservação)</td>
+                </tr>
+            </table>
+
+            <div class="alert-box">
+                <div class="title">AVALIAÇÃO FINAL</div>
+                <p>Sistema integrado oferece proteção nível profissional, comparável a ambientes climatizados ativos, por fração do custo.</p>
+                <p style="margin-top: 10px;">
+                    <strong>Investimento:</strong> R$ 750-850 (instalação) + R$ 3-12/mês<br>
+                    <strong>Proteção:</strong> Instrumentos R$ 20.000+<br>
+                    <strong>Custo-benefício:</strong> 4-5% do valor protegido
+                </p>
+            </div>
+
+            <div style="margin-top: 40px; border-top: 2px solid #000; padding-top: 20px;">
+                <p><strong>Responsável instalação:</strong></p>
+                <p style="margin-top: 10px;">Nome: _________________________________</p>
+                <p>Início: ___/___/_____ | Conclusão: ___/___/_____</p>
+                <p style="margin-top: 20px;">Assinatura: _______________________________</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 9pt; text-align: center;">
+            <p>Projeto Técnico - Sistema de Isolamento e Controle Climático</p>
+            <p>Integração com Sistema de Suportes para 14 Instrumentos</p>
+            <p>Revisão 01 | ___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>
