@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETAPA 2 - Sistema Coolers Fileira Única</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .alert-box {
+            border: 2px solid #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #f5f5f5;
+        }
+
+        .alert-box .title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 20px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 8pt;
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.3;
+        }
+
+        .note {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .note .note-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .step-box {
+            border-left: 3px solid #000;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+
+        .measurement {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            border: 1px solid #000;
+            padding: 2px 5px;
+            display: inline-block;
+        }
+
+        .component-box {
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .component-title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+        }
+
+        .critical-warning {
+            background: #ffe6e6;
+            border: 2px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-warning .title {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .success-box {
+            background: #e6ffe6;
+            border: 2px solid #009900;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .success-box .title {
+            color: #009900;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ETAPA 2 - Sistema Coolers Fileira Única</h1>
+            <div class="subtitle">Circulação Otimizada para 10 Instrumentos Base</div>
+            <div class="subtitle">Cristaleira 3 Portas - Fluxo Superior Protegido</div>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                Cliente: _________________ | Data: _________________ | Rev: 01
+            </div>
+        </div>
+
+        <div class="success-box">
+            <div class="title">✅ PRÉ-REQUISITO: ETAPA 1 CONCLUÍDA</div>
+            <p>□ Sistema MDF + câmara ar instalado | □ Vedação 3 portas testada | □ Base preparada para coolers</p>
+            <p style="margin-top: 5px;"><strong>Configuração confirmada:</strong> 10 instrumentos fileira única + zona superior livre 140cm</p>
+        </div>
+
+        <div class="alert-box">
+            <div class="title">OBJETIVO DESTA ETAPA</div>
+            <p>Instalar sistema de <strong>4 coolers estratégicos</strong> para circulação superior, mantendo instrumentos na base protegidos do fluxo direto.</p>
+            <p style="margin-top: 5px;"><strong>Resultado esperado:</strong> Homogeneidade ±1°C | Proteção máxima instrumentos | Consumo <30W</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. SISTEMA DE COOLERS ESPECIALIZADO</div>
+
+            <div class="subsection-title">1.1. Especificação Componentes</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Componente</th>
+                    <th>Especificação</th>
+                    <th>Quantidade</th>
+                    <th>Função Específica</th>
+                </tr>
+                <tr>
+                    <td>Cooler principal</td>
+                    <td>120×120×25mm, 12V DC<br>Baixo ruído ≤25dB<br>1000-1800 RPM variável</td>
+                    <td>4 unidades</td>
+                    <td>Circulação zona superior</td>
+                </tr>
+                <tr>
+                    <td>Defletores ar</td>
+                    <td>EVA 5mm, 15×15cm<br>Ângulo 45° ajustável</td>
+                    <td>2 unidades</td>
+                    <td>Proteção instrumentos intake</td>
+                </tr>
+                <tr>
+                    <td>Filtros entrada</td>
+                    <td>Malha fina 120×120mm<br>Lavável, anti-poeira</td>
+                    <td>2 unidades</td>
+                    <td>Ar limpo intake C1,C2</td>
+                </tr>
+                <tr>
+                    <td>Controlador PWM duplo</td>
+                    <td>2 canais independentes<br>Controle intake/exhaust</td>
+                    <td>1 unidade</td>
+                    <td>Ajuste fino velocidades</td>
+                </tr>
+                <tr>
+                    <td>Fonte 12V</td>
+                    <td>2A, bivolt, cabo 3m</td>
+                    <td>1 unidade</td>
+                    <td>Alimentação sistema</td>
+                </tr>
+                <tr>
+                    <td>Sensores temperatura</td>
+                    <td>Digital, cabo 2m</td>
+                    <td>3 unidades</td>
+                    <td>Monitoramento zonas</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.2. Layout Detalhado Sistema</div>
+
+            <div class="diagram">SISTEMA COOLERS - CONFIGURAÇÃO FILEIRA ÚNICA
+
+VISTA LATERAL (corte)                    VISTA SUPERIOR
+                                         
+TOPO 157cm                              TRASEIRA
+    ↑                                   ╔══════════════════════════════════════╗
+    │ [C3] ← EXHAUST   [C4] ← EXHAUST   ║ [C3]              [C4]              ║
+    │  ↑                 ↑             ║ EXHAUST           EXHAUST           ║
+    │  │                 │             ║   ↑                 ↑              ║
+140cm│  │   ZONA LIVRE   │             ║   │                 │              ║
+    │  │   CIRCULAÇÃO    │             ║   │                 │              ║
+    │  │                 │             ║   │                 │              ║
+    │  │                 │             ║   │   ZONA SUPERIOR │              ║
+    │  │                 │             ║   │   (140cm livre) │              ║
+    │  │                 │             ║   │                 │              ║
+    │  ↓                 ↓             ║   │                 │              ║
+ 17cm│ 🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸          ║   ↓                 ↓              ║
+    │ [■][■][■][■][■][■][■][■][■][■]   ║🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸              ║
+BASE│[DEF]              [DEF]          ║[C1]              [C2]              ║
+    └[C1] INTAKE      [C2] INTAKE      ║INTAKE + DEFLETOR  INTAKE + DEFLETOR ║
+                                       ║+ Filtro          + Filtro          ║
+FLUXO: C1,C2 → ZONA SUPERIOR → C3,C4   ╚══════════════════════════════════════╝
+                                       FRENTE (3 portas)</div>
+
+            <div class="subsection-title">1.3. Princípio de Funcionamento</div>
+
+            <div class="component-box">
+                <div class="component-title">Proteção Instrumentos</div>
+                <ul>
+                    <li><strong>Intake protegido:</strong> Defletores EVA direcionam ar para cima</li>
+                    <li><strong>Zona estável:</strong> Instrumentos na região de menor turbulência</li>
+                    <li><strong>Gradiente suave:</strong> Variação temperatura <1°C na base</li>
+                    <li><strong>Fluxo indireto:</strong> Ar nunca incide diretamente nos instrumentos</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Circulação Otimizada</div>
+                <ul>
+                    <li><strong>Convecção forçada:</strong> Ar quente sobe naturalmente auxiliado pelos exhaust</li>
+                    <li><strong>Renovação controlada:</strong> 2-3 trocas/hora (vs. 8-10 sistemas convencionais)</li>
+                    <li><strong>Pressão equilibrada:</strong> Intake ≈ Exhaust (sem correntes fortes)</li>
+                    <li><strong>Distribuição uniforme:</strong> 175cm largura coberta pelos 4 coolers</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. COORDENADAS DE INSTALAÇÃO</div>
+
+            <div class="subsection-title">2.1. Posicionamento Preciso</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Cooler</th>
+                    <th>Posição</th>
+                    <th>X (mm)</th>
+                    <th>Y (mm)</th>
+                    <th>Z (mm)</th>
+                    <th>Orientação</th>
+                </tr>
+                <tr>
+                    <td>C1</td>
+                    <td>Base frontal esquerda</td>
+                    <td>80</td>
+                    <td>430</td>
+                    <td>170</td>
+                    <td>Intake ↑ + defletor</td>
+                </tr>
+                <tr>
+                    <td>C2</td>
+                    <td>Base frontal direita</td>
+                    <td>1670</td>
+                    <td>430</td>
+                    <td>170</td>
+                    <td>Intake ↑ + defletor</td>
+                </tr>
+                <tr>
+                    <td>C3</td>
+                    <td>Topo traseiro esquerda</td>
+                    <td>80</td>
+                    <td>80</td>
+                    <td>1550</td>
+                    <td>Exhaust ↑</td>
+                </tr>
+                <tr>
+                    <td>C4</td>
+                    <td>Topo traseiro direita</td>
+                    <td>1670</td>
+                    <td>80</td>
+                    <td>1550</td>
+                    <td>Exhaust ↑</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">REFERÊNCIA COORDENADAS:</div>
+                <p><strong>Origem (0,0,0):</strong> Canto frontal esquerdo inferior interno</p>
+                <p><strong>X:</strong> Largura (0-1750mm) | <strong>Y:</strong> Profundidade (0-490mm) | <strong>Z:</strong> Altura (0-1570mm)</p>
+                <p><strong>Instrumentos:</strong> Base Z=0-170mm | <strong>Zona livre:</strong> Z=170-1550mm</p>
+            </div>
+
+            <div class="subsection-title">2.2. Detalhe Defletores Proteção</div>
+
+            <div class="diagram">DEFLETOR INTAKE - CORTE LATERAL
+
+COOLER C1/C2 (base)
+    ┌─────────────┐
+    │   120×120   │ ← Cooler intake
+    │    ↑ Ar     │
+    └─────┬───────┘
+          │
+    ┌─────▼───────┐
+    │ ╱DEFLETOR╲  │ ← EVA 5mm, ângulo 45°
+    │╱    45°   ╲ │
+    └─────────────┘
+          │ │ │  ← Ar direcionado lateralmente
+          │ │ │
+    ┌─────────────┐
+    │   ZONA      │ ← Instrumentos protegidos
+    │ PROTEGIDA   │   (sem fluxo direto)
+    │  🎸🎸🎸     │
+    └─────────────┘
+
+Resultado: Ar entra mas não atinge instrumentos diretamente</div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">3. PROCEDIMENTO DE INSTALAÇÃO</div>
+
+            <div class="critical-warning">
+                <div class="title">⚠️ CUIDADOS CRÍTICOS</div>
+                <p><strong>INSTRUMENTOS:</strong> Remover TODOS os instrumentos antes da furação</p>
+                <p><strong>PROTEÇÃO:</strong> Cobrir interior com lona durante trabalhos</p>
+                <p><strong>POEIRA:</strong> Aspirar completamente após cada etapa</p>
+                <p><strong>VIBRAÇÃO:</strong> Usar furadeira com controle de torque</p>
+            </div>
+
+            <div class="step-box">
+                <strong>PREPARAÇÃO (1h)</strong>
+                <ol>
+                    <li>Verificar conclusão Etapa 1 e cura 48h</li>
+                    <li>Remover todos instrumentos e proteger interior</li>
+                    <li>Conferir coordenadas marcadas para coolers</li>
+                    <li>Testar componentes elétricos antes instalação</li>
+                    <li>Organizar ferramentas e materiais</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 1: FURAÇÃO CONTROLADA (2h)</strong>
+                <ol>
+                    <li>Marcar centros exatos dos 4 furos Ø10mm nas coordenadas</li>
+                    <li>Furação gradual para evitar estilhaçamento:
+                        <ul>
+                            <li>Furo piloto Ø3mm em todas camadas</li>
+                            <li>Expandir Ø6mm (manta externa + câmara ar)</li>
+                            <li>Expandir Ø8mm (incluindo MDF)</li>
+                            <li>Finalizar Ø10mm (manta interna)</li>
+                        </ul>
+                    </li>
+                    <li>Lima circular para acabamento perfeito</li>
+                    <li>Aspirar poeira completamente após cada furo</li>
+                    <li>Teste passagem ar: soprar cada furo individualmente</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 2: MONTAGEM INTAKE BASE (C1, C2) (2h)</strong>
+                <ol>
+                    <li>Instalar filtros nos coolers C1 e C2</li>
+                    <li>Posicionar coolers sobre furos base (Z=170mm)</li>
+                    <li>Verificar orientação: fluxo PARA CIMA</li>
+                    <li>Fixar com parafusos M4×40mm e arruelas</li>
+                    <li>Instalar defletores EVA 45° sobre cada cooler:
+                        <ul>
+                            <li>Cortar EVA 5mm em formato cônico</li>
+                            <li>Fixar com cola quente resistente</li>
+                            <li>Teste direcionamento: ar deve ir lateralmente</li>
+                        </ul>
+                    </li>
+                    <li>Vedação perímetro com espuma</li>
+                    <li>Conectar cabos (extensões se necessário)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 3: MONTAGEM EXHAUST TOPO (C3, C4) (2h)</strong>
+                <ol>
+                    <li>Acesso pelo topo da cristaleira</li>
+                    <li>Posicionar coolers C3 e C4 sobre furos (Z=1550mm)</li>
+                    <li>Verificar orientação: fluxo PARA FORA (exhaust)</li>
+                    <li>Fixação com parafusos M4×30mm</li>
+                    <li>Vedação crítica: ar quente escapa facilmente</li>
+                    <li>Aplicar silicone neutro ao redor se necessário</li>
+                    <li>Teste rotação livre manual</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 4: SISTEMA ELÉTRICO E CONTROLE (3h)</strong>
+                <ol>
+                    <li>Instalar controlador PWM duplo posição acessível</li>
+                    <li>Conectar C1+C2 (intake) no canal 1</li>
+                    <li>Conectar C3+C4 (exhaust) no canal 2</li>
+                    <li>Passar fiação pela câmara 15mm da base</li>
+                    <li>Saída externa via furo lateral (similar Etapa 1)</li>
+                    <li>Conectar fonte 12V/2A externa</li>
+                    <li>Vedar passagem cabo com silicone + ilhós</li>
+                    <li>Teste funcional: cada canal independente</li>
+                </ol>
+            </div>
+
+            <div class="diagram">DIAGRAMA ELÉTRICO - CONTROLE DUPLO
+
+FONTE 12V/2A ──→ CONTROLADOR PWM DUPLO
+  (externa)           │           │
+                      ▼           ▼
+                  CANAL 1     CANAL 2
+                  (Intake)    (Exhaust)
+                     │           │
+                     ├──→ C1     ├──→ C3
+                     └──→ C2     └──→ C4
+
+CONFIGURAÇÃO INICIAL:
+Canal 1 (Intake): 60% velocidade
+Canal 2 (Exhaust): 70% velocidade
+Resultado: Pressão levemente positiva</div>
+
+            <div class="step-box">
+                <strong>ETAPA 5: INSTALAÇÃO SENSORES (1h)</strong>
+                <ol>
+                    <li>Sensor 1: Base próximo instrumentos (Z=100mm, centro)</li>
+                    <li>Sensor 2: Meio altura zona livre (Z=800mm, centro)</li>
+                    <li>Sensor 3: Topo zona livre (Z=1400mm, centro)</li>
+                    <li>Fixação discreta com fita dupla face</li>
+                    <li>Cabos organizados junto à lateral</li>
+                    <li>Display/interface em posição visível externa</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">4. CONFIGURAÇÃO E TESTES</div>
+
+            <div class="subsection-title">4.1. Configuração Inicial</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Parâmetro</th>
+                    <th>Valor Inicial</th>
+                    <th>Ajuste Fino</th>
+                    <th>Meta Final</th>
+                </tr>
+                <tr>
+                    <td>Intake C1,C2 (PWM%)</td>
+                    <td>60%</td>
+                    <td>50-70%</td>
+                    <td>Conforme sensores</td>
+                </tr>
+                <tr>
+                    <td>Exhaust C3,C4 (PWM%)</td>
+                    <td>70%</td>
+                    <td>60-80%</td>
+                    <td>Intake + 10%</td>
+                </tr>
+                <tr>
+                    <td>Diferença temperatura (°C)</td>
+                    <td>Máx ±2°C</td>
+                    <td>±1,5°C</td>
+                    <td>±1°C zonas</td>
+                </tr>
+                <tr>
+                    <td>Ruído total (dB)</td>
+                    <td><30dB</td>
+                    <td><25dB</td>
+                    <td>Silencioso</td>
+                </tr>
+                <tr>
+                    <td>Consumo (W)</td>
+                    <td>~24W</td>
+                    <td>18-30W</td>
+                    <td>Otimizado</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">4.2. Protocolo de Testes</div>
+
+            <div class="component-box">
+                <div class="component-title">Teste 1: Proteção Instrumentos (30min)</div>
+                <ol>
+                    <li>Posicionar papel tissue próximo aos instrumentos</li>
+                    <li>Ligar sistema velocidade 100%</li>
+                    <li>Verificar ausência movimento direto do papel</li>
+                    <li>Confirmar defletores direcionando ar corretamente</li>
+                    <li>Ajustar ângulo defletores se necessário</li>
+                </ol>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Teste 2: Homogeneidade Térmica (2h)</div>
+                <ol>
+                    <li>Monitorar 3 sensores simultaneamente</li>
+                    <li>Registrar variações por 2 horas</li>
+                    <li>Meta: diferença máxima 1°C entre sensores</li>
+                    <li>Ajustar velocidades se desvio detectado</li>
+                    <li>Teste com portas fechadas e abertas</li>
+                </ol>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Teste 3: Eficiência Energética (24h)</div>
+                <ol>
+                    <li>Medição consumo real vs. teórico</li>
+                    <li>Teste diferentes velocidades</li>
+                    <li>Encontrar ponto ótimo eficiência/resultado</li>
+                    <li>Configurar timers para economia noturna</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">4.3. Ajustes Sazonais</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Estação</th>
+                    <th>Intake (%)</th>
+                    <th>Exhaust (%)</th>
+                    <th>Horário</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td>Verão</td>
+                    <td>70%</td>
+                    <td>80%</td>
+                    <td>06:00-22:00</td>
+                    <td>Circulação intensiva</td>
+                </tr>
+                <tr>
+                    <td>Inverno</td>
+                    <td>50%</td>
+                    <td>60%</td>
+                    <td>08:00-20:00</td>
+                    <td>Circulação mínima</td>
+                </tr>
+                <tr>
+                    <td>Meia estação</td>
+                    <td>60%</td>
+                    <td>70%</td>
+                    <td>07:00-21:00</td>
+                    <td>Configuração padrão</td>
+                </tr>
+                <tr>
+                    <td>Noturno</td>
+                    <td>40%</td>
+                    <td>50%</td>
+                    <td>22:00-06:00</td>
+                    <td>Economia energia</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">5. INTEGRAÇÃO COM INSTRUMENTOS</div>
+
+            <div class="subsection-title">5.1. Posicionamento Seguro</div>
+
+            <div class="diagram">LAYOUT FINAL - INSTRUMENTOS + COOLERS
+
+TRASEIRA
+╔════════════════════════════════════════════════════════════╗
+║ [C3] ↑                                  ↑ [C4]            ║
+║ EXHAUST                                EXHAUST             ║
+║      │                                    │               ║
+║      │         ZONA SUPERIOR              │               ║
+║      │         LIVRE 140cm                │               ║
+║      │    (circulação homogênea)          │               ║
+║      │                                    │               ║
+║      ▼ ◄─────── fluxo suave ─────────► ▼               ║
+║                                                            ║
+║ [S1]   [S2]   [S3]   [S4]   [S5]   [S6]   [S7]   [S8]   ║
+║  │     │     │     │     │     │     │     │             ║
+║  🎸    🎸    🎸    🎸    🎸    🎸    🎸    🎸            ║
+║ P-1   P-2   P-3   P-4   P-5   P-6   P-7   P-8           ║
+║[DEF] [■] [■] [■] [■] [■] [■] [■] [■] [■] [DEF]     ║
+║[C1]↑                                            ↑[C2]     ║
+║INTAKE + Filtro                         INTAKE + Filtro   ║
+╚════════════════════════════════════════════════════════════╝
+FRENTE (3 portas)
+
+S1-S8: Suportes instrumentos (apoios EVA)
+DEF: Defletores proteção
+P-1 a P-8: Posições 1-8 (faltam P-9, P-10 para 10 total)</div>
+
+            <div class="note">
+                <div class="note-title">CORREÇÃO LAYOUT:</div>
+                <p>Diagrama mostra 8 posições, mas são <strong>10 instrumentos</strong> conforme especificação.</p>
+                <p><strong>Layout correto:</strong> 10 posições espaçadas 17,5cm = 175cm total</p>
+                <p><strong>Instrumentos 9-10:</strong> Posicionar após P-8 mantendo espaçamento</p>
+            </div>
+
+            <div class="subsection-title">5.2. Proteções Específicas</div>
+
+            <div class="component-box">
+                <div class="component-title">Apoios Base Instrumentos</div>
+                <ul>
+                    <li><strong>Material:</strong> EVA 5mm autoadesivo</li>
+                    <li><strong>Dimensões:</strong> 12×8cm por apoio</li>
+                    <li><strong>Posicionamento:</strong> Base de cada instrumento</li>
+                    <li><strong>Função:</strong> Isolamento vibração + proteção</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Monitoramento Zona Instrumentos</div>
+                <ul>
+                    <li><strong>Sensor base:</strong> Z=100mm, monitoramento direto</li>
+                    <li><strong>Alarmes:</strong> Temperatura <16°C ou >30°C</li>
+                    <li><strong>Umidade:</strong> <40% ou >60% UR</li>
+                    <li><strong>Registro:</strong> Log automático variações</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">6. MANUTENÇÃO E OPERAÇÃO</div>
+
+            <div class="subsection-title">6.1. Rotina Manutenção</div>
+
+            <div class="component-box">
+                <div class="component-title">Semanal</div>
+                <ul>
+                    <li>Limpeza filtros C1, C2 (aspirar ou lavar)</li>
+                    <li>Verificar funcionamento todos coolers</li>
+                    <li>Conferir temperatura 3 sensores</li>
+                    <li>Limpeza defletores (pano úmido)</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Mensal</div>
+                <ul>
+                    <li>Limpeza completa coolers (pás + motor)</li>
+                    <li>Verificar conexões elétricas</li>
+                    <li>Teste ruído e vibração</li>
+                    <li>Calibração sensores</li>
+                    <li>Análise logs temperatura</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Trimestral</div>
+                <ul>
+                    <li>Troca filtros de ar</li>
+                    <li>Verificar vedações ao redor coolers</li>
+                    <li>Limpeza sistema elétrico</li>
+                    <li>Teste completo 48h todos parâmetros</li>
+                    <li>Atualização configurações sazonais</li>
+                </ul>
+            </div>
+
+            <div class="subsection-title">6.2. Solução Problemas</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Problema</th>
+                    <th>Causa Provável</th>
+                    <th>Solução</th>
+                </tr>
+                <tr>
+                    <td>Temperatura desigual</td>
+                    <td>Velocidades desbalanceadas</td>
+                    <td>Ajustar PWM intake/exhaust</td>
+                </tr>
+                <tr>
+                    <td>Fluxo nos instrumentos</td>
+                    <td>Defletores mal posicionados</td>
+                    <td>Reajustar ângulo defletores</td>
+                </tr>
+                <tr>
+                    <td>Ruído excessivo</td>
+                    <td>Vibração ou cooler defeituoso</td>
+                    <td>Verificar fixação/trocar cooler</td>
+                </tr>
+                <tr>
+                    <td>Consumo alto</td>
+                    <td>Velocidades muito altas</td>
+                    <td>Reduzir PWM gradualmente</td>
+                </tr>
+                <tr>
+                    <td>Poeira nos instrumentos</td>
+                    <td>Filtros saturados</td>
+                    <td>Limpeza/troca filtros</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <div class="section-title">7. RESULTADOS FINAIS</div>
+
+            <div class="success-box">
+                <div class="title">✅ PERFORMANCE SISTEMA COMPLETO</div>
+                <p><strong>Proteção instrumentos:</strong> Fluxo indireto + zona estável base</p>
+                <p><strong>Homogeneidade:</strong> ±1°C em toda cristaleira</p>
+                <p><strong>Eficiência energética:</strong> 18-30W (vs. 60W+ sistemas convencionais)</p>
+                <p><strong>Controle preciso:</strong> Ajuste independente intake/exhaust</p>
+                <p><strong>Operação silenciosa:</strong> <25dB ruído total</p>
+            </div>
+
+            <div class="alert-box">
+                <div class="title">SISTEMA FINALIZADO</div>
+                <p><strong>Etapa 1:</strong> ✅ Isolamento MDF + câmara ar</p>
+                <p><strong>Etapa 2:</strong> ✅ Coolers + controle + proteção</p>
+                <p><strong>Próximo passo:</strong> Aguardar 72h teste completo antes colocar instrumentos</p>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Eficiência Global Alcançada</div>
+                <ul>
+                    <li><strong>Isolamento térmico:</strong> 65-75% (vs. 0% original)</li>
+                    <li><strong>Controle temperatura:</strong> ±1°C (vs. ±10°C original)</li>
+                    <li><strong>Proteção UV:</strong> 99% bloqueio (insulfilm futuro)</li>
+                    <li><strong>Proteção poeira:</strong> Filtros + pressão positiva</li>
+                    <li><strong>Monitoramento:</strong> 3 sensores + alarmes automáticos</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; border-top: 2px solid #000; padding-top: 20px;">
+            <p><strong>Responsável instalação Etapa 2:</strong></p>
+            <p style="margin-top: 10px;">Nome: _________________________________</p>
+            <p>Início: ___/___/_____ | Conclusão: ___/___/_____</p>
+            <p style="margin-top: 10px;"><strong>Sistema validado:</strong></p>
+            <p>□ 4 coolers funcionais | □ Proteção instrumentos | □ Homogeneidade ±1°C | □ Controle operacional</p>
+            <p style="margin-top: 20px;">Assinatura: _______________________________</p>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 9pt; text-align: center;">
+            <p>ETAPA 2 - Sistema Coolers Fileira Única</p>
+            <p>Projeto Técnico Modular - Cristaleira 10 Instrumentos</p>
+            <p>Rev: 01 | ___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>

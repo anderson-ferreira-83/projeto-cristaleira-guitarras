@@ -7,7 +7,8 @@
       "WebFetch(domain:produto.mercadolivre.com.br)",
       "WebSearch",
       "Bash(grep:*)",
-      "Bash(awk:*)"
+      "Bash(awk:*)",
+      "Bash(rm:*)"
     ],
     "deny": [],
     "ask": []

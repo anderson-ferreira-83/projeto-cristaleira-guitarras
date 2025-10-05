@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Detalhado para Marceneiro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .alert-box {
+            border: 2px solid #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #f5f5f5;
+        }
+
+        .alert-box .title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 20px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 8pt;
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.3;
+        }
+
+        .note {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .note .note-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .step-box {
+            border-left: 3px solid #000;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+
+        .measurement {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            border: 1px solid #000;
+            padding: 2px 5px;
+            display: inline-block;
+        }
+
+        .component-box {
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .component-title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+        }
+
+        .critical-warning {
+            background: #ffe6e6;
+            border: 2px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-warning .title {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .success-box {
+            background: #e6ffe6;
+            border: 2px solid #009900;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .success-box .title {
+            color: #009900;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+
+        .cutting-diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 7pt;
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.2;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Projeto Detalhado para Marceneiro</h1>
+            <div class="subtitle">Painéis MDF para Sistema Isolamento Térmico</div>
+            <div class="subtitle">Cristaleira 3 Portas - 10 Instrumentos Fileira Única</div>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                Marceneiro: _________________ | Data: _________________ | Rev: 01
+            </div>
+        </div>
+
+        <div class="success-box">
+            <div class="title">✅ ESPECIFICAÇÃO TÉCNICA</div>
+            <p><strong>Material:</strong> MDF 5mm Nacional ou Importado (qualidade móveis)</p>
+            <p><strong>Aplicação:</strong> Painéis estruturais para isolamento térmico</p>
+            <p><strong>Instalação:</strong> Fixação SOBRE sistema isolamento (NÃO direto na madeira)</p>
+        </div>
+
+        <div class="critical-warning">
+            <div class="title">⚠️ ATENÇÃO MARCENEIRO</div>
+            <p><strong>SEQUÊNCIA OBRIGATÓRIA:</strong> Painéis MDF são instalados APÓS isolamento térmico</p>
+            <p><strong>NÃO FIXAR:</strong> Diretamente na parede original da cristaleira</p>
+            <p><strong>FIXAÇÃO:</strong> Nos espaçadores 10×10mm instalados no isolamento</p>
+            <p><strong>FUROS:</strong> Coordenadas exatas serão marcadas durante instalação</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. DIMENSÕES INTERNAS CRISTALEIRA</div>
+
+            <div class="subsection-title">1.1. Medidas Confirmadas</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Dimensão</th>
+                    <th>Medida Interna (mm)</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td>Largura total</td>
+                    <td>1750</td>
+                    <td>3 portas frontais</td>
+                </tr>
+                <tr>
+                    <td>Altura total</td>
+                    <td>1570</td>
+                    <td>Base a topo interno</td>
+                </tr>
+                <tr>
+                    <td>Profundidade</td>
+                    <td>490</td>
+                    <td>Frente a fundo interno</td>
+                </tr>
+                <tr>
+                    <td>Base gavetas</td>
+                    <td>170</td>
+                    <td>Altura das gavetas</td>
+                </tr>
+                <tr>
+                    <td>Altura útil instrumentos</td>
+                    <td>1400</td>
+                    <td>1570 - 170 = espaço livre</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.2. Layout Final com Painéis</div>
+
+            <div class="diagram">VISTA FRONTAL - PAINÉIS MDF APÓS ISOLAMENTO
+
+    ←─────────── 1750mm ────────────→
+    ┌─────────────────────────────────┐ ↑
+    │                                 │ │
+    │    PAINEL MDF FUNDO 5mm         │ │
+    │    1740×1560mm                  │ │
+    │                                 │ │ 1570mm
+    │                                 │ │
+    │  🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸        │ │
+    │  ↑ 170mm (base instrumentos)    │ │
+    └─────────────────────────────────┘ ↓
+    
+    LATERAIS:
+    Esquerda: 1560×480mm
+    Direita:  1560×480mm
+    
+    TOPO: 1740×480mm
+    BASE: 1740×480mm (sobre gavetas)</div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. LISTA DE CORTES MDF 5mm</div>
+
+            <div class="subsection-title">2.1. Painéis Principais</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Peça</th>
+                    <th>Dimensões (mm)</th>
+                    <th>Quantidade</th>
+                    <th>Aplicação</th>
+                    <th>Observações</th>
+                </tr>
+                <tr>
+                    <td>Painel Fundo</td>
+                    <td>1740 × 1560</td>
+                    <td>1</td>
+                    <td>Parede traseira</td>
+                    <td>Peça principal estrutural</td>
+                </tr>
+                <tr>
+                    <td>Painel Lateral Esquerdo</td>
+                    <td>1560 × 480</td>
+                    <td>1</td>
+                    <td>Lateral esquerda</td>
+                    <td>Altura total menos base</td>
+                </tr>
+                <tr>
+                    <td>Painel Lateral Direito</td>
+                    <td>1560 × 480</td>
+                    <td>1</td>
+                    <td>Lateral direita</td>
+                    <td>Idêntico ao esquerdo</td>
+                </tr>
+                <tr>
+                    <td>Painel Topo</td>
+                    <td>1740 × 480</td>
+                    <td>1</td>
+                    <td>Cobertura superior</td>
+                    <td>Furos coolers serão marcados</td>
+                </tr>
+                <tr>
+                    <td>Painel Base</td>
+                    <td>1740 × 480</td>
+                    <td>1</td>
+                    <td>Piso sobre gavetas</td>
+                    <td>Furos coolers serão marcados</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">2.2. Espaçadores de Fixação</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Peça</th>
+                    <th>Dimensões (mm)</th>
+                    <th>Quantidade</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>Espaçadores câmara ar</td>
+                    <td>10 × 10 × 10</td>
+                    <td>120</td>
+                    <td>Distanciamento isolamento</td>
+                </tr>
+                <tr>
+                    <td>Espaçadores base</td>
+                    <td>15 × 10 × 10</td>
+                    <td>20</td>
+                    <td>Base (espaço fiação coolers)</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">ESPAÇADORES:</div>
+                <p>Os espaçadores podem ser usinados pelo marceneiro ou cortados de sobras MDF.</p>
+                <p><strong>Função:</strong> Criar câmara de ar 10mm entre isolamento e painéis MDF</p>
+                <p><strong>Tolerância:</strong> ±1mm (precisão importante para eficiência térmica)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">3. OTIMIZAÇÃO DE CHAPAS</div>
+
+            <div class="subsection-title">3.1. Plano de Corte Chapa 1 (2750×1850mm)</div>
+
+            <div class="cutting-diagram">CHAPA MDF 5mm - CORTE 1 (2750×1850mm)
+
+    ←────────────── 2750mm ──────────────→
+    ┌─────────────────────────────────────┐ ↑
+    │                                     │ │
+    │     PAINEL FUNDO                    │ │
+    │     1740×1560mm                     │ │ 1850mm
+    │                                     │ │
+    │           ┌──────────────┐          │ │
+    └───────────┤ SOBRA 1      │          │ ↓
+                │ 1010×1560mm  │
+                └──────────────┘
+
+Aproveitamento: 89,2%
+Sobra 1: Usar para espaçadores e ajustes</div>
+
+            <div class="subsection-title">3.2. Plano de Corte Chapa 2 (2750×1850mm)</div>
+
+            <div class="cutting-diagram">CHAPA MDF 5mm - CORTE 2 (2750×1850mm)
+
+    ←────────────── 2750mm ──────────────→
+    ┌───────────────┬───────────────┬─────┐ ↑
+    │ LATERAL ESQ   │ LATERAL DIR   │     │ │
+    │ 1560×480mm    │ 1560×480mm    │SOBRA│ │
+    │               │               │ 2   │ │ 1850mm
+    ├───────────────┼───────────────┤     │ │
+    │ TOPO          │ BASE          │     │ │
+    │ 1740×480mm    │ 1740×480mm    │     │ │
+    └───────────────┴───────────────┴─────┘ ↓
+
+Aproveitamento: 91,8%
+Sobra 2: Usar para reforços e espaçadores</div>
+
+            <div class="subsection-title">3.3. Lista de Compras MDF</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Especificação</th>
+                    <th>Quantidade</th>
+                    <th>Observação</th>
+                </tr>
+                <tr>
+                    <td>Chapa MDF 5mm</td>
+                    <td>2750×1850mm</td>
+                    <td>2 chapas</td>
+                    <td>Qualidade móveis/naval</td>
+                </tr>
+                <tr>
+                    <td>Parafusos autorroscantes</td>
+                    <td>3,5×25mm madeira</td>
+                    <td>100 unidades</td>
+                    <td>Fixação nos espaçadores</td>
+                </tr>
+                <tr>
+                    <td>Furadeira broca</td>
+                    <td>3mm piloto</td>
+                    <td>1 unidade</td>
+                    <td>Pré-furação parafusos</td>
+                </tr>
+                <tr>
+                    <td>Cola madeira</td>
+                    <td>500ml</td>
+                    <td>1 frasco</td>
+                    <td>Fixação espaçadores</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">4. INSTRUÇÕES DE FABRICAÇÃO</div>
+
+            <div class="subsection-title">4.1. Preparação das Peças</div>
+
+            <div class="step-box">
+                <strong>CORTE DAS PEÇAS</strong>
+                <ol>
+                    <li>Cortar peças conforme dimensões exatas da tabela</li>
+                    <li>Utilizar serra esquadria ou circular com guia</li>
+                    <li>Acabamento bordas com lixa 120 → 220</li>
+                    <li>Verificar esquadro e dimensões finais</li>
+                    <li>Identificar cada peça com etiqueta</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>FABRICAÇÃO ESPAÇADORES</strong>
+                <ol>
+                    <li>Cortar ripas 10×10mm das sobras</li>
+                    <li>Cortar cubos 10mm de comprimento (120 unidades)</li>
+                    <li>Cortar cubos 15mm para base (20 unidades)</li>
+                    <li>Lixar faces para uniformidade</li>
+                    <li>Verificar dimensões com paquímetro</li>
+                </ol>
+            </div>
+
+            <div class="subsection-title">4.2. Pré-Montagem e Verificação</div>
+
+            <div class="step-box">
+                <strong>TESTE MONTAGEM À SECO</strong>
+                <ol>
+                    <li>Montar painéis temporariamente com sargentos</li>
+                    <li>Verificar encaixes e esquadros</li>
+                    <li>Confirmar dimensões finais montadas</li>
+                    <li>Marcar pontos ajustes se necessário</li>
+                    <li>Desmontar para entrega separada</li>
+                </ol>
+            </div>
+
+            <div class="note">
+                <div class="note-title">IMPORTANTE:</div>
+                <p><strong>NÃO MONTAR DEFINITIVAMENTE:</strong> Painéis serão instalados após isolamento</p>
+                <p><strong>ENTREGA:</strong> Peças separadas + espaçadores + parafusos</p>
+                <p><strong>COORDENAÇÃO:</strong> Marceneiro deve acompanhar marcação furos coolers</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">5. COORDENAÇÃO COM INSTALAÇÃO</div>
+
+            <div class="subsection-title">5.1. Sequência de Trabalho</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Etapa</th>
+                    <th>Responsável</th>
+                    <th>Prazo</th>
+                    <th>Entregáveis</th>
+                </tr>
+                <tr>
+                    <td>1. Fabricação MDF</td>
+                    <td>Marceneiro</td>
+                    <td>3-5 dias</td>
+                    <td>Peças cortadas + espaçadores</td>
+                </tr>
+                <tr>
+                    <td>2. Isolamento térmico</td>
+                    <td>Instalador</td>
+                    <td>2-3 dias</td>
+                    <td>Sistema isolamento + posição espaçadores</td>
+                </tr>
+                <tr>
+                    <td>3. Instalação MDF</td>
+                    <td>Marceneiro + Instalador</td>
+                    <td>1 dia</td>
+                    <td>Painéis fixados + furos coolers</td>
+                </tr>
+                <tr>
+                    <td>4. Sistema coolers</td>
+                    <td>Instalador</td>
+                    <td>1-2 dias</td>
+                    <td>Sistema completo funcional</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">5.2. Pontos de Coordenação</div>
+
+            <div class="component-box">
+                <div class="component-title">Marcação Furos Coolers</div>
+                <ul>
+                    <li><strong>Quando:</strong> Durante instalação dos painéis MDF</li>
+                    <li><strong>Quantidade:</strong> 4 furos Ø10mm</li>
+                    <li><strong>Posições:</strong> 2 na base + 2 no topo</li>
+                    <li><strong>Responsável:</strong> Instalador marca, marceneiro executa</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Fixação Espaçadores</div>
+                <ul>
+                    <li><strong>Grid:</strong> 40×40cm distância entre espaçadores</li>
+                    <li><strong>Colagem:</strong> Cola madeira + pressão 30s</li>
+                    <li><strong>Cura:</strong> 30min antes fixar painéis</li>
+                    <li><strong>Verificação:</strong> Esquadro e nivelamento</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Apoios Instrumentos</div>
+                <ul>
+                    <li><strong>Localização:</strong> Base painel MDF</li>
+                    <li><strong>Posições:</strong> 10 apoios espaçados 175mm</li>
+                    <li><strong>Material apoio:</strong> Fornecido pelo instalador (EVA)</li>
+                    <li><strong>Marcação:</strong> Durante instalação final</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">6. ESPECIFICAÇÕES TÉCNICAS</div>
+
+            <div class="subsection-title">6.1. Qualidade MDF Exigida</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Característica</th>
+                    <th>Especificação</th>
+                    <th>Motivo</th>
+                </tr>
+                <tr>
+                    <td>Densidade</td>
+                    <td>650-750 kg/m³</td>
+                    <td>Resistência + massa térmica</td>
+                </tr>
+                <tr>
+                    <td>Umidade</td>
+                    <td>6-9%</td>
+                    <td>Estabilidade dimensional</td>
+                </tr>
+                <tr>
+                    <td>Faces</td>
+                    <td>Lisas, sem defeitos</td>
+                    <td>Aplicação isolamento</td>
+                </tr>
+                <tr>
+                    <td>Bordas</td>
+                    <td>Uniformes, sem lascas</td>
+                    <td>Vedação eficiente</td>
+                </tr>
+                <tr>
+                    <td>Espessura</td>
+                    <td>5mm ± 0,3mm</td>
+                    <td>Tolerância câmara ar</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">6.2. Acabamento e Tratamento</div>
+
+            <div class="component-box">
+                <div class="component-title">Acabamento Superficial</div>
+                <ul>
+                    <li><strong>Lixamento:</strong> Grão 220 em ambas faces</li>
+                    <li><strong>Limpeza:</strong> Remoção completa pó</li>
+                    <li><strong>Selador:</strong> NÃO aplicar (interface com isolamento)</li>
+                    <li><strong>Proteção:</strong> Apenas durante transporte</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Armazenamento</div>
+                <ul>
+                    <li><strong>Local:</strong> Ambiente seco, ventilado</li>
+                    <li><strong>Posição:</strong> Horizontal, com separadores</li>
+                    <li><strong>Proteção:</strong> Lona impermeável</li>
+                    <li><strong>Prazo:</strong> Usar em até 30 dias</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">7. CRONOGRAMA E ENTREGA</div>
+
+            <div class="subsection-title">7.1. Prazos de Execução</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Atividade</th>
+                    <th>Duração</th>
+                    <th>Observações</th>
+                </tr>
+                <tr>
+                    <td>Compra materiais</td>
+                    <td>1-2 dias</td>
+                    <td>Verificar disponibilidade MDF 5mm</td>
+                </tr>
+                <tr>
+                    <td>Corte peças principais</td>
+                    <td>1 dia</td>
+                    <td>Serra circular ou esquadria</td>
+                </tr>
+                <tr>
+                    <td>Fabricação espaçadores</td>
+                    <td>0,5 dia</td>
+                    <td>140 unidades total</td>
+                </tr>
+                <tr>
+                    <td>Acabamento e verificação</td>
+                    <td>0,5 dia</td>
+                    <td>Lixamento + controle qualidade</td>
+                </tr>
+                <tr>
+                    <td>Entrega no local</td>
+                    <td>0,5 dia</td>
+                    <td>Transporte cuidadoso</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">7.2. Lista de Entrega</div>
+
+            <div class="component-box">
+                <div class="component-title">Checklist Entrega Marceneiro</div>
+                <ol>
+                    <li>□ Painel fundo 1740×1560mm</li>
+                    <li>□ Painel lateral esquerdo 1560×480mm</li>
+                    <li>□ Painel lateral direito 1560×480mm</li>
+                    <li>□ Painel topo 1740×480mm</li>
+                    <li>□ Painel base 1740×480mm</li>
+                    <li>□ Espaçadores 10×10×10mm (120 unidades)</li>
+                    <li>□ Espaçadores base 15×10×10mm (20 unidades)</li>
+                    <li>□ Parafusos 3,5×25mm (100 unidades)</li>
+                    <li>□ Cola madeira 500ml</li>
+                    <li>□ Documentação dimensões</li>
+                </ol>
+            </div>
+
+            <div class="alert-box">
+                <div class="title">COORDENAÇÃO INSTALAÇÃO</div>
+                <p><strong>Aviso prévio:</strong> Marceneiro deve ser comunicado 48h antes da instalação</p>
+                <p><strong>Presença obrigatória:</strong> Durante marcação e furação coolers</p>
+                <p><strong>Ferramentas necessárias:</strong> Furadeira, brocas, parafusadeira</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; border-top: 2px solid #000; padding-top: 20px;">
+            <p><strong>Marceneiro responsável:</strong></p>
+            <p style="margin-top: 10px;">Nome: _________________________________</p>
+            <p>Empresa: _____________________________</p>
+            <p>Telefone: ____________________________</p>
+            <p style="margin-top: 10px;"><strong>Prazo de entrega acordado:</strong> ___/___/_____</p>
+            <p style="margin-top: 10px;"><strong>Orçamento aprovado:</strong> R$ _______________</p>
+            <p style="margin-top: 20px;">Assinatura: _______________________________</p>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 9pt; text-align: center;">
+            <p>Projeto Detalhado para Marceneiro</p>
+            <p>Sistema Isolamento Térmico - Cristaleira 10 Instrumentos</p>
+            <p>Rev: 01 | ___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>

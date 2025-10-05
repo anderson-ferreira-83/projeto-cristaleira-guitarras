@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETAPA 1 - Sistema Real Cristaleira 3 Portas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @media print {
+            body { margin: 1cm; }
+            .page-break { page-break-before: always; }
+            @page { margin: 1.5cm; }
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11pt;
+            line-height: 1.4;
+            color: #000;
+            background: #fff;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 210mm;
+            margin: 0 auto;
+            background: #fff;
+        }
+
+        .header {
+            border: 2px solid #000;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .header .subtitle {
+            font-size: 12pt;
+            margin-bottom: 5px;
+        }
+
+        .alert-box {
+            border: 2px solid #000;
+            padding: 12px;
+            margin: 15px 0;
+            background: #f5f5f5;
+        }
+
+        .alert-box .title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 5px;
+            text-decoration: underline;
+        }
+
+        .section {
+            margin: 20px 0;
+            border-bottom: 1px solid #000;
+            padding-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            margin-bottom: 10px;
+            padding: 5px 0;
+            border-bottom: 2px solid #000;
+        }
+
+        .subsection-title {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 15px 0 8px 0;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 10pt;
+        }
+
+        .specs-table th,
+        .specs-table td {
+            border: 1px solid #000;
+            padding: 6px 8px;
+            text-align: left;
+        }
+
+        .specs-table th {
+            font-weight: bold;
+            background: #f0f0f0;
+        }
+
+        .diagram {
+            font-family: 'Courier New', monospace;
+            font-size: 8pt;
+            border: 1px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            white-space: pre;
+            line-height: 1.3;
+        }
+
+        .note {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        .note .note-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .step-box {
+            border-left: 3px solid #000;
+            padding-left: 15px;
+            margin: 10px 0;
+        }
+
+        .measurement {
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            border: 1px solid #000;
+            padding: 2px 5px;
+            display: inline-block;
+        }
+
+        .component-box {
+            border: 1px solid #000;
+            padding: 12px;
+            margin: 12px 0;
+        }
+
+        .component-title {
+            font-weight: bold;
+            font-size: 11pt;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 3px;
+        }
+
+        .critical-warning {
+            background: #ffe6e6;
+            border: 2px solid #cc0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .critical-warning .title {
+            color: #cc0000;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        .success-box {
+            background: #e6ffe6;
+            border: 2px solid #009900;
+            padding: 15px;
+            margin: 20px 0;
+        }
+
+        .success-box .title {
+            color: #009900;
+            font-weight: bold;
+            font-size: 12pt;
+            margin-bottom: 8px;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>ETAPA 1 - Cristaleira Real 3 Portas</h1>
+            <div class="subtitle">Sistema MDF + Câmara Ar - Compartimento Único</div>
+            <div class="subtitle">Configuração: 10 Instrumentos - Layout Otimizado</div>
+            <div style="margin-top: 10px; font-size: 10pt;">
+                Cliente: _________________ | Data: _________________ | Rev: 01
+            </div>
+        </div>
+
+        <div class="success-box">
+            <div class="title">✅ CONFIGURAÇÃO REAL IDENTIFICADA</div>
+            <p>Sistema corrigido para SUA cristaleira específica: <strong>armário 3 portas, compartimento único</strong> sem divisórias internas.</p>
+            <p style="margin-top: 5px;"><strong>Estrutura:</strong> Madeira pinus + 3 gavetas base + dobradiças externas</p>
+        </div>
+
+        <div class="critical-warning">
+            <div class="title">⚠️ CORREÇÃO DE PROJETO</div>
+            <p><strong>ERRO ANTERIOR:</strong> Projeto "duas seções" baseado em modelo incorreto</p>
+            <p><strong>REALIDADE:</strong> Sua cristaleira é compartimento único com 3 portas</p>
+            <p><strong>SOLUÇÃO:</strong> Sistema unificado otimizado para layout real</p>
+        </div>
+
+        <div class="section">
+            <div class="section-title">1. ANÁLISE DA CRISTALEIRA REAL</div>
+
+            <div class="subsection-title">1.1. Configuração Identificada</div>
+
+            <div class="diagram">VISTA FRONTAL - SUA CRISTALEIRA REAL
+
+    ←─────────── 175cm (largura total) ────────────→
+    ┌─────────────────────────────────────────────┐ ↑
+    │          COMPARTIMENTO ÚNICO                │ │
+    │                                             │ │
+    │  🎸    🎸    🎸    🎸    🎸                │ │
+    │                                             │ │ 157cm
+    │                                             │ │ (altura)
+    │  🎸    🎸    🎸    🎸    🎸                │ │
+    │                                             │ │
+    │                                             │ │
+    └─────────────────────────────────────────────┘ ↓
+    │  GAVETA 1  │  GAVETA 2  │  GAVETA 3  │
+    └────────────┴────────────┴────────────┘
+    
+     PORTA A      PORTA B      PORTA C
+    (dobradiças externas - 3 portas independentes)</div>
+
+            <div class="subsection-title">1.2. Características Estruturais</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Elemento</th>
+                    <th>Especificação</th>
+                    <th>Implicação Projeto</th>
+                </tr>
+                <tr>
+                    <td>Material principal</td>
+                    <td>Madeira pinus maciça</td>
+                    <td>Boa massa térmica, condução moderada</td>
+                </tr>
+                <tr>
+                    <td>Compartimento</td>
+                    <td>Único 175×157×49 cm</td>
+                    <td>Sistema unificado, circulação livre</td>
+                </tr>
+                <tr>
+                    <td>Portas frontais</td>
+                    <td>3 independentes, madeira</td>
+                    <td>Vedação tripla necessária</td>
+                </tr>
+                <tr>
+                    <td>Dobradiças</td>
+                    <td>Externas, metálicas</td>
+                    <td>Pontes térmicas a isolar</td>
+                </tr>
+                <tr>
+                    <td>Base com gavetas</td>
+                    <td>3 gavetas funcionais</td>
+                    <td>Isolamento base crítico</td>
+                </tr>
+                <tr>
+                    <td>Fundo</td>
+                    <td>Painel madeira fixo</td>
+                    <td>Ideal para sistema MDF</td>
+                </tr>
+            </table>
+
+            <div class="subsection-title">1.3. Desafios Específicos Identificados</div>
+
+            <div class="component-box">
+                <div class="component-title">Vedação 3 Portas</div>
+                <ul>
+                    <li><strong>Problema:</strong> 3 portas = múltiplas junções de vedação</li>
+                    <li><strong>Solução:</strong> Sistema vedação escalonada nas sobreposições</li>
+                    <li><strong>Material:</strong> EVA em todas junções + cantos reforçados</li>
+                    <li><strong>Teste:</strong> Verificação independente cada porta</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Pontes Térmicas Múltiplas</div>
+                <ul>
+                    <li><strong>Dobradiças externas:</strong> 6 pontos de condução térmica</li>
+                    <li><strong>Maçanetas/fechaduras:</strong> Metal condutor</li>
+                    <li><strong>Junções madeira:</strong> Continuidade térmica</li>
+                    <li><strong>Solução:</strong> Isolamento contínuo + quebra térmicas</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Base com Gavetas</div>
+                <ul>
+                    <li><strong>Vantagem:</strong> Isolamento do solo melhorado</li>
+                    <li><strong>Desafio:</strong> Acesso à parte inferior limitado</li>
+                    <li><strong>Solução:</strong> Isolamento superior da base interna</li>
+                    <li><strong>Coolers:</strong> Posicionamento otimizado acima gavetas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">2. SISTEMA DE ISOLAMENTO UNIFICADO</div>
+
+            <div class="subsection-title">2.1. Arquitetura de Camadas</div>
+
+            <div class="diagram">CORTE TRANSVERSAL - SISTEMA UNIFICADO
+
+EXTERIOR                                    INTERIOR
+    ↓                                         ↓
+┌─────────────────────────────────────────────────────────────┐
+│ PAREDE CRISTALEIRA (pinus maciço)                          │
+└─────────────────────────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────────────────────────┐
+│ CAMADA 1: MANTA TÉRMICA EXTERNA                            │
+│ • Face metalizada voltada PARA FORA                        │
+│ • Reflexão calor externo + bloqueio IR                     │
+│ • Cobertura completa incluindo pontes térmicas             │
+└─────────────────────────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────────────────────────┐
+│ CAMADA 2: CÂMARA AR ESTÁTICA (CRÍTICA)                     │
+│ • Espaçamento uniforme: 10mm ± 1mm                         │
+│ • Espaçadores MDF cada 40cm (grid regular)                 │
+│ • Quebra pontes térmicas + isolamento adicional            │
+└─────────────────────────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────────────────────────┐
+│ CAMADA 3: PAINEL MDF ESTRUTURAL                            │
+│ • Espessura: 5mm (massa térmica + suporte)                 │
+│ • Fixação: parafusos nos espaçadores                       │
+│ • Base para apoios instrumentos                            │
+└─────────────────────────────────────────────────────────────┘
+    ↓
+┌─────────────────────────────────────────────────────────────┐
+│ CAMADA 4: MANTA TÉRMICA INTERNA                            │
+│ • Face metalizada voltada PARA DENTRO                      │
+│ • Estabilização microclima interno                         │
+│ • Reflexão calor instrumentos                              │
+└─────────────────────────────────────────────────────────────┘
+    ↓
+AMBIENTE INTERNO - 10 INSTRUMENTOS
+(175×157×49 cm = 1,35 m³)</div>
+
+            <div class="subsection-title">2.2. Layout de Instrumentos Otimizado</div>
+
+            <div class="diagram">DISTRIBUIÇÃO 10 INSTRUMENTOS - FILEIRA ÚNICA BASE
+
+TRASEIRA (parede fundo)
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║                                                            ║
+║                     ZONA SUPERIOR                          ║
+║                  (circulação livre)                        ║
+║                                                            ║
+║                                                            ║
+║                                                            ║
+║ ←─── 17,5cm ──→ ←─── 17,5cm ──→ ←─── 17,5cm ──→           ║
+║                                                            ║
+║ [■] [■] [■] [■] [■] [■] [■] [■] [■] [■]  ← APOIOS EVA    ║
+║  │   │   │   │   │   │   │   │   │   │                    ║
+║  🎸  🎸  🎸  🎸  🎸  🎸  🎸  🎸  🎸  🎸                 ║
+║ P-1 P-2 P-3 P-4 P-5 P-6 P-7 P-8 P-9 P10                 ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+FRENTE (3 portas)
+
+Layout: 1 fileira única na base
+Espaçamento: 17,5cm entre centros (10 posições)
+Profundidade: 49cm total disponível
+Altura útil: ~140cm livres para circulação</div>
+        </div>
+
+        <div class="section page-break">
+            <div class="section-title">3. PROCEDIMENTO DE INSTALAÇÃO</div>
+
+            <div class="step-box">
+                <strong>PREPARAÇÃO (2h)</strong>
+                <ol>
+                    <li>Esvaziar completamente cristaleira</li>
+                    <li>Remover prateleiras/suportes internos existentes</li>
+                    <li>Limpeza rigorosa com álcool isopropílico</li>
+                    <li>Secar completamente (aguardar 1h)</li>
+                    <li>Conferir dimensões internas exatas:
+                        <ul>
+                            <li>Altura: <span class="measurement">157 cm</span></li>
+                            <li>Largura: <span class="measurement">175 cm</span></li>
+                            <li>Profundidade: <span class="measurement">49 cm</span></li>
+                        </ul>
+                    </li>
+                    <li>Identificar e marcar pontes térmicas (dobradiças, fechaduras)</li>
+                    <li>Avaliar condição das gavetas (vedação base)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 1: PAREDE TRASEIRA (3h)</strong>
+                <ol>
+                    <li>Cortar manta térmica: <span class="measurement">180cm × 180cm</span></li>
+                    <li>Aplicar fita dupla face nas bordas parede externa</li>
+                    <li>Fixar 1ª camada (face metalizada FORA)</li>
+                    <li>Pressionar eliminando bolhas de ar</li>
+                    <li>Marcar grid espaçadores: 40×40cm (20 pontos total)</li>
+                    <li>Colar espaçadores 10×10×10mm com cola instantânea</li>
+                    <li>Aguardar cura 30min</li>
+                    <li>Fixar painel MDF 5mm com parafusos autorroscantes</li>
+                    <li>Cortar 2ª camada: <span class="measurement">174cm × 174cm</span></li>
+                    <li>Fixar 2ª camada no MDF (face metalizada DENTRO)</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 2: LATERAIS (2h)</strong>
+                <ol>
+                    <li>Lateral esquerda: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Lateral direita: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Sistema dupla camada com espaçadores</li>
+                    <li>Sobreposição 2cm com manta traseira</li>
+                    <li>Atenção às dobradiças: isolamento específico</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 3: TOPO (2h)</strong>
+                <ol>
+                    <li>Cortar manta: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Sistema dupla camada com espaçamento 10mm</li>
+                    <li>Região crítica: acúmulo calor</li>
+                    <li>Preparar pontos furos exhaust coolers</li>
+                    <li>Vedação cuidadosa cantos superiores</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 4: BASE ESPECIAL (3h)</strong>
+                <ol>
+                    <li>Base sobre gavetas: isolamento superior</li>
+                    <li>Espaçamento 15mm (vs. 10mm demais paredes)</li>
+                    <li>Razão: acomodar fiação coolers</li>
+                    <li>Cortar manta: <span class="measurement">180cm × 49cm</span></li>
+                    <li>Grid espaçadores: evitar área dos 4 coolers</li>
+                    <li>Marcar posições intake (sem furar ainda)</li>
+                    <li>Reforço isolamento sobre gavetas metálicas</li>
+                </ol>
+            </div>
+
+            <div class="step-box">
+                <strong>ETAPA 5: VEDAÇÃO TRIPLA PORTAS (2h)</strong>
+                <ol>
+                    <li>Aplicar fita EVA 6mm em todas junções:</li>
+                    <ul>
+                        <li>Junção porta A/parede lateral esquerda</li>
+                        <li>Junção porta A/porta B (sobreposição)</li>
+                        <li>Junção porta B/porta C (sobreposição)</li>
+                        <li>Junção porta C/parede lateral direita</li>
+                        <li>Junções todas portas com topo</li>
+                        <li>Junções todas portas com base</li>
+                    </ul>
+                    <li>Teste vedação porta por porta</li>
+                    <li>Teste conjunto: todas portas fechadas</li>
+                    <li>Reforço pontos vazamento detectados</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">4. PREPARAÇÃO SISTEMA COOLERS</div>
+
+            <div class="subsection-title">4.1. Layout Coolers Otimizado</div>
+
+            <div class="diagram">POSICIONAMENTO COOLERS - FILEIRA ÚNICA
+
+TRASEIRA
+╔════════════════════════════════════════════════════════════╗
+║  [COOLER C3]              [COOLER C4]                     ║
+║   EXHAUST                  EXHAUST                        ║
+║   Ø120mm                   Ø120mm                         ║
+║     ↑                        ↑                           ║
+║     │                        │                           ║
+║     │                        │                           ║
+║     │      ZONA SUPERIOR     │                           ║
+║     │    (circulação livre)  │                           ║
+║     │                        │                           ║
+║     │                        │                           ║
+║     │                        │                           ║
+║     ↓                        ↓                           ║
+║ 🎸🎸🎸🎸🎸🎸🎸🎸🎸🎸                                    ║
+║  │  │  │  │  │  │  │  │  │  │                           ║
+║ [C1]                      [C2]                           ║
+║ INTAKE                    INTAKE                          ║
+║ + Filtro                  + Filtro                       ║
+╚════════════════════════════════════════════════════════════╝
+FRENTE (3 portas)
+
+Fluxo otimizado:
+C1,C2: Intake nas extremidades (ar filtrado)
+C3,C4: Exhaust topo (ar quente sai)
+Zona superior: 140cm livres para circulação
+Instrumentos: Base protegida do fluxo direto</div>
+
+            <div class="subsection-title">4.2. Vantagens Sistema Unificado</div>
+
+            <div class="component-box">
+                <div class="component-title">Circulação Otimizada</div>
+                <ul>
+                    <li><strong>Zona superior livre:</strong> 140cm altura para circulação</li>
+                    <li><strong>Fileira única:</strong> Instrumentos protegidos na base</li>
+                    <li><strong>Acesso facilitado:</strong> 3 portas = manutenção fácil</li>
+                    <li><strong>Fluxo otimizado:</strong> Ar circula acima dos instrumentos</li>
+                </ul>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Eficiência Energética</div>
+                <ul>
+                    <li><strong>4 coolers vs. 6 originais:</strong> 33% menor consumo</li>
+                    <li><strong>Volume único:</strong> Menos perdas térmicas</li>
+                    <li><strong>Controle centralizado:</strong> Otimização automática</li>
+                    <li><strong>Base isolada:</strong> Menor ganho térmico solo</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">5. MATERIAIS ESPECÍFICOS</div>
+
+            <div class="subsection-title">5.1. Lista Atualizada</div>
+
+            <table class="specs-table">
+                <tr>
+                    <th>Material</th>
+                    <th>Especificação</th>
+                    <th>Quantidade</th>
+                    <th>Aplicação</th>
+                </tr>
+                <tr>
+                    <td>Manta térmica dupla face</td>
+                    <td>Tetto LAR, 1m largura</td>
+                    <td>15m lineares</td>
+                    <td>Sistema dupla camada completo</td>
+                </tr>
+                <tr>
+                    <td>MDF 5mm</td>
+                    <td>Chapa 2,75×1,85m</td>
+                    <td>2 chapas</td>
+                    <td>Painéis estruturais</td>
+                </tr>
+                <tr>
+                    <td>Espaçadores MDF</td>
+                    <td>Cubos 10×10×10mm</td>
+                    <td>120 unidades</td>
+                    <td>Câmara ar uniforme</td>
+                </tr>
+                <tr>
+                    <td>Fita EVA 6mm</td>
+                    <td>Largura 25mm, preta</td>
+                    <td>30m total</td>
+                    <td>Vedação 3 portas + extras</td>
+                </tr>
+                <tr>
+                    <td>Fita dupla face 3M</td>
+                    <td>Espuma acrílica 19mm</td>
+                    <td>25m</td>
+                    <td>Fixação mantas</td>
+                </tr>
+                <tr>
+                    <td>Parafusos autorroscantes</td>
+                    <td>3,5×25mm madeira</td>
+                    <td>80 unidades</td>
+                    <td>Fixação MDF</td>
+                </tr>
+            </table>
+
+            <div class="note">
+                <div class="note-title">CUSTO ESTIMADO ETAPA 1:</div>
+                <p><strong>Materiais principais:</strong> R$ 380-450</p>
+                <p><strong>Ferramentas (se necessário):</strong> R$ 120-180</p>
+                <p><strong>Total Etapa 1:</strong> R$ 500-630</p>
+                <p style="margin-top: 8px;"><strong>Tempo instalação:</strong> 12-15 horas (2-3 dias)</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">6. VALIDAÇÃO E PRÓXIMOS PASSOS</div>
+
+            <div class="alert-box">
+                <div class="title">CHECKLIST ETAPA 1 CONCLUÍDA</div>
+                <p>□ Parede traseira isolada (dupla camada + espaçadores)</p>
+                <p>□ Laterais isoladas (sobreposição com traseira)</p>
+                <p>□ Topo isolado (pontos coolers marcados)</p>
+                <p>□ Base isolada (espaçamento 15mm + área coolers)</p>
+                <p>□ Vedação 3 portas testada individualmente</p>
+                <p>□ Teste vedação conjunto (todas portas)</p>
+                <p>□ Pontes térmicas neutralizadas</p>
+                <p>□ Sistema preparado para coolers Etapa 2</p>
+            </div>
+
+            <div class="component-box">
+                <div class="component-title">Eficiência Esperada Etapa 1</div>
+                <ul>
+                    <li><strong>Isolamento térmico:</strong> 45-55% (vs. 0% atual)</li>
+                    <li><strong>Estabilização:</strong> ±3°C (vs. ±10°C atual)</li>
+                    <li><strong>Vedação:</strong> >90% das trocas de ar bloqueadas</li>
+                    <li><strong>Base preparada:</strong> 4 pontos coolers + fiação</li>
+                </ul>
+            </div>
+
+            <div class="note">
+                <div class="note-title">PRÓXIMA ETAPA:</div>
+                <p><strong>ETAPA 2:</strong> Instalação sistema 4 coolers + controle + monitoramento</p>
+                <p><strong>Aguardar:</strong> 48h cura completa antes furação</p>
+                <p><strong>Validar:</strong> Medição temperatura 48h para confirmar isolamento</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px; border-top: 2px solid #000; padding-top: 20px;">
+            <p><strong>Responsável instalação Etapa 1 (Cristaleira Real):</strong></p>
+            <p style="margin-top: 10px;">Nome: _________________________________</p>
+            <p>Início: ___/___/_____ | Conclusão: ___/___/_____</p>
+            <p style="margin-top: 10px;"><strong>Verificações obrigatórias:</strong></p>
+            <p>□ Sistema unificado instalado | □ 3 portas vedadas | □ Base preparada | □ Eficiência validada</p>
+            <p style="margin-top: 20px;">Assinatura: _______________________________</p>
+        </div>
+
+        <div style="margin-top: 30px; padding-top: 15px; border-top: 1px solid #000; font-size: 9pt; text-align: center;">
+            <p>ETAPA 1 - Sistema Real Cristaleira 3 Portas</p>
+            <p>Projeto Técnico Modular - 10 Instrumentos Compartimento Único</p>
+            <p>Rev: 01 | ___/___/2025</p>
+        </div>
+    </div>
+</body>
+</html>
